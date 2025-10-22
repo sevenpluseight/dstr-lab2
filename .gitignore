@@ -1,0 +1,52 @@
+# Build artifacts
+/build/
+cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+Makefile
+cmake_install.cmake
+*.o
+*.obj
+*.a
+*.so
+*.exe
+*.out
+
+# IDE/editor files
+.vscode/
+*.code-workspace
+*.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary and backup files
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+
+# Data files
+*.csv
+data/*.json
+
+# Libraries
+*.lib
+*.dll
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+__MACOSX/
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# User-specific CMake files
+CMakeUserPresets.json

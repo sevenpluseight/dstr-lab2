@@ -1,0 +1,36 @@
+# Source code — normalize line endings to LF
+*.cpp text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.hpp text eol=lf
+*.cmake text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+
+# Data files — treat as text (normalize LF)
+data/*.csv text eol=lf
+data/*.json text eol=lf
+
+# Binary / build artifacts — no conversion
+/build/* binary
+cmake-build-*/* binary
+*.o binary
+*.obj binary
+*.a binary
+*.so binary
+*.exe binary
+*.out binary
+*.dll binary
+*.lib binary
+
+# System / OS files — binary
+.DS_Store binary
+.AppleDouble binary
+.LSOverride binary
+Icon? binary
+__MACOSX/ binary
+Thumbs.db binary
+ehthumbs.db binary
+Desktop.ini binary
+$RECYCLE.BIN/ binary
+*.lnk binary
