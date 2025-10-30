@@ -1,8 +1,6 @@
 # Cross-Platform Development Note
 
-Use **standard C++ features whenever possible** to ensure the program runs consistently across **Windows**, **macOS**, and **Linux**.  
-Prefer standard libraries such as `<filesystem>`, `<thread>`, `<chrono>`, `<vector>`, and `<iostream>` for portability 
-and maintainability instead of using platform-specific code.
+Use **standard C++ features whenever possible** to ensure the program runs consistently across **Windows**, **macOS**, and **Linux**.
 
 ---
 
