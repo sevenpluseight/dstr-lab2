@@ -27,7 +27,7 @@ cmake_install.cmake
 *.orig
 
 # Data files
-*.csv
+#*.csv
 data/*.json
 
 # Libraries
