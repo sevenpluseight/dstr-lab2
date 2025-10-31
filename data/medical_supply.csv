@@ -1,0 +1,501 @@
+Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity,Status,Supplier_Name,Timestamp_Added,Expiry_Date
+PPE-FAC-9545,Face Shield,PPE,292,150,300,Expired,Deepspace Life Sciences,2025-05-05,2025-03-01
+PPE-FAC-1113,Face Shield,PPE,665,150,700,Expired,Breth Healthcare,2025-04-15,2024-12-09
+PPE-FAC-7958,Face Shield,PPE,227,150,400,Available,Deepspace Life Sciences,2025-06-08,2026-03-15
+PPE-SHO-6791,Shoe Covers,PPE,224,150,300,Available,Twinkle Medicine Supply,2025-07-28,2025-12-06
+PPE-FAC-6180,Face Mask,PPE,443,150,500,Available,Hex Medical Supplies,2025-05-08,2026-01-12
+EQP-DEF-4023,Defibrillator,EQP,592,150,600,Available,Breth Healthcare,2025-06-27,2026-10-20
+EQP-VEN-7811,Ventilator,EQP,40,150,600,Expired,Twinkle Medicine Supply,2025-09-08,2025-08-29
+MED-CIP-9793,Ciprofloxacin,MED,34,150,600,Low Stock,Deepspace Life Sciences,2024-12-15,2026-05-19
+PPE-GLO-6776,Gloves,PPE,527,150,600,Expired,Twinkle Medicine Supply,2025-06-15,2025-01-21
+MED-IBU-5801,Ibuprofen,MED,235,150,400,Available,Breth Healthcare,2025-02-25,2026-03-08
+MED-MET-4853,Metformin,MED,391,150,400,Available,Hex Medical Supplies,2025-05-19,2026-05-25
+MED-CIP-4269,Ciprofloxacin,MED,318,150,500,Expired,Spigan HealthTech,2025-09-25,2025-09-06
+PPE-SHO-6767,Shoe Covers,PPE,131,150,300,Expired,Deepspace Life Sciences,2025-04-07,2025-02-17
+MED-CIP-1430,Ciprofloxacin,MED,306,150,600,Expired,Hex Medical Supplies,2025-10-02,2025-03-30
+EQP-ECG-8426,ECG Machine,EQP,632,150,700,Available,Breth Healthcare,2025-05-13,2026-08-04
+PPE-FAC-7393,Face Shield,PPE,134,150,600,Expired,Breth Healthcare,2025-09-13,2025-04-11
+MED-MET-8677,Metformin,MED,215,150,700,Available,Breth Healthcare,2025-06-28,2025-12-13
+PPE-GOW-8850,Gown,PPE,252,150,400,Available,Breth Healthcare,2024-11-17,2025-12-08
+EQP-ECG-8848,ECG Machine,EQP,206,150,300,Available,Hex Medical Supplies,2025-08-24,2026-04-06
+MED-MET-4076,Metformin,MED,276,150,400,Expired,Spigan HealthTech,2025-10-23,2025-08-14
+MED-AMO-4394,Amoxicillin,MED,246,150,400,Available,Twinkle Medicine Supply,2025-06-15,2026-05-26
+EQP-VEN-4314,Ventilator,EQP,692,150,700,Available,Deepspace Life Sciences,2025-09-22,2026-05-26
+EQP-ULT-5818,Ultrasound Machine,EQP,349,150,600,Available,Hex Medical Supplies,2025-04-07,2026-04-12
+MED-CIP-4341,Ciprofloxacin,MED,331,150,700,Available,Spigan HealthTech,2025-02-03,2025-12-21
+MED-CIP-1218,Ciprofloxacin,MED,104,150,300,Expired,Hex Medical Supplies,2025-06-27,2025-10-22
+EQP-INF-2154,Infusion Pump,EQP,490,150,600,Available,Breth Healthcare,2025-01-09,2026-02-16
+PPE-FAC-1570,Face Mask,PPE,371,150,500,Available,Spigan HealthTech,2025-07-04,2026-09-15
+MED-AMO-4813,Amoxicillin,MED,329,150,500,Available,Hex Medical Supplies,2025-04-11,2026-04-12
+MED-IBU-9670,Ibuprofen,MED,553,150,600,Available,Twinkle Medicine Supply,2025-03-19,2026-02-05
+EQP-ECG-8341,ECG Machine,EQP,82,150,800,Low Stock,Twinkle Medicine Supply,2025-03-23,2026-03-30
+EQP-VEN-2747,Ventilator,EQP,331,150,400,Available,Spigan HealthTech,2025-07-11,2025-12-27
+MED-IBU-4854,Ibuprofen,MED,598,150,600,Available,Spigan HealthTech,2025-04-14,2026-04-03
+MED-IBU-5763,Ibuprofen,MED,15,150,800,Low Stock,Breth Healthcare,2025-06-18,2026-09-03
+EQP-INF-1752,Infusion Pump,EQP,300,150,300,Expired,Spigan HealthTech,2025-09-20,2024-12-04
+PPE-SHO-8850,Shoe Covers,PPE,191,150,800,Available,Spigan HealthTech,2025-06-24,2026-09-07
+EQP-DEF-6708,Defibrillator,EQP,21,150,300,Low Stock,Hex Medical Supplies,2025-07-17,2026-02-15
+PPE-SHO-4375,Shoe Covers,PPE,174,150,700,Available,Hex Medical Supplies,2025-08-09,2026-01-12
+MED-IBU-9670,Ibuprofen,MED,160,150,300,Available,Twinkle Medicine Supply,2025-06-14,2026-02-05
+PPE-GLO-6058,Gloves,PPE,462,150,500,Available,Spigan HealthTech,2025-05-04,2026-08-21
+MED-IBU-5357,Ibuprofen,MED,174,150,400,Available,Twinkle Medicine Supply,2025-05-25,2026-01-16
+EQP-DEF-4433,Defibrillator,EQP,274,150,300,Available,Breth Healthcare,2025-08-05,2026-01-06
+MED-CIP-3304,Ciprofloxacin,MED,86,150,800,Low Stock,Deepspace Life Sciences,2025-06-19,2026-10-23
+EQP-DEF-6708,Defibrillator,EQP,213,150,400,Available,Hex Medical Supplies,2025-02-14,2026-02-15
+MED-MET-7211,Metformin,MED,212,150,300,Available,Breth Healthcare,2025-10-13,2026-04-25
+EQP-ECG-5624,ECG Machine,EQP,244,150,400,Expired,Spigan HealthTech,2025-09-23,2024-11-24
+PPE-GLO-2386,Gloves,PPE,658,150,700,Available,Twinkle Medicine Supply,2024-11-06,2026-03-09
+PPE-GLO-2519,Gloves,PPE,488,150,800,Available,Twinkle Medicine Supply,2025-05-10,2026-02-09
+MED-CIP-1218,Ciprofloxacin,MED,170,150,400,Expired,Hex Medical Supplies,2025-01-20,2025-07-13
+PPE-SHO-8686,Shoe Covers,PPE,655,150,700,Available,Spigan HealthTech,2025-09-23,2026-08-27
+MED-PAR-6120,Paracetamol,MED,443,150,600,Available,Twinkle Medicine Supply,2025-05-28,2025-12-19
+PPE-FAC-6470,Face Shield,PPE,89,150,800,Low Stock,Hex Medical Supplies,2025-07-18,2026-08-18
+EQP-ECG-7831,ECG Machine,EQP,55,150,600,Low Stock,Deepspace Life Sciences,2025-05-08,2026-10-04
+EQP-DEF-8854,Defibrillator,EQP,98,150,600,Low Stock,Twinkle Medicine Supply,2025-03-14,2026-02-24
+PPE-GLO-2386,Gloves,PPE,236,150,400,Available,Twinkle Medicine Supply,2025-04-21,2026-03-09
+MED-CIP-9793,Ciprofloxacin,MED,316,150,500,Available,Deepspace Life Sciences,2025-01-27,2026-05-19
+EQP-INF-5141,Infusion Pump,EQP,354,150,500,Available,Breth Healthcare,2025-07-10,2026-10-06
+MED-PAR-9514,Paracetamol,MED,654,150,700,Expired,Twinkle Medicine Supply,2025-10-12,2025-05-02
+MED-MET-7694,Metformin,MED,363,150,800,Expired,Spigan HealthTech,2025-03-05,2025-08-09
+PPE-FAC-7856,Face Shield,PPE,191,150,300,Available,Hex Medical Supplies,2025-04-17,2025-12-25
+EQP-INF-8812,Infusion Pump,EQP,337,150,400,Available,Breth Healthcare,2025-06-25,2026-10-07
+MED-IBU-8543,Ibuprofen,MED,158,150,600,Available,Breth Healthcare,2025-08-23,2026-01-28
+MED-IBU-1845,Ibuprofen,MED,376,150,400,Available,Breth Healthcare,2025-10-27,2026-07-03
+MED-IBU-8816,Ibuprofen,MED,330,150,500,Available,Hex Medical Supplies,2025-01-15,2026-02-11
+EQP-ULT-9799,Ultrasound Machine,EQP,499,150,800,Available,Twinkle Medicine Supply,2025-01-12,2025-12-17
+PPE-GOW-9499,Gown,PPE,284,150,400,Available,Twinkle Medicine Supply,2024-12-09,2026-08-29
+PPE-FAC-6799,Face Mask,PPE,278,150,400,Available,Breth Healthcare,2024-11-30,2026-02-08
+PPE-GLO-6778,Gloves,PPE,175,150,400,Available,Twinkle Medicine Supply,2025-02-11,2026-06-14
+PPE-FAC-7837,Face Shield,PPE,159,150,600,Expired,Breth Healthcare,2025-08-29,2025-06-18
+MED-IBU-1749,Ibuprofen,MED,618,150,800,Expired,Twinkle Medicine Supply,2024-12-30,2025-10-04
+MED-IBU-5984,Ibuprofen,MED,46,150,500,Low Stock,Spigan HealthTech,2025-05-20,2026-05-08
+MED-MET-9402,Metformin,MED,132,150,400,Low Stock,Spigan HealthTech,2025-05-30,2026-10-30
+MED-AMO-8329,Amoxicillin,MED,359,150,400,Expired,Hex Medical Supplies,2025-03-10,2025-06-16
+MED-PAR-5033,Paracetamol,MED,695,150,800,Available,Hex Medical Supplies,2025-10-07,2026-10-29
+MED-CIP-6367,Ciprofloxacin,MED,348,150,600,Available,Hex Medical Supplies,2025-03-28,2026-01-21
+MED-PAR-9907,Paracetamol,MED,406,150,500,Available,Deepspace Life Sciences,2025-06-08,2026-04-20
+MED-AMO-8329,Amoxicillin,MED,270,150,300,Available,Hex Medical Supplies,2024-12-29,2026-03-05
+MED-PAR-9907,Paracetamol,MED,227,150,300,Expired,Deepspace Life Sciences,2025-08-26,2025-08-06
+EQP-INF-7771,Infusion Pump,EQP,348,150,500,Available,Hex Medical Supplies,2025-08-14,2026-08-27
+MED-PAR-5685,Paracetamol,MED,83,150,500,Low Stock,Hex Medical Supplies,2025-05-08,2025-12-08
+PPE-FAC-4162,Face Mask,PPE,510,150,600,Expired,Twinkle Medicine Supply,2024-12-09,2025-01-06
+EQP-ULT-3407,Ultrasound Machine,EQP,12,150,700,Expired,Deepspace Life Sciences,2025-05-27,2025-02-19
+PPE-FAC-1437,Face Mask,PPE,169,150,500,Available,Twinkle Medicine Supply,2025-05-13,2026-05-05
+EQP-VEN-9940,Ventilator,EQP,214,150,400,Available,Breth Healthcare,2025-04-09,2026-02-18
+MED-PAR-8882,Paracetamol,MED,345,150,400,Available,Hex Medical Supplies,2025-03-19,2025-12-11
+EQP-VEN-1111,Ventilator,EQP,366,150,800,Available,Hex Medical Supplies,2025-05-01,2026-01-20
+PPE-FAC-4318,Face Shield,PPE,607,150,800,Available,Twinkle Medicine Supply,2025-05-22,2025-12-04
+PPE-GLO-1176,Gloves,PPE,258,150,300,Available,Breth Healthcare,2025-05-12,2026-05-08
+PPE-SHO-1319,Shoe Covers,PPE,454,150,700,Available,Breth Healthcare,2025-01-08,2026-09-13
+EQP-VEN-5405,Ventilator,EQP,98,150,400,Low Stock,Spigan HealthTech,2025-02-26,2026-04-14
+EQP-INF-1462,Infusion Pump,EQP,543,150,800,Available,Deepspace Life Sciences,2025-03-31,2026-06-26
+MED-IBU-7085,Ibuprofen,MED,182,150,800,Available,Spigan HealthTech,2025-02-03,2026-09-29
+PPE-FAC-2256,Face Mask,PPE,26,150,600,Low Stock,Breth Healthcare,2024-12-27,2026-09-08
+PPE-FAC-3957,Face Shield,PPE,521,150,600,Available,Spigan HealthTech,2025-03-02,2026-10-05
+EQP-ECG-4445,ECG Machine,EQP,89,150,700,Expired,Breth Healthcare,2024-11-29,2025-02-20
+EQP-VEN-7239,Ventilator,EQP,659,150,700,Expired,Deepspace Life Sciences,2024-11-23,2025-05-12
+MED-PAR-7507,Paracetamol,MED,331,150,800,Available,Spigan HealthTech,2025-04-24,2026-02-23
+PPE-FAC-4900,Face Mask,PPE,133,150,800,Low Stock,Twinkle Medicine Supply,2024-11-21,2026-05-18
+PPE-FAC-7233,Face Mask,PPE,495,150,500,Expired,Hex Medical Supplies,2025-07-06,2025-09-16
+EQP-DEF-4866,Defibrillator,EQP,733,150,800,Available,Hex Medical Supplies,2025-06-21,2026-01-10
+PPE-GOW-1142,Gown,PPE,91,150,700,Expired,Spigan HealthTech,2025-03-07,2025-09-11
+MED-IBU-1691,Ibuprofen,MED,674,150,700,Available,Hex Medical Supplies,2025-08-11,2025-11-30
+EQP-DEF-4433,Defibrillator,EQP,148,150,500,Available,Breth Healthcare,2024-11-08,2026-01-06
+EQP-ECG-7621,ECG Machine,EQP,285,150,700,Available,Twinkle Medicine Supply,2025-04-08,2026-09-16
+PPE-SHO-6767,Shoe Covers,PPE,224,150,600,Available,Deepspace Life Sciences,2025-05-07,2026-07-26
+MED-CIP-8062,Ciprofloxacin,MED,534,150,800,Available,Breth Healthcare,2025-09-21,2026-03-08
+MED-MET-5659,Metformin,MED,292,150,300,Available,Twinkle Medicine Supply,2025-07-11,2026-01-11
+MED-PAR-2032,Paracetamol,MED,685,150,700,Available,Hex Medical Supplies,2025-01-08,2026-02-11
+PPE-GOW-4412,Gown,PPE,171,150,600,Available,Hex Medical Supplies,2025-01-31,2025-12-03
+EQP-VEN-8902,Ventilator,EQP,58,150,700,Expired,Twinkle Medicine Supply,2025-03-21,2025-05-29
+PPE-GOW-5289,Gown,PPE,608,150,800,Available,Deepspace Life Sciences,2024-11-07,2026-09-11
+EQP-ECG-4110,ECG Machine,EQP,261,150,300,Available,Deepspace Life Sciences,2025-08-31,2025-12-05
+MED-CIP-1218,Ciprofloxacin,MED,66,150,800,Expired,Hex Medical Supplies,2025-09-04,2025-08-05
+MED-PAR-7507,Paracetamol,MED,48,150,500,Expired,Spigan HealthTech,2025-05-22,2025-08-19
+EQP-ULT-9912,Ultrasound Machine,EQP,370,150,800,Available,Deepspace Life Sciences,2025-05-07,2026-03-04
+EQP-INF-9980,Infusion Pump,EQP,514,150,700,Available,Twinkle Medicine Supply,2025-01-28,2026-07-19
+MED-MET-8606,Metformin,MED,559,150,700,Expired,Spigan HealthTech,2025-07-18,2025-06-14
+PPE-GOW-5266,Gown,PPE,58,150,800,Low Stock,Spigan HealthTech,2025-06-27,2025-11-29
+EQP-INF-5268,Infusion Pump,EQP,329,150,400,Available,Hex Medical Supplies,2025-03-08,2026-07-07
+PPE-SHO-5215,Shoe Covers,PPE,585,150,700,Available,Twinkle Medicine Supply,2024-11-28,2026-09-20
+MED-MET-6947,Metformin,MED,238,150,800,Available,Twinkle Medicine Supply,2024-12-28,2026-04-27
+EQP-DEF-4023,Defibrillator,EQP,186,150,800,Expired,Breth Healthcare,2025-05-11,2025-01-18
+MED-AMO-9200,Amoxicillin,MED,310,150,400,Available,Twinkle Medicine Supply,2025-05-21,2026-05-15
+EQP-ECG-5624,ECG Machine,EQP,247,150,700,Expired,Spigan HealthTech,2025-08-01,2025-01-21
+PPE-SHO-3462,Shoe Covers,PPE,31,150,800,Expired,Deepspace Life Sciences,2025-03-04,2025-09-13
+EQP-ECG-7621,ECG Machine,EQP,426,150,700,Available,Twinkle Medicine Supply,2025-01-05,2026-09-16
+PPE-FAC-7393,Face Shield,PPE,347,150,400,Expired,Breth Healthcare,2024-11-20,2025-10-10
+MED-MET-5858,Metformin,MED,30,150,600,Low Stock,Twinkle Medicine Supply,2024-12-01,2026-06-01
+MED-CIP-4269,Ciprofloxacin,MED,35,150,800,Low Stock,Spigan HealthTech,2025-06-04,2026-02-07
+MED-AMO-8329,Amoxicillin,MED,209,150,400,Expired,Hex Medical Supplies,2025-05-24,2025-10-24
+MED-AMO-8329,Amoxicillin,MED,355,150,800,Expired,Hex Medical Supplies,2025-07-15,2025-08-02
+EQP-VEN-6117,Ventilator,EQP,255,150,500,Available,Breth Healthcare,2025-09-25,2026-01-01
+MED-MET-4853,Metformin,MED,115,150,800,Low Stock,Hex Medical Supplies,2025-06-15,2026-05-25
+EQP-DEF-6708,Defibrillator,EQP,372,150,400,Available,Hex Medical Supplies,2025-09-26,2026-02-15
+PPE-SHO-8350,Shoe Covers,PPE,472,150,700,Available,Deepspace Life Sciences,2025-01-28,2026-06-09
+PPE-SHO-8686,Shoe Covers,PPE,303,150,400,Available,Spigan HealthTech,2024-11-16,2026-08-27
+EQP-VEN-2455,Ventilator,EQP,128,150,300,Low Stock,Hex Medical Supplies,2025-08-28,2026-02-06
+PPE-GLO-9154,Gloves,PPE,659,150,700,Available,Deepspace Life Sciences,2025-03-29,2026-05-25
+EQP-DEF-3670,Defibrillator,EQP,228,150,600,Available,Breth Healthcare,2025-01-19,2026-01-02
+PPE-GOW-6729,Gown,PPE,332,150,500,Available,Spigan HealthTech,2025-02-11,2026-06-29
+PPE-SHO-8850,Shoe Covers,PPE,228,150,400,Available,Spigan HealthTech,2024-12-10,2026-09-07
+EQP-ECG-7168,ECG Machine,EQP,538,150,800,Available,Hex Medical Supplies,2025-06-15,2025-12-28
+MED-PAR-9514,Paracetamol,MED,393,150,400,Expired,Twinkle Medicine Supply,2025-03-24,2025-01-04
+MED-AMO-6938,Amoxicillin,MED,536,150,800,Available,Hex Medical Supplies,2025-05-07,2026-10-29
+PPE-SHO-3462,Shoe Covers,PPE,269,150,500,Available,Deepspace Life Sciences,2025-03-11,2026-01-02
+PPE-FAC-3850,Face Shield,PPE,649,150,700,Available,Spigan HealthTech,2025-07-16,2026-06-16
+MED-PAR-8814,Paracetamol,MED,132,150,600,Low Stock,Twinkle Medicine Supply,2024-11-29,2026-10-10
+EQP-ULT-3333,Ultrasound Machine,EQP,62,150,700,Low Stock,Spigan HealthTech,2024-12-11,2026-10-06
+PPE-GLO-3410,Gloves,PPE,261,150,600,Available,Twinkle Medicine Supply,2025-02-15,2026-08-16
+EQP-ULT-6412,Ultrasound Machine,EQP,393,150,600,Available,Twinkle Medicine Supply,2024-12-28,2026-03-25
+MED-IBU-4547,Ibuprofen,MED,59,150,600,Low Stock,Deepspace Life Sciences,2025-07-31,2026-09-27
+EQP-ECG-8848,ECG Machine,EQP,392,150,500,Available,Hex Medical Supplies,2025-08-01,2026-04-06
+PPE-FAC-7837,Face Shield,PPE,37,150,400,Low Stock,Breth Healthcare,2025-08-18,2026-02-11
+PPE-FAC-1171,Face Mask,PPE,595,150,600,Available,Breth Healthcare,2025-08-27,2025-12-11
+PPE-GOW-6929,Gown,PPE,192,150,600,Available,Hex Medical Supplies,2025-10-28,2025-12-28
+MED-AMO-7644,Amoxicillin,MED,417,150,600,Available,Deepspace Life Sciences,2025-03-14,2026-04-12
+MED-IBU-4897,Ibuprofen,MED,209,150,400,Available,Spigan HealthTech,2025-06-27,2026-08-16
+PPE-GOW-2073,Gown,PPE,189,150,400,Available,Breth Healthcare,2025-08-12,2026-10-10
+PPE-SHO-6767,Shoe Covers,PPE,288,150,500,Available,Deepspace Life Sciences,2025-03-31,2026-07-26
+PPE-FAC-1502,Face Mask,PPE,147,150,700,Low Stock,Twinkle Medicine Supply,2025-01-05,2026-01-17
+PPE-FAC-2533,Face Shield,PPE,182,150,700,Available,Deepspace Life Sciences,2025-03-04,2026-05-31
+MED-PAR-5685,Paracetamol,MED,246,150,500,Available,Hex Medical Supplies,2025-03-27,2025-12-08
+MED-PAR-9907,Paracetamol,MED,405,150,600,Available,Deepspace Life Sciences,2025-06-04,2026-04-20
+PPE-SHO-5627,Shoe Covers,PPE,263,150,500,Available,Twinkle Medicine Supply,2025-10-18,2026-06-19
+MED-MET-4076,Metformin,MED,164,150,300,Expired,Spigan HealthTech,2025-08-06,2025-08-04
+EQP-DEF-4023,Defibrillator,EQP,434,150,800,Available,Breth Healthcare,2025-04-09,2026-10-20
+EQP-ECG-8781,ECG Machine,EQP,559,150,600,Available,Breth Healthcare,2024-12-24,2026-08-03
+EQP-INF-2154,Infusion Pump,EQP,185,150,600,Available,Breth Healthcare,2025-01-23,2026-02-16
+EQP-DEF-6396,Defibrillator,EQP,308,150,600,Available,Hex Medical Supplies,2025-04-11,2026-02-15
+PPE-FAC-7837,Face Shield,PPE,324,150,500,Expired,Breth Healthcare,2025-10-22,2025-10-27
+EQP-INF-3661,Infusion Pump,EQP,99,150,800,Low Stock,Twinkle Medicine Supply,2025-04-16,2026-09-09
+MED-AMO-2357,Amoxicillin,MED,428,150,600,Available,Hex Medical Supplies,2025-04-02,2026-01-19
+PPE-FAC-4162,Face Mask,PPE,412,150,700,Expired,Twinkle Medicine Supply,2025-05-30,2025-10-29
+PPE-GOW-5289,Gown,PPE,136,150,800,Low Stock,Deepspace Life Sciences,2025-01-14,2026-09-11
+PPE-FAC-3949,Face Mask,PPE,402,150,800,Available,Hex Medical Supplies,2025-10-25,2026-10-25
+MED-CIP-8334,Ciprofloxacin,MED,332,150,500,Available,Deepspace Life Sciences,2024-11-23,2026-01-03
+PPE-FAC-5886,Face Mask,PPE,265,150,700,Available,Spigan HealthTech,2025-03-20,2025-12-21
+EQP-DEF-8854,Defibrillator,EQP,349,150,400,Available,Twinkle Medicine Supply,2025-07-15,2026-02-24
+EQP-INF-5553,Infusion Pump,EQP,273,150,300,Available,Breth Healthcare,2025-07-27,2026-02-21
+EQP-VEN-5405,Ventilator,EQP,393,150,700,Available,Spigan HealthTech,2024-11-04,2026-04-14
+PPE-GOW-2081,Gown,PPE,292,150,500,Available,Twinkle Medicine Supply,2025-10-01,2026-07-25
+EQP-ULT-4140,Ultrasound Machine,EQP,555,150,800,Available,Breth Healthcare,2025-06-20,2026-03-30
+MED-AMO-1696,Amoxicillin,MED,157,150,300,Available,Deepspace Life Sciences,2025-04-19,2026-08-12
+MED-PAR-7489,Paracetamol,MED,455,150,700,Available,Spigan HealthTech,2025-03-29,2026-02-04
+PPE-FAC-4409,Face Shield,PPE,162,150,400,Available,Hex Medical Supplies,2025-04-01,2026-03-24
+MED-AMO-2617,Amoxicillin,MED,424,150,800,Expired,Hex Medical Supplies,2025-01-10,2025-09-28
+EQP-VEN-1567,Ventilator,EQP,330,150,500,Available,Deepspace Life Sciences,2025-01-28,2026-01-19
+PPE-FAC-9688,Face Mask,PPE,301,150,700,Available,Breth Healthcare,2025-07-17,2026-01-24
+EQP-ECG-4584,ECG Machine,EQP,274,150,300,Available,Spigan HealthTech,2025-08-16,2026-10-27
+EQP-DEF-7944,Defibrillator,EQP,39,150,700,Low Stock,Spigan HealthTech,2024-12-21,2026-10-10
+PPE-SHO-6767,Shoe Covers,PPE,200,150,600,Available,Deepspace Life Sciences,2024-11-02,2026-07-26
+EQP-VEN-7811,Ventilator,EQP,397,150,400,Expired,Twinkle Medicine Supply,2025-02-02,2025-03-27
+EQP-INF-1222,Infusion Pump,EQP,87,150,400,Low Stock,Hex Medical Supplies,2025-10-15,2026-08-01
+MED-IBU-3157,Ibuprofen,MED,355,150,600,Available,Deepspace Life Sciences,2025-06-23,2026-07-17
+MED-MET-1751,Metformin,MED,194,150,400,Available,Spigan HealthTech,2025-10-11,2026-09-20
+EQP-INF-7771,Infusion Pump,EQP,585,150,700,Available,Hex Medical Supplies,2025-10-25,2026-08-27
+EQP-ULT-6412,Ultrasound Machine,EQP,544,150,800,Available,Twinkle Medicine Supply,2025-05-09,2026-03-25
+EQP-DEF-9646,Defibrillator,EQP,20,150,700,Low Stock,Deepspace Life Sciences,2025-02-19,2026-04-23
+EQP-ECG-4445,ECG Machine,EQP,188,150,300,Available,Breth Healthcare,2025-03-16,2026-04-21
+MED-AMO-6536,Amoxicillin,MED,610,150,700,Available,Spigan HealthTech,2025-08-11,2026-03-04
+PPE-FAC-6799,Face Mask,PPE,685,150,800,Available,Breth Healthcare,2025-07-25,2026-02-08
+MED-PAR-7997,Paracetamol,MED,179,150,700,Available,Twinkle Medicine Supply,2025-01-09,2026-10-09
+PPE-GOW-7437,Gown,PPE,203,150,300,Expired,Deepspace Life Sciences,2024-12-05,2025-03-23
+MED-PAR-8882,Paracetamol,MED,59,150,300,Low Stock,Hex Medical Supplies,2025-07-10,2025-12-11
+EQP-ECG-8757,ECG Machine,EQP,74,150,400,Expired,Spigan HealthTech,2025-05-05,2025-10-20
+MED-AMO-3233,Amoxicillin,MED,186,150,400,Available,Breth Healthcare,2025-02-12,2026-01-25
+MED-AMO-1023,Amoxicillin,MED,411,150,600,Available,Deepspace Life Sciences,2025-07-18,2026-10-18
+PPE-GOW-1943,Gown,PPE,373,150,800,Available,Breth Healthcare,2024-12-15,2025-12-05
+MED-MET-9402,Metformin,MED,140,150,500,Low Stock,Spigan HealthTech,2025-02-02,2026-10-30
+MED-PAR-2218,Paracetamol,MED,97,150,800,Low Stock,Hex Medical Supplies,2025-03-15,2026-08-03
+EQP-ULT-3333,Ultrasound Machine,EQP,241,150,400,Expired,Spigan HealthTech,2025-07-17,2024-11-16
+EQP-ECG-7621,ECG Machine,EQP,411,150,500,Expired,Twinkle Medicine Supply,2025-07-30,2025-08-30
+EQP-ULT-8751,Ultrasound Machine,EQP,713,150,800,Available,Twinkle Medicine Supply,2025-05-25,2026-10-18
+PPE-FAC-2256,Face Mask,PPE,130,150,400,Low Stock,Breth Healthcare,2025-05-12,2026-09-08
+EQP-ECG-6752,ECG Machine,EQP,473,150,500,Available,Hex Medical Supplies,2025-08-30,2026-01-06
+MED-AMO-3907,Amoxicillin,MED,209,150,300,Available,Hex Medical Supplies,2025-01-12,2026-09-18
+EQP-INF-1415,Infusion Pump,EQP,334,150,800,Available,Twinkle Medicine Supply,2025-10-28,2026-01-13
+MED-MET-7211,Metformin,MED,52,150,400,Low Stock,Breth Healthcare,2025-06-19,2026-04-25
+PPE-GOW-4201,Gown,PPE,390,150,400,Available,Breth Healthcare,2025-05-26,2026-04-30
+EQP-VEN-6117,Ventilator,EQP,45,150,700,Low Stock,Breth Healthcare,2024-11-10,2026-01-01
+EQP-ECG-7168,ECG Machine,EQP,66,150,500,Low Stock,Hex Medical Supplies,2025-07-19,2025-12-28
+MED-CIP-1218,Ciprofloxacin,MED,77,150,500,Expired,Hex Medical Supplies,2025-10-06,2025-03-18
+MED-PAR-8814,Paracetamol,MED,53,150,500,Low Stock,Twinkle Medicine Supply,2025-01-29,2026-10-10
+EQP-ECG-4110,ECG Machine,EQP,224,150,400,Available,Deepspace Life Sciences,2024-11-24,2025-12-05
+EQP-DEF-6708,Defibrillator,EQP,111,150,300,Low Stock,Hex Medical Supplies,2025-03-11,2026-02-15
+MED-IBU-5357,Ibuprofen,MED,198,150,500,Available,Twinkle Medicine Supply,2024-12-09,2026-01-16
+PPE-SHO-4426,Shoe Covers,PPE,454,150,700,Available,Twinkle Medicine Supply,2025-08-16,2025-12-16
+PPE-GOW-2073,Gown,PPE,228,150,800,Available,Breth Healthcare,2025-08-20,2026-10-10
+EQP-ECG-7621,ECG Machine,EQP,472,150,700,Available,Twinkle Medicine Supply,2024-12-20,2026-09-16
+PPE-GOW-2081,Gown,PPE,258,150,300,Available,Twinkle Medicine Supply,2025-03-03,2026-07-25
+MED-PAR-5033,Paracetamol,MED,398,150,700,Expired,Hex Medical Supplies,2025-03-21,2025-05-09
+EQP-ULT-4140,Ultrasound Machine,EQP,279,150,300,Available,Breth Healthcare,2025-05-01,2026-03-30
+MED-MET-8606,Metformin,MED,337,150,500,Available,Spigan HealthTech,2025-07-03,2026-01-13
+MED-CIP-7119,Ciprofloxacin,MED,319,150,500,Available,Spigan HealthTech,2025-02-21,2026-03-16
+EQP-DEF-8781,Defibrillator,EQP,174,150,400,Available,Breth Healthcare,2025-05-25,2026-07-03
+PPE-FAC-2256,Face Mask,PPE,146,150,700,Low Stock,Breth Healthcare,2025-10-09,2026-09-08
+PPE-GLO-2602,Gloves,PPE,356,150,400,Available,Hex Medical Supplies,2024-12-10,2026-09-13
+MED-CIP-2853,Ciprofloxacin,MED,111,150,700,Expired,Spigan HealthTech,2025-06-18,2025-07-03
+EQP-ECG-5572,ECG Machine,EQP,185,150,400,Available,Deepspace Life Sciences,2025-09-15,2026-08-01
+EQP-ECG-8757,ECG Machine,EQP,10,150,300,Low Stock,Spigan HealthTech,2025-07-07,2026-02-24
+EQP-ECG-8848,ECG Machine,EQP,254,150,300,Available,Hex Medical Supplies,2025-05-17,2026-04-06
+PPE-GLO-6776,Gloves,PPE,13,150,600,Expired,Twinkle Medicine Supply,2025-06-16,2025-07-03
+EQP-INF-5268,Infusion Pump,EQP,119,150,700,Expired,Hex Medical Supplies,2025-04-30,2025-01-15
+EQP-ECG-7168,ECG Machine,EQP,129,150,300,Expired,Hex Medical Supplies,2025-04-09,2025-10-17
+MED-CIP-1218,Ciprofloxacin,MED,244,150,300,Available,Hex Medical Supplies,2025-04-14,2026-04-21
+PPE-GLO-1176,Gloves,PPE,677,150,700,Available,Breth Healthcare,2025-08-12,2026-05-08
+EQP-INF-1752,Infusion Pump,EQP,482,150,500,Expired,Spigan HealthTech,2025-06-06,2025-10-10
+EQP-ECG-7621,ECG Machine,EQP,182,150,300,Available,Twinkle Medicine Supply,2025-08-30,2026-09-16
+PPE-SHO-3462,Shoe Covers,PPE,71,150,700,Low Stock,Deepspace Life Sciences,2025-06-15,2026-01-02
+EQP-ULT-4392,Ultrasound Machine,EQP,242,150,300,Available,Deepspace Life Sciences,2025-09-07,2026-06-15
+MED-IBU-8154,Ibuprofen,MED,683,150,700,Expired,Hex Medical Supplies,2025-03-27,2025-08-13
+EQP-ULT-3407,Ultrasound Machine,EQP,275,150,500,Available,Deepspace Life Sciences,2025-05-24,2026-02-16
+PPE-GOW-1142,Gown,PPE,140,150,800,Low Stock,Spigan HealthTech,2025-06-26,2026-07-22
+MED-CIP-4425,Ciprofloxacin,MED,235,150,500,Available,Twinkle Medicine Supply,2025-04-06,2026-05-19
+EQP-ULT-4392,Ultrasound Machine,EQP,263,150,500,Available,Deepspace Life Sciences,2025-10-15,2026-06-15
+PPE-GLO-3361,Gloves,PPE,221,150,400,Available,Twinkle Medicine Supply,2025-05-21,2026-05-26
+MED-IBU-1391,Ibuprofen,MED,126,150,800,Expired,Hex Medical Supplies,2025-09-04,2024-12-19
+EQP-DEF-7734,Defibrillator,EQP,559,150,800,Available,Hex Medical Supplies,2024-12-21,2026-05-06
+EQP-DEF-7944,Defibrillator,EQP,340,150,400,Available,Spigan HealthTech,2025-07-25,2026-10-10
+MED-IBU-1276,Ibuprofen,MED,733,150,800,Available,Breth Healthcare,2025-06-17,2026-02-07
+PPE-GOW-5286,Gown,PPE,63,150,500,Low Stock,Spigan HealthTech,2025-03-10,2025-12-03
+EQP-INF-3956,Infusion Pump,EQP,91,150,300,Low Stock,Deepspace Life Sciences,2025-04-04,2026-04-22
+PPE-FAC-4162,Face Mask,PPE,420,150,500,Expired,Twinkle Medicine Supply,2024-11-14,2025-06-05
+PPE-GLO-6058,Gloves,PPE,94,150,300,Low Stock,Spigan HealthTech,2025-06-09,2026-08-21
+EQP-VEN-5135,Ventilator,EQP,696,150,700,Available,Hex Medical Supplies,2025-10-15,2026-03-31
+MED-MET-3190,Metformin,MED,345,150,400,Available,Twinkle Medicine Supply,2025-04-01,2026-04-26
+EQP-ECG-5624,ECG Machine,EQP,132,150,300,Low Stock,Spigan HealthTech,2025-09-08,2026-09-09
+PPE-GLO-5383,Gloves,PPE,90,150,300,Low Stock,Breth Healthcare,2024-12-22,2026-08-17
+PPE-GOW-2222,Gown,PPE,288,150,300,Available,Breth Healthcare,2025-02-21,2026-02-16
+MED-IBU-5763,Ibuprofen,MED,685,150,800,Expired,Breth Healthcare,2025-09-25,2025-05-21
+EQP-ECG-8848,ECG Machine,EQP,114,150,300,Low Stock,Hex Medical Supplies,2025-08-17,2026-04-06
+EQP-DEF-5873,Defibrillator,EQP,59,150,500,Expired,Twinkle Medicine Supply,2025-09-23,2025-08-02
+MED-AMO-9520,Amoxicillin,MED,268,150,500,Available,Breth Healthcare,2025-05-11,2025-12-19
+PPE-FAC-4070,Face Mask,PPE,500,150,800,Expired,Spigan HealthTech,2024-12-03,2025-07-28
+MED-AMO-3233,Amoxicillin,MED,238,150,400,Available,Breth Healthcare,2025-05-04,2026-01-25
+EQP-ULT-3228,Ultrasound Machine,EQP,209,150,400,Available,Deepspace Life Sciences,2024-12-18,2025-12-07
+EQP-INF-2154,Infusion Pump,EQP,277,150,400,Available,Breth Healthcare,2025-04-06,2026-02-16
+MED-AMO-9516,Amoxicillin,MED,341,150,800,Available,Breth Healthcare,2025-09-27,2026-01-22
+EQP-INF-2154,Infusion Pump,EQP,157,150,400,Available,Breth Healthcare,2025-01-09,2026-02-16
+PPE-SHO-5386,Shoe Covers,PPE,375,150,700,Available,Breth Healthcare,2025-07-30,2025-12-08
+PPE-GOW-7387,Gown,PPE,237,150,300,Available,Spigan HealthTech,2025-08-05,2026-05-24
+MED-CIP-1218,Ciprofloxacin,MED,398,150,400,Available,Hex Medical Supplies,2025-06-26,2026-04-21
+MED-AMO-8971,Amoxicillin,MED,163,150,300,Available,Spigan HealthTech,2025-10-25,2026-06-17
+MED-CIP-9793,Ciprofloxacin,MED,295,150,700,Available,Deepspace Life Sciences,2025-07-19,2026-05-19
+MED-IBU-4897,Ibuprofen,MED,626,150,800,Expired,Spigan HealthTech,2024-12-02,2025-10-20
+PPE-FAC-7212,Face Shield,PPE,160,150,400,Available,Twinkle Medicine Supply,2025-07-26,2026-09-11
+PPE-FAC-7166,Face Shield,PPE,265,150,500,Available,Deepspace Life Sciences,2025-10-04,2026-01-12
+EQP-INF-2154,Infusion Pump,EQP,202,150,300,Available,Breth Healthcare,2025-07-30,2026-02-16
+EQP-DEF-4387,Defibrillator,EQP,71,150,300,Low Stock,Spigan HealthTech,2025-05-01,2026-04-25
+EQP-ECG-1423,ECG Machine,EQP,309,150,400,Expired,Deepspace Life Sciences,2024-10-30,2025-06-13
+EQP-VEN-2899,Ventilator,EQP,310,150,500,Available,Deepspace Life Sciences,2025-06-11,2026-10-26
+PPE-GLO-3410,Gloves,PPE,174,150,800,Available,Twinkle Medicine Supply,2025-09-17,2026-08-16
+EQP-ULT-6024,Ultrasound Machine,EQP,70,150,700,Low Stock,Deepspace Life Sciences,2025-01-13,2026-09-06
+PPE-FAC-5486,Face Shield,PPE,414,150,500,Expired,Hex Medical Supplies,2025-10-25,2025-05-28
+EQP-DEF-3457,Defibrillator,EQP,148,150,500,Low Stock,Breth Healthcare,2024-11-28,2026-09-01
+EQP-DEF-9646,Defibrillator,EQP,110,150,400,Low Stock,Deepspace Life Sciences,2025-02-28,2026-04-23
+EQP-VEN-9469,Ventilator,EQP,71,150,600,Low Stock,Breth Healthcare,2024-12-24,2026-02-15
+EQP-INF-2154,Infusion Pump,EQP,273,150,700,Available,Breth Healthcare,2025-07-05,2026-02-16
+EQP-ECG-4110,ECG Machine,EQP,218,150,700,Available,Deepspace Life Sciences,2025-10-06,2025-12-05
+MED-PAR-5685,Paracetamol,MED,336,150,500,Available,Hex Medical Supplies,2025-03-27,2025-12-08
+PPE-GOW-7899,Gown,PPE,202,150,300,Available,Hex Medical Supplies,2025-08-25,2026-02-09
+EQP-ECG-9108,ECG Machine,EQP,369,150,800,Available,Spigan HealthTech,2025-01-23,2026-04-01
+PPE-GOW-8850,Gown,PPE,130,150,600,Low Stock,Breth Healthcare,2024-11-15,2025-12-08
+MED-CIP-1430,Ciprofloxacin,MED,397,150,500,Available,Hex Medical Supplies,2025-10-06,2026-06-02
+MED-AMO-6938,Amoxicillin,MED,239,150,400,Available,Hex Medical Supplies,2024-12-31,2026-10-29
+MED-MET-4853,Metformin,MED,13,150,300,Expired,Hex Medical Supplies,2025-10-17,2025-03-25
+MED-IBU-1749,Ibuprofen,MED,96,150,300,Low Stock,Twinkle Medicine Supply,2025-02-02,2025-12-16
+MED-CIP-9793,Ciprofloxacin,MED,104,150,300,Expired,Deepspace Life Sciences,2025-05-03,2025-10-12
+MED-PAR-2218,Paracetamol,MED,93,150,600,Low Stock,Hex Medical Supplies,2024-12-21,2026-08-03
+PPE-SHO-8850,Shoe Covers,PPE,479,150,800,Expired,Spigan HealthTech,2025-09-03,2025-06-19
+PPE-GLO-6538,Gloves,PPE,184,150,800,Available,Spigan HealthTech,2025-01-30,2026-09-13
+EQP-INF-3956,Infusion Pump,EQP,478,150,500,Available,Deepspace Life Sciences,2025-09-02,2026-04-22
+MED-MET-8677,Metformin,MED,668,150,700,Available,Breth Healthcare,2025-09-26,2025-12-13
+EQP-DEF-3457,Defibrillator,EQP,266,150,700,Available,Breth Healthcare,2025-04-01,2026-09-01
+MED-AMO-2357,Amoxicillin,MED,243,150,300,Expired,Hex Medical Supplies,2025-03-23,2025-05-16
+EQP-DEF-6396,Defibrillator,EQP,335,150,700,Available,Hex Medical Supplies,2025-10-29,2026-02-15
+MED-PAR-7685,Paracetamol,MED,386,150,400,Available,Breth Healthcare,2025-04-01,2025-12-11
+EQP-ECG-7168,ECG Machine,EQP,423,150,700,Expired,Hex Medical Supplies,2025-08-20,2025-01-27
+PPE-GOW-4201,Gown,PPE,459,150,500,Expired,Breth Healthcare,2025-04-08,2025-06-30
+PPE-FAC-2256,Face Mask,PPE,96,150,400,Expired,Breth Healthcare,2025-09-05,2025-03-25
+PPE-GOW-9831,Gown,PPE,445,150,600,Available,Breth Healthcare,2025-10-19,2026-08-05
+MED-CIP-3604,Ciprofloxacin,MED,241,150,700,Available,Twinkle Medicine Supply,2025-10-01,2026-03-23
+EQP-DEF-1342,Defibrillator,EQP,500,150,500,Available,Deepspace Life Sciences,2024-11-03,2026-09-07
+PPE-FAC-7233,Face Mask,PPE,146,150,800,Low Stock,Hex Medical Supplies,2024-12-30,2026-03-17
+EQP-DEF-1390,Defibrillator,EQP,177,150,300,Available,Twinkle Medicine Supply,2025-05-07,2026-06-24
+PPE-GLO-2645,Gloves,PPE,158,150,400,Available,Hex Medical Supplies,2025-04-17,2026-10-14
+MED-IBU-5763,Ibuprofen,MED,219,150,300,Expired,Breth Healthcare,2025-02-09,2025-07-28
+EQP-INF-5268,Infusion Pump,EQP,11,150,700,Low Stock,Hex Medical Supplies,2025-08-29,2026-07-07
+MED-MET-4853,Metformin,MED,64,150,700,Low Stock,Hex Medical Supplies,2025-05-06,2026-05-25
+EQP-INF-5846,Infusion Pump,EQP,389,150,800,Expired,Twinkle Medicine Supply,2024-11-14,2025-06-18
+MED-PAR-2218,Paracetamol,MED,82,150,800,Low Stock,Hex Medical Supplies,2025-01-14,2026-08-03
+MED-AMO-9071,Amoxicillin,MED,488,150,600,Available,Twinkle Medicine Supply,2025-01-26,2026-09-20
+PPE-GOW-5286,Gown,PPE,3,150,500,Low Stock,Spigan HealthTech,2025-05-02,2025-12-03
+PPE-SHO-5620,Shoe Covers,PPE,491,150,700,Available,Twinkle Medicine Supply,2025-02-28,2026-08-25
+EQP-ULT-9989,Ultrasound Machine,EQP,255,150,700,Expired,Hex Medical Supplies,2025-06-03,2025-07-19
+EQP-VEN-2899,Ventilator,EQP,137,150,300,Low Stock,Deepspace Life Sciences,2025-01-27,2026-10-26
+MED-AMO-2017,Amoxicillin,MED,560,150,700,Available,Spigan HealthTech,2025-02-04,2026-01-03
+MED-AMO-7585,Amoxicillin,MED,71,150,300,Low Stock,Twinkle Medicine Supply,2025-06-07,2026-02-11
+MED-IBU-2925,Ibuprofen,MED,8,150,700,Low Stock,Spigan HealthTech,2025-08-05,2026-08-12
+EQP-ECG-4110,ECG Machine,EQP,25,150,800,Low Stock,Deepspace Life Sciences,2024-11-03,2025-12-05
+MED-MET-3298,Metformin,MED,500,150,500,Available,Spigan HealthTech,2025-10-08,2026-10-18
+MED-IBU-4893,Ibuprofen,MED,388,150,800,Available,Spigan HealthTech,2025-02-07,2026-02-02
+PPE-FAC-5832,Face Shield,PPE,106,150,300,Low Stock,Hex Medical Supplies,2025-05-20,2026-10-07
+PPE-SHO-6767,Shoe Covers,PPE,269,150,300,Available,Deepspace Life Sciences,2025-07-11,2026-07-26
+PPE-SHO-3462,Shoe Covers,PPE,445,150,500,Available,Deepspace Life Sciences,2024-11-25,2026-01-02
+MED-PAR-7629,Paracetamol,MED,655,150,700,Available,Hex Medical Supplies,2025-10-07,2026-08-18
+EQP-INF-2154,Infusion Pump,EQP,217,150,600,Available,Breth Healthcare,2025-03-08,2026-02-16
+PPE-FAC-1570,Face Mask,PPE,240,150,300,Available,Spigan HealthTech,2025-05-14,2026-09-15
+EQP-VEN-2816,Ventilator,EQP,500,150,500,Available,Twinkle Medicine Supply,2025-10-10,2026-09-26
+PPE-GOW-1142,Gown,PPE,138,150,300,Expired,Spigan HealthTech,2025-07-20,2024-11-24
+MED-MET-8381,Metformin,MED,371,150,400,Available,Spigan HealthTech,2025-04-07,2026-02-02
+PPE-FAC-7233,Face Mask,PPE,47,150,400,Expired,Hex Medical Supplies,2025-07-09,2025-07-11
+PPE-GLO-6538,Gloves,PPE,21,150,800,Expired,Spigan HealthTech,2025-10-26,2025-03-02
+EQP-VEN-6117,Ventilator,EQP,109,150,400,Expired,Breth Healthcare,2025-07-03,2025-05-05
+EQP-VEN-9940,Ventilator,EQP,527,150,600,Available,Breth Healthcare,2025-01-26,2026-02-18
+EQP-INF-1752,Infusion Pump,EQP,98,150,600,Low Stock,Spigan HealthTech,2025-04-16,2026-08-10
+MED-AMO-7644,Amoxicillin,MED,231,150,400,Available,Deepspace Life Sciences,2025-06-14,2026-04-12
+EQP-INF-5268,Infusion Pump,EQP,386,150,400,Available,Hex Medical Supplies,2025-07-21,2026-07-07
+MED-CIP-3304,Ciprofloxacin,MED,72,150,800,Low Stock,Deepspace Life Sciences,2025-10-14,2026-10-23
+PPE-FAC-9704,Face Mask,PPE,164,150,700,Available,Twinkle Medicine Supply,2025-08-10,2026-03-24
+PPE-GOW-1591,Gown,PPE,316,150,800,Expired,Spigan HealthTech,2025-10-18,2025-09-15
+MED-CIP-6367,Ciprofloxacin,MED,345,150,500,Expired,Hex Medical Supplies,2025-09-19,2025-05-26
+EQP-ECG-7621,ECG Machine,EQP,360,150,400,Available,Twinkle Medicine Supply,2025-04-04,2026-09-16
+MED-IBU-1391,Ibuprofen,MED,154,150,300,Available,Hex Medical Supplies,2025-09-27,2026-09-30
+EQP-INF-7771,Infusion Pump,EQP,211,150,500,Available,Hex Medical Supplies,2024-12-03,2026-08-27
+PPE-GOW-2073,Gown,PPE,176,150,700,Available,Breth Healthcare,2024-12-31,2026-10-10
+EQP-ULT-5546,Ultrasound Machine,EQP,215,150,600,Available,Twinkle Medicine Supply,2025-02-28,2026-09-14
+MED-MET-7211,Metformin,MED,90,150,600,Expired,Breth Healthcare,2024-12-24,2025-05-30
+MED-PAR-5903,Paracetamol,MED,283,150,300,Available,Breth Healthcare,2025-04-20,2026-01-30
+EQP-ULT-6024,Ultrasound Machine,EQP,344,150,400,Available,Deepspace Life Sciences,2025-07-22,2026-09-06
+EQP-ULT-3333,Ultrasound Machine,EQP,635,150,800,Available,Spigan HealthTech,2025-07-15,2026-10-06
+EQP-INF-5268,Infusion Pump,EQP,311,150,500,Expired,Hex Medical Supplies,2025-04-29,2025-10-06
+PPE-FAC-7212,Face Shield,PPE,564,150,600,Available,Twinkle Medicine Supply,2025-05-17,2026-09-11
+EQP-ULT-5818,Ultrasound Machine,EQP,772,150,800,Available,Hex Medical Supplies,2024-12-27,2026-04-12
+MED-PAR-7177,Paracetamol,MED,157,150,600,Available,Twinkle Medicine Supply,2025-01-10,2026-08-12
+PPE-GLO-6776,Gloves,PPE,12,150,300,Low Stock,Twinkle Medicine Supply,2025-07-05,2026-07-11
+PPE-GLO-6778,Gloves,PPE,581,150,700,Available,Twinkle Medicine Supply,2025-06-18,2026-06-14
+MED-MET-4853,Metformin,MED,606,150,800,Available,Hex Medical Supplies,2025-08-17,2026-05-25
+PPE-GOW-1591,Gown,PPE,175,150,600,Available,Spigan HealthTech,2025-05-31,2026-05-14
+MED-CIP-1218,Ciprofloxacin,MED,198,150,400,Available,Hex Medical Supplies,2025-02-27,2026-04-21
+EQP-INF-8815,Infusion Pump,EQP,205,150,700,Available,Spigan HealthTech,2025-06-17,2026-07-22
+MED-IBU-8154,Ibuprofen,MED,328,150,500,Expired,Hex Medical Supplies,2025-01-13,2025-03-04
+MED-AMO-3343,Amoxicillin,MED,48,150,300,Low Stock,Breth Healthcare,2024-12-13,2026-08-21
+PPE-SHO-5620,Shoe Covers,PPE,249,150,400,Available,Twinkle Medicine Supply,2025-01-30,2026-08-25
+PPE-FAC-8894,Face Mask,PPE,116,150,600,Low Stock,Hex Medical Supplies,2025-10-17,2026-10-12
+MED-IBU-4897,Ibuprofen,MED,189,150,500,Available,Spigan HealthTech,2025-10-05,2026-08-16
+MED-AMO-9812,Amoxicillin,MED,480,150,500,Available,Breth Healthcare,2025-06-10,2026-03-28
+MED-AMO-8971,Amoxicillin,MED,86,150,400,Low Stock,Spigan HealthTech,2025-06-14,2026-06-17
+MED-IBU-9576,Ibuprofen,MED,396,150,400,Available,Breth Healthcare,2025-06-01,2026-08-03
+MED-MET-9736,Metformin,MED,171,150,400,Available,Spigan HealthTech,2025-01-17,2026-09-28
+PPE-SHO-8850,Shoe Covers,PPE,492,150,500,Available,Spigan HealthTech,2025-07-27,2026-09-07
+PPE-GLO-1176,Gloves,PPE,173,150,800,Available,Breth Healthcare,2024-11-14,2026-05-08
+EQP-ECG-5624,ECG Machine,EQP,397,150,600,Available,Spigan HealthTech,2025-01-30,2026-09-09
+MED-MET-1171,Metformin,MED,173,150,300,Available,Spigan HealthTech,2025-07-24,2026-07-26
+MED-AMO-8329,Amoxicillin,MED,87,150,400,Expired,Hex Medical Supplies,2025-06-28,2025-04-03
+MED-IBU-8543,Ibuprofen,MED,147,150,500,Low Stock,Breth Healthcare,2025-07-14,2026-01-28
+EQP-INF-1752,Infusion Pump,EQP,99,150,400,Low Stock,Spigan HealthTech,2025-02-03,2026-08-10
+PPE-SHO-6767,Shoe Covers,PPE,5,150,400,Expired,Deepspace Life Sciences,2025-02-14,2025-07-04
+MED-PAR-6120,Paracetamol,MED,393,150,400,Available,Twinkle Medicine Supply,2024-11-19,2025-12-19
+PPE-FAC-7393,Face Shield,PPE,114,150,700,Low Stock,Breth Healthcare,2025-09-30,2026-01-19
+EQP-INF-9980,Infusion Pump,EQP,684,150,800,Available,Twinkle Medicine Supply,2025-07-24,2026-07-19
+MED-PAR-6120,Paracetamol,MED,189,150,300,Available,Twinkle Medicine Supply,2024-11-04,2025-12-19
+PPE-GLO-3410,Gloves,PPE,35,150,300,Expired,Twinkle Medicine Supply,2025-01-31,2025-10-27
+PPE-FAC-1820,Face Mask,PPE,373,150,400,Available,Spigan HealthTech,2025-09-15,2026-10-25
+MED-CIP-4269,Ciprofloxacin,MED,166,150,400,Expired,Spigan HealthTech,2025-10-22,2025-07-04
+EQP-VEN-4952,Ventilator,EQP,74,150,800,Low Stock,Breth Healthcare,2025-01-30,2026-03-29
+MED-MET-4057,Metformin,MED,521,150,700,Available,Spigan HealthTech,2025-02-13,2025-12-26
+EQP-DEF-9989,Defibrillator,EQP,114,150,300,Low Stock,Hex Medical Supplies,2025-08-26,2026-09-19
+MED-AMO-9516,Amoxicillin,MED,256,150,500,Available,Breth Healthcare,2025-08-28,2026-01-22
+MED-AMO-9812,Amoxicillin,MED,464,150,600,Available,Breth Healthcare,2025-04-06,2026-03-28
+MED-AMO-1023,Amoxicillin,MED,202,150,400,Available,Deepspace Life Sciences,2025-02-13,2026-10-18
+EQP-INF-3662,Infusion Pump,EQP,322,150,400,Available,Breth Healthcare,2025-10-01,2026-02-04
+PPE-FAC-3850,Face Shield,PPE,383,150,500,Available,Spigan HealthTech,2025-03-12,2026-06-16
+EQP-VEN-6241,Ventilator,EQP,227,150,500,Available,Twinkle Medicine Supply,2025-02-20,2026-10-26
+EQP-ECG-7920,ECG Machine,EQP,58,150,800,Low Stock,Deepspace Life Sciences,2025-08-26,2026-05-02
+MED-CIP-9793,Ciprofloxacin,MED,70,150,700,Low Stock,Deepspace Life Sciences,2025-03-22,2026-05-19
+PPE-FAC-3066,Face Shield,PPE,130,150,800,Low Stock,Hex Medical Supplies,2025-02-10,2026-05-23
+PPE-GLO-3410,Gloves,PPE,767,150,800,Available,Twinkle Medicine Supply,2025-10-21,2026-08-16
+MED-IBU-1691,Ibuprofen,MED,217,150,800,Available,Hex Medical Supplies,2025-09-24,2025-11-30
+EQP-DEF-9646,Defibrillator,EQP,333,150,600,Available,Deepspace Life Sciences,2025-05-24,2026-04-23
+MED-MET-8606,Metformin,MED,41,150,600,Low Stock,Spigan HealthTech,2024-12-24,2026-01-13
+EQP-INF-3956,Infusion Pump,EQP,14,150,700,Low Stock,Deepspace Life Sciences,2025-06-10,2026-04-22
+PPE-FAC-9993,Face Shield,PPE,276,150,700,Available,Deepspace Life Sciences,2025-10-01,2026-04-07
+EQP-ULT-3333,Ultrasound Machine,EQP,227,150,500,Available,Spigan HealthTech,2025-05-13,2026-10-06
+MED-IBU-4057,Ibuprofen,MED,476,150,700,Available,Spigan HealthTech,2025-08-07,2025-12-25
+PPE-GOW-7496,Gown,PPE,250,150,300,Available,Twinkle Medicine Supply,2025-08-17,2026-01-30
+EQP-VEN-7353,Ventilator,EQP,326,150,400,Expired,Twinkle Medicine Supply,2024-12-06,2025-05-03
+EQP-DEF-4023,Defibrillator,EQP,165,150,600,Available,Breth Healthcare,2024-11-10,2026-10-20
+PPE-GOW-4201,Gown,PPE,44,150,500,Low Stock,Breth Healthcare,2024-11-20,2026-04-30
+EQP-ECG-7168,ECG Machine,EQP,206,150,600,Expired,Hex Medical Supplies,2025-03-11,2025-04-11
+MED-AMO-6938,Amoxicillin,MED,465,150,600,Available,Hex Medical Supplies,2024-11-25,2026-10-29
+EQP-INF-9645,Infusion Pump,EQP,178,150,300,Available,Deepspace Life Sciences,2025-07-08,2026-10-22
+MED-PAR-8882,Paracetamol,MED,120,150,500,Low Stock,Hex Medical Supplies,2025-02-22,2025-12-11
+MED-MET-5659,Metformin,MED,244,150,300,Available,Twinkle Medicine Supply,2025-01-19,2026-01-11
+PPE-FAC-6470,Face Shield,PPE,126,150,400,Low Stock,Hex Medical Supplies,2025-09-04,2026-08-18
+MED-MET-7634,Metformin,MED,91,150,700,Low Stock,Spigan HealthTech,2024-11-17,2026-05-03
+PPE-GOW-1591,Gown,PPE,525,150,600,Available,Spigan HealthTech,2025-04-08,2026-05-14
+MED-CIP-9517,Ciprofloxacin,MED,467,150,600,Available,Hex Medical Supplies,2024-11-29,2026-02-26
+EQP-ECG-7621,ECG Machine,EQP,139,150,600,Low Stock,Twinkle Medicine Supply,2024-11-06,2026-09-16
+EQP-VEN-7811,Ventilator,EQP,41,150,300,Low Stock,Twinkle Medicine Supply,2025-04-09,2026-03-07
+PPE-FAC-5555,Face Shield,PPE,152,150,600,Available,Breth Healthcare,2024-12-26,2026-02-06
+MED-IBU-2171,Ibuprofen,MED,133,150,700,Low Stock,Breth Healthcare,2025-01-18,2026-04-20
+PPE-FAC-6470,Face Shield,PPE,372,150,700,Available,Hex Medical Supplies,2025-02-28,2026-08-18
+PPE-GOW-9499,Gown,PPE,295,150,300,Available,Twinkle Medicine Supply,2025-02-03,2026-08-29
+MED-MET-4853,Metformin,MED,5,150,600,Low Stock,Hex Medical Supplies,2025-06-01,2026-05-25
+PPE-FAC-2256,Face Mask,PPE,142,150,800,Expired,Breth Healthcare,2025-04-29,2025-01-13
+EQP-DEF-6708,Defibrillator,EQP,148,150,500,Expired,Hex Medical Supplies,2025-04-08,2024-12-29
+MED-MET-6947,Metformin,MED,366,150,400,Available,Twinkle Medicine Supply,2025-02-03,2026-04-27
+EQP-INF-5268,Infusion Pump,EQP,536,150,600,Available,Hex Medical Supplies,2024-11-16,2026-07-07
+PPE-FAC-3782,Face Shield,PPE,300,150,300,Available,Deepspace Life Sciences,2025-09-08,2026-04-25
+MED-AMO-4420,Amoxicillin,MED,277,150,400,Expired,Hex Medical Supplies,2025-05-04,2025-10-09
+PPE-GOW-5286,Gown,PPE,29,150,400,Low Stock,Spigan HealthTech,2025-04-07,2025-12-03
+PPE-FAC-1113,Face Shield,PPE,394,150,700,Expired,Breth Healthcare,2025-10-29,2025-03-10
+PPE-FAC-1113,Face Shield,PPE,119,150,400,Low Stock,Breth Healthcare,2025-09-02,2026-07-19
+PPE-GLO-2519,Gloves,PPE,530,150,800,Available,Twinkle Medicine Supply,2025-03-30,2026-02-09
+EQP-VEN-7353,Ventilator,EQP,224,150,300,Available,Twinkle Medicine Supply,2025-02-27,2026-05-10
+EQP-INF-1393,Infusion Pump,EQP,201,150,300,Available,Deepspace Life Sciences,2025-06-05,2026-09-01
+EQP-ULT-6024,Ultrasound Machine,EQP,144,150,700,Low Stock,Deepspace Life Sciences,2024-12-27,2026-09-06
+MED-CIP-4269,Ciprofloxacin,MED,281,150,600,Available,Spigan HealthTech,2025-07-06,2026-02-07
+MED-AMO-9278,Amoxicillin,MED,544,150,800,Available,Spigan HealthTech,2025-04-30,2026-07-02
+PPE-FAC-9443,Face Mask,PPE,40,150,300,Low Stock,Spigan HealthTech,2025-06-10,2025-12-26
+EQP-VEN-1111,Ventilator,EQP,201,150,600,Available,Hex Medical Supplies,2025-09-24,2026-01-20
+MED-AMO-7644,Amoxicillin,MED,252,150,600,Expired,Deepspace Life Sciences,2024-12-28,2025-07-08
+MED-AMO-4420,Amoxicillin,MED,150,150,500,Available,Hex Medical Supplies,2025-05-26,2026-09-24
+MED-IBU-1391,Ibuprofen,MED,189,150,500,Expired,Hex Medical Supplies,2025-01-07,2024-11-09
+MED-IBU-7557,Ibuprofen,MED,327,150,400,Available,Twinkle Medicine Supply,2025-01-12,2026-01-11
+PPE-GLO-6058,Gloves,PPE,203,150,800,Available,Spigan HealthTech,2025-06-08,2026-08-21
+MED-MET-8606,Metformin,MED,520,150,700,Available,Spigan HealthTech,2025-07-02,2026-01-13
+MED-MET-9402,Metformin,MED,172,150,600,Available,Spigan HealthTech,2025-07-12,2026-10-30
+PPE-SHO-1319,Shoe Covers,PPE,386,150,500,Available,Breth Healthcare,2025-03-08,2026-09-13
+EQP-DEF-5564,Defibrillator,EQP,348,150,400,Available,Twinkle Medicine Supply,2025-09-08,2026-06-30
+MED-IBU-5763,Ibuprofen,MED,23,150,400,Low Stock,Breth Healthcare,2025-05-19,2026-09-03
+PPE-GOW-1943,Gown,PPE,247,150,300,Available,Breth Healthcare,2024-11-06,2025-12-05
+PPE-FAC-5486,Face Shield,PPE,371,150,800,Available,Hex Medical Supplies,2025-06-30,2026-09-08
+MED-PAR-8419,Paracetamol,MED,248,150,800,Available,Breth Healthcare,2024-12-14,2026-04-07
+PPE-FAC-1171,Face Mask,PPE,100,150,300,Low Stock,Breth Healthcare,2025-01-08,2025-12-11
+PPE-FAC-1570,Face Mask,PPE,470,150,700,Available,Spigan HealthTech,2024-11-30,2026-09-15
+MED-IBU-4547,Ibuprofen,MED,620,150,800,Expired,Deepspace Life Sciences,2025-09-29,2025-02-03
+EQP-INF-5192,Infusion Pump,EQP,159,150,300,Available,Twinkle Medicine Supply,2025-03-10,2026-01-01
+PPE-GOW-6993,Gown,PPE,463,150,800,Expired,Spigan HealthTech,2025-03-30,2025-10-22
+EQP-ULT-4140,Ultrasound Machine,EQP,618,150,700,Available,Breth Healthcare,2025-10-04,2026-03-30
+MED-AMO-4813,Amoxicillin,MED,191,150,300,Available,Hex Medical Supplies,2025-06-05,2026-04-12
+PPE-FAC-1820,Face Mask,PPE,171,150,500,Expired,Spigan HealthTech,2025-06-20,2025-01-20
+PPE-GLO-6575,Gloves,PPE,256,150,300,Available,Breth Healthcare,2025-03-02,2026-02-15
+PPE-FAC-9545,Face Shield,PPE,160,150,700,Expired,Deepspace Life Sciences,2025-05-02,2025-01-06
+PPE-GLO-6776,Gloves,PPE,199,150,300,Available,Twinkle Medicine Supply,2025-04-03,2026-07-11
+MED-CIP-9793,Ciprofloxacin,MED,29,150,400,Expired,Deepspace Life Sciences,2024-12-29,2025-08-20
+MED-AMO-1687,Amoxicillin,MED,376,150,700,Available,Twinkle Medicine Supply,2025-05-08,2026-03-11
+EQP-DEF-9980,Defibrillator,EQP,224,150,300,Available,Deepspace Life Sciences,2025-03-01,2025-12-28
+PPE-GLO-8268,Gloves,PPE,445,150,800,Expired,Hex Medical Supplies,2025-03-02,2024-12-03
+MED-PAR-6120,Paracetamol,MED,548,150,700,Available,Twinkle Medicine Supply,2025-10-26,2025-12-19
+EQP-VEN-9940,Ventilator,EQP,48,150,800,Low Stock,Breth Healthcare,2025-06-24,2026-02-18
+EQP-INF-4622,Infusion Pump,EQP,448,150,500,Available,Deepspace Life Sciences,2025-05-09,2026-02-26
+MED-MET-2156,Metformin,MED,322,150,500,Expired,Hex Medical Supplies,2025-05-05,2025-08-12
+EQP-ULT-6412,Ultrasound Machine,EQP,30,150,600,Low Stock,Twinkle Medicine Supply,2025-09-11,2026-03-25
+MED-PAR-1971,Paracetamol,MED,424,150,800,Available,Breth Healthcare,2024-12-24,2026-05-07
+MED-AMO-4420,Amoxicillin,MED,237,150,700,Available,Hex Medical Supplies,2025-06-23,2026-09-24
+EQP-ECG-5624,ECG Machine,EQP,223,150,300,Available,Spigan HealthTech,2025-09-13,2026-09-09
+MED-MET-5659,Metformin,MED,249,150,600,Expired,Twinkle Medicine Supply,2025-08-09,2024-11-13
+PPE-FAC-1642,Face Mask,PPE,1,150,500,Low Stock,Twinkle Medicine Supply,2025-08-20,2026-02-01
+PPE-FAC-7233,Face Mask,PPE,131,150,700,Low Stock,Hex Medical Supplies,2025-03-31,2026-03-17
