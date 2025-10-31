@@ -1,6 +1,7 @@
-#include <iostream>
+#include "session_manager.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::string credentials_path = "data/user_credentials.csv";
+    SessionManager::start(credentials_path);
     return 0;
 }
