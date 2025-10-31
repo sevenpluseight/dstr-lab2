@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef CONFIG_HPP
+#define CONFIG_HPP
 
 /**
  * @brief Platform and compiler detection header for cross-platform compatibility
@@ -35,4 +35,4 @@
     #define CLEAR_COMMAND "clear"
 #endif
 
-#endif // CONFIG_H
+#endif
