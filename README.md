@@ -39,3 +39,31 @@ git stash
 git pull <branch> # Usually from the main branch
 git stash apply 
 ```
+
+---
+
+# How to Build and Run
+
+## Command-Line
+
+**macOS / Linux**
+```bash
+mkdir build
+cmake -B build -S .
+cmake --build build
+./build/main_app
+```
+
+**Windows**
+```bash
+mkdir build
+cmake -B build -S .
+cmake --build build --config Release
+./build/Release/main_app.exe
+```
+
+## IDE
+
+1.  Open the project's root folder in a CMake-compatible IDE (e.g., CLion, VS Code with CMake Tools, Visual Studio).
+2.  Select `main_app` as the target.
+3.  Click the "Run" button.
