@@ -18,6 +18,7 @@ endif()
 # Add all component include directories and utils for direct header access
 include_directories(
     "${CMAKE_CURRENT_SOURCE_DIR}/utils"
+    "${CMAKE_CURRENT_SOURCE_DIR}/auth/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/ambulances/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/emergencies/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/patients/include"
@@ -27,6 +28,7 @@ include_directories(
 # Source File Discovery
 # Automatically find all source files in the component directories
 file(GLOB_RECURSE CORE_SOURCES
+    "auth/*.cpp"
     "ambulances/src/*.cpp"
     "emergencies/src/*.cpp"
     "patients/src/*.cpp"
