@@ -31,6 +31,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Cache the CMake build folder per OS
+      - name: Cache CMake build
+        uses: actions/cache@v3
+        with:
+          path: build
+          key: ${{ runner.os }}-cmake-${{ hashFiles('**/CMakeLists.txt') }}
+
       - name: Configure CMake
         run: cmake -B build -S . \
           -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
@@ -38,8 +45,10 @@ jobs:
           -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
-        run: cmake --build build --config Release
+        run: cmake --build build --config Release --parallel
 
-      - name: Run Tests
+      # Run tests only on Linux (Ubuntu) for faster feedback
+      - name: Run Tests (Ubuntu only)
+        if: matrix.os == 'ubuntu-latest'
         working-directory: build
-        run: ctest --output-on-failure || echo "Tests failed but build succeeded"
+        run: ctest --output-on-failure
