@@ -6,6 +6,17 @@
  *
  * Defines macros for detecting the OS (Windows, macOS, Linux) and compiler (MSVC,
  * GCC, Clang)
+ *
+ * @note
+ * Do NOT modify or rename the macros in this file unless you fully understand their dependencies
+ *
+ * If you change these definitions:
+ *      - Colored terminal output in `message_handler.hpp` may break
+ *      - Cross-platform compilation or runtime behavior may become unstable
+ *
+ * Any platform or compiler adjustments should be done carefully and tested across all supported environments
+ *
+ * ℹ️ If you modify or encounter issues related to OS or compiler macros, please raise it in the WhatsApp group before making changes
  */
 
 // Detect OS platform

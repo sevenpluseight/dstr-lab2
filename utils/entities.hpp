@@ -15,7 +15,10 @@
  *
  * @usage
  * - Use in cross-module operations (e.g., when Emergency Department needs to read `Patients` data)
+ * - Can also be included and accessed by its own module (self-access)
  * - Use to maintain consistent data definitions across all system components
+ *
+ * ℹ️ If you find issues with these structs, please raise it in the WhatsApp group before making changes
  */
 
 // Patient Admission Clerk

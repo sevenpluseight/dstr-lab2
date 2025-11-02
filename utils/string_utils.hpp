@@ -8,6 +8,32 @@
 #include "message_handler.hpp"
 
 /**
+ * @brief Common string helper and input validation utilities used across hospital system modules
+ *
+ * @note
+ * - This header provides reusable helper functions for string processing and input validation
+ * - It depends on `message_handler.hpp` for displaying colored error messages when validation fails
+ * - Do NOT modify or specialize these functions directly for specific modules, instead, write separate
+ *   validator functions (e.g., supply_validation.hpp) and reuse `getValidatedInput`
+ * - Any change in core string handling logic here affects ALL modules that rely on user input or text formatting
+ *
+ * @usage
+ * - Include in any module that needs:
+ *      1. Whitespace trimming for user input or CSV parsing
+ *      2. Interactive input validation with clear feedback
+ * - Example:
+ *      #include "string_utils.hpp"
+ *
+ *      bool isValidName(const std::string& input) {
+ *          return !input.empty() && input.size() > 2;
+ *      }
+ *
+ *      std::string name = getValidatedInput("Enter name: ", isValidName, "Invalid name. Try again.");
+ *
+ * ℹ️ If you encounter logic or validation issues, please raise it in the WhatsApp group before making changes
+ */
+
+/**
  * @brief Trim whitespace (spaces, tabs, newlines, carriage returns) from both ends of a string
  * @param str The input string
  * @return Trimmed string
