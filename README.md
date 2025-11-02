@@ -1,20 +1,3 @@
-# Cross-Platform Development Note
-
-Use **standard C++ features whenever possible** to ensure the program runs consistently across **Windows**, **macOS**, and **Linux**.
-
----
-
-## When to Use Preprocessor Guards
-
-Use **preprocessor guards** (`#ifdef`, `#ifndef`, `#if defined(...)`, etc.) **only when platform-dependent functionality is necessary** such as:
-
-- Including OS-specific headers (e.g., `<windows.h>`)
-- Executing system commands (`cls` vs `clear`)
-- Handling compiler-specific options or optimizations
-- Managing file paths or environment variables that differ between systems
-
----
-
 # Branch Overview
 
 ## ⚠️ Important  
@@ -39,6 +22,21 @@ git stash
 git pull <branch> # Usually from the main branch
 git stash apply 
 ```
+
+---
+
+# User Credentials
+
+| Role                         | Username | Password |
+| :--------------------------- | :------- | :------- |
+| PatientAdmissionClerk        | pac1     | pac1     |
+| PatientAdmissionClerk        | pac2     | pac2     |
+| MedicalSupplyManager         | msm1     | msm1     |
+| MedicalSupplyManager         | msm2     | msm2     |
+| EmergencyDepartmentOfficer   | eod1     | eod1     |
+| EmergencyDepartmentOfficer   | eod2     | eod2     |
+| AmbulanceDispatcher          | ab1      | ab1      |
+| AmbulanceDispatcher          | ab2      | ab2      |
 
 ---
 
