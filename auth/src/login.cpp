@@ -90,8 +90,11 @@ bool Login::promptLogin() {
 
         // Convert to lowercase for exit/quit comparison
         std::string lower_username = username;
+        // std::transform(lower_username.begin(), lower_username.end(), lower_username.begin(),
+        //                [](unsigned char c) { return std::tolower(c); });
+
         std::transform(lower_username.begin(), lower_username.end(), lower_username.begin(),
-                       [](unsigned char c) { return std::tolower(c); });
+               [](unsigned char c) -> char { return static_cast<char>(std::tolower(c)); });
 
         // Exit option (case-insensitive)
         if (lower_username == "exit" || lower_username == "quit" || lower_username == "q") {
