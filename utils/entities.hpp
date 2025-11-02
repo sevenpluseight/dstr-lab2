@@ -38,7 +38,7 @@ struct Supply {
     int min_required; /// Minimum required quantity before low stock
     int max_capacity; /// Maximum allowed stock capacity
     std::string status; /// Status (Available, Low Stock, Expired)
-    std::string supplier_name; /// Supplier name (Hex Medical Supplies, Twinkle Medical Supply, Spigan Healthtech, Breth Healthcare, Deepspace Life Sciences)
+    std::string supplier_name; /// Supplier name
     std::string timestamp_added; /// Date/time when supply was added
     std::string expiry_date; /// Expiration date
 };
