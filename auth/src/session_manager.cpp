@@ -5,12 +5,10 @@
  * @param credentials_path Path to user credentials file
  */
 void SessionManager::start(const std::string& credentials_path) {
-    while (true) {
-        MessageHandler::info("\nHospital Management System");
-        Login login(credentials_path);
-        login.promptLogin();
-
-        // When a role calls logout(), this loop continues. Otherwise, if program exists inside a role, it stops here
+    MessageHandler::info("\nHospital Management System");
+    Login login(credentials_path);
+    while (login.promptLogin()) {
+        // Loop continues as long as promptLogin returns true (user wants to re-login)
     }
 }
 
