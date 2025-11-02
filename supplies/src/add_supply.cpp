@@ -102,7 +102,8 @@ void MedicalSupplyManager::addSupply() {
 
     // Construct batch ID
     std::string shortName = name.substr(0, std::min<size_t>(3, name.size()));
-    for (auto &c : shortName) c = toupper(c);
+    // for (auto &c : shortName) c = toupper(c);
+    for (auto &c : shortName) c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
     std::string supply_batch_id = type + "-" + shortName + "-" + batchNumber;
 
     // Check for duplicate supply in the same batch
