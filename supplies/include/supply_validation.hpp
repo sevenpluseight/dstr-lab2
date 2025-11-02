@@ -1,6 +1,10 @@
 #ifndef SUPPLY_VALIDATION_HPP
 #define SUPPLY_VALIDATION_HPP
 
+#ifdef _MSC_VER
+#pragma warning(disable : 4996)
+#endif
+
 #include <string>
 #include <iostream>
 #include <regex>
