@@ -4,12 +4,14 @@ project(DSTR_Hospital_System)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Cross-platform Compiler Flags
 if(MSVC)
-    add_compile_options(/W4 /WX)
+    add_compile_options(/W4 /WX)  # Treat warnings as errors
 else()
     add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif()
 
+# Core Library
 add_library(core STATIC
         auth/src/login.cpp
         auth/src/session_manager.cpp
@@ -21,6 +23,7 @@ add_library(core STATIC
         supplies/src/view_supply.cpp
 )
 
+# Include directories for core library
 target_include_directories(core PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/utils"
         "${CMAKE_CURRENT_SOURCE_DIR}/auth/include"
@@ -30,44 +33,51 @@ target_include_directories(core PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/supplies/include"
 )
 
+# Main Executable
 add_executable(main_app main.cpp)
 target_link_libraries(main_app PRIVATE core)
 
-file(GLOB main_files "*_main.cpp")
-foreach(main_file ${main_files})
-    string(REPLACE "_main.cpp" "" exe_name ${main_file})
-    add_executable(${exe_name} ${main_file})
-    target_link_libraries(${exe_name} PRIVATE core)
+# Auto-discover other *_main.cpp executables
+file(GLOB MAIN_FILES "*_main.cpp")
+foreach(MAIN_FILE ${MAIN_FILES})
+    get_filename_component(EXE_NAME ${MAIN_FILE} NAME_WE)
+    add_executable(${EXE_NAME} ${MAIN_FILE})
+    target_link_libraries(${EXE_NAME} PRIVATE core)
 endforeach()
 
-# Automatic CSV update
+# CSV Auto-copy (Rebuild on Change)
 file(GLOB DATA_FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/*.csv")
 
-# Create the data directory in the build folder
+# Ensure data folder exists in build directory
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/data")
 
-set(CSV_DESTINATIONS "") # Initialize list
-
+set(CSV_TARGETS "")
 foreach(DATA_FILE ${DATA_FILES})
     get_filename_component(FILE_NAME ${DATA_FILE} NAME)
-    set(DESTINATION_FILE "${CMAKE_CURRENT_BINARY_DIR}/data/${FILE_NAME}")
+    set(DEST_FILE "${CMAKE_CURRENT_BINARY_DIR}/data/${FILE_NAME}")
 
     add_custom_command(
-            OUTPUT "${DESTINATION_FILE}"
+            OUTPUT "${DEST_FILE}"
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${DATA_FILE}"
-            "${DESTINATION_FILE}"
+            "${DATA_FILE}" "${DEST_FILE}"
             DEPENDS "${DATA_FILE}"
-            COMMENT "Copying ${FILE_NAME} to build/data"
+            COMMENT "Copying ${FILE_NAME} to build/data..."
+            VERBATIM
     )
-    list(APPEND CSV_DESTINATIONS "${DESTINATION_FILE}")
+    list(APPEND CSV_TARGETS "${DEST_FILE}")
 endforeach()
 
-# Custom target to group all CSV copy commands
+# Group all CSV copy commands
 add_custom_target(copy_csv ALL
-        DEPENDS ${CSV_DESTINATIONS}
-        COMMENT "Copying CSV files to build directory..."
+        DEPENDS ${CSV_TARGETS}
+        COMMENT "Copying all CSV files to build/data..."
 )
 
-# Ensure main_app depends on CSV copy
+# Make executables depend on CSV files
 add_dependencies(main_app copy_csv)
+add_dependencies(core copy_csv)
+
+foreach(MAIN_FILE ${MAIN_FILES})
+    get_filename_component(EXE_NAME ${MAIN_FILE} NAME_WE)
+    add_dependencies(${EXE_NAME} copy_csv)
+endforeach()
