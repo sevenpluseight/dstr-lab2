@@ -104,7 +104,7 @@ bool Login::promptLogin() {
             std::getline(std::cin, confirm);
             trim(confirm);
             std::transform(confirm.begin(), confirm.end(), confirm.begin(),
-                           [](unsigned char c) { return std::tolower(c); });
+                           [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
 
             if (confirm == "y" || confirm == "yes") {
                 MessageHandler::info("Program terminated.");
