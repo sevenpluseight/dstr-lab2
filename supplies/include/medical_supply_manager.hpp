@@ -58,6 +58,10 @@ public:
      */
     void writeSupplyIntoCSV(const Supply& supply, const std::string& filename);
 
+    /**
+     * @brief Saves the current state of the stack to a CSV file
+     * @param filename Path to the CSV file
+     */
     void saveToCSV(const std::string& filename);
 
     /**
