@@ -53,7 +53,7 @@ public:
     /**
      * @brief Prompts the user for login
      */
-    void promptLogin();
+    bool promptLogin();
 };
 
 #endif

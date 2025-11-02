@@ -3,10 +3,12 @@
 #include <sstream>
 #include <cstring>
 #include <cctype>
+#include <algorithm>
 
 #include "login.hpp"
 #include "message_handler.hpp"
 #include "string_utils.hpp"
+#include "medical_supply_manager.hpp"
 
 /**
  * @brief Constructor for Login
@@ -72,31 +74,46 @@ std::string Login::attemptLogin(const std::string &username, const std::string &
  * @brief Prompt the user for login and redirect to role menu
  * @details
  * - Re-prompts if login fails (invalid credentials)
- * - If username is "exit" (case-sensitive), the program terminates immediately
+ * - If username is "exit", "quit", or "q" (case-insensitive), asks for confirmation before quitting
  */
-void Login::promptLogin() {
-    // Synchronize cout and cerr to maintain correct order
-    std::ios::sync_with_stdio(true);
+bool Login::promptLogin() {
+    std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
     std::string username, password;
 
     while (true) {
-        std::cout << "Please enter your username (or type 'exit' to quit): ";
+        std::cout << "Please enter your username (or enter 'exit', 'quit', or 'q' to quit): ";
         std::cout.flush();
         std::getline(std::cin, username);
         trim(username);
 
-        // Convert to lowercase for "exit"
+        // Convert to lowercase for exit/quit comparison
         std::string lower_username = username;
-        for (auto &c : lower_username)
-            c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+        // std::transform(lower_username.begin(), lower_username.end(), lower_username.begin(),
+        //                [](unsigned char c) { return std::tolower(c); });
 
-        // Exit option
-        if (lower_username == "exit") {
-            MessageHandler::info("Program terminated.");
+        std::transform(lower_username.begin(), lower_username.end(), lower_username.begin(),
+               [](unsigned char c) -> char { return static_cast<char>(std::tolower(c)); });
+
+        // Exit option (case-insensitive)
+        if (lower_username == "exit" || lower_username == "quit" || lower_username == "q") {
+            std::string confirm;
+            std::cout << "\nAre you sure you want to exit? (y/n): ";
             std::cout.flush();
-            exit(0);
+            std::getline(std::cin, confirm);
+            trim(confirm);
+            std::transform(confirm.begin(), confirm.end(), confirm.begin(),
+                           [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+
+            if (confirm == "y" || confirm == "yes") {
+                MessageHandler::info("Program terminated.");
+                std::cout.flush();
+                return false; // Indicate program exit
+            } else {
+                MessageHandler::info("Returning to login screen.\n");
+                continue; // Restart login process
+            }
         }
 
         std::cout << "Please enter your password: ";
@@ -136,13 +153,13 @@ void Login::promptLogin() {
                 break;
 
             case MEDICAL_SUPPLY_MANAGER:
-                MessageHandler::warning("Medical Supply Manager menu not implemented yet");
+                // MessageHandler::warning("Medical Supply Manager menu not implemented yet");
                 // Once implemented, comment out the above MessageHandler line
                 // and uncomment the block below:
-                // {
-                //     MedicalSupplyManager msm;
-                //     msm.displayMenu();
-                // }
+                {
+                    MedicalSupplyManager msm;
+                    msm.displayMenu();
+                }
                 break;
 
             case EMERGENCY_DEPARTMENT_OFFICER:
@@ -170,6 +187,6 @@ void Login::promptLogin() {
                 break;
         }
 
-        break; // Exit loop on successful login
+        return true; // Indicate successful login and return to login prompt
     }
 }
