@@ -9,15 +9,15 @@
  * @brief Implements a stack data structure for managing medical supplies
  *
  * @note
- * - Uses a statis array
+ * - Uses a static array
  * - Follows LIFO (Last In, First Out) principle
  */
 
-#define MAX_SUPPLY_STORAGE 1000
+#define MAX_STACK_CAPACITY 1000
 
 class SupplyStack {
 private:
-    Supply supplies[MAX_SUPPLY_STORAGE]; /// Static array to hold supply items
+    Supply supplies[MAX_STACK_CAPACITY]; /// Static array to hold supply items
     int top; /// Index of the top element in the stack
 
 public:
@@ -56,10 +56,23 @@ public:
      */
     Supply pop();
 
+    // /**
+    //  * @brief Displays all supplies in the stack (for debugging or viewing)
+    //  */
+    // void display() const;
+
     /**
-     * @brief Display all current supplies in the stack
+     * @brief Get the current top index of the stack
+     * @return Index of the top supply
      */
-    void display() const;
+    int getTopIndex() const;
+
+    /**
+     * @brief Get the supply at a specific index
+     * @param index Index from 0 to top
+     * @return Supply at the given index
+     */
+    Supply getSupplyAt(int index) const;
 };
 
 #endif
