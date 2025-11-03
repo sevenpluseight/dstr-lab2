@@ -6,6 +6,7 @@
 
 #include "entities.hpp"
 #include "stack.hpp"
+#include "message_handler.hpp"
 
 namespace fs = std::filesystem;
 
@@ -29,11 +30,33 @@ private:
      */
     std::string getDataFilePath(const std::string& filename) const {
         fs::path currentPath = fs::current_path();
-        fs::path parentDir = currentPath.parent_path();
-        fs::path dataDir = parentDir / "data";
+        fs::path projectRoot;
+
+        // Traverse up the directory tree to find the project root (where CMakeLists.txt is located)
+        fs::path tempPath = currentPath;
+        while (tempPath.has_parent_path()) {
+            if (fs::exists(tempPath / "CMakeLists.txt")) {
+                projectRoot = tempPath;
+                break;
+            }
+            tempPath = tempPath.parent_path();
+        }
+
+        if (projectRoot.empty()) {
+            MessageHandler::error("Could not find project root (CMakeLists.txt not found in parent directories).");
+            return "";
+        }
+
+        fs::path dataDir = projectRoot / "data";
 
         if (!fs::exists(dataDir)) {
-            fs::create_directories(dataDir);
+            if (!fs::create_directories(dataDir)) {
+                MessageHandler::error("Failed to create data directory: " + dataDir.string());
+                return "";
+            }
+        } else if (!fs::is_directory(dataDir)) {
+            MessageHandler::error("Path exists but is not a directory: " + dataDir.string());
+            return "";
         }
 
         fs::path filePath = dataDir / filename;

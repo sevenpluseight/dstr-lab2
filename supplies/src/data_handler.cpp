@@ -62,3 +62,34 @@ void MedicalSupplyManager::loadFromCSV(const std::string& filename) {
 
     file.close();
 }
+
+void MedicalSupplyManager::saveToCSV(const std::string &filename) {
+    std::string filePath = getDataFilePath(filename);
+    std::ofstream file(filePath, std::ios::trunc); // Overwrite the file
+
+    if (!file.is_open()) {
+        MessageHandler::error("Failed to open " + filePath + " for writing.");
+        return;
+    }
+
+    // Write header
+    file << "Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity," 
+            "Status,Supplier_Name,Timestamp_Added,Expiry_Date\n";
+
+    // Write all supplies from the stack
+    for (int i = 0; i <= stack.getTopIndex(); ++i) {
+        Supply s = stack.getSupplyAt(i);
+        file << s.supply_batch_id << ","
+             << s.name << ","
+             << s.supply_type << ","
+             << s.quantity << ","
+             << s.min_required << ","
+             << s.max_capacity << ","
+             << s.status << ","
+             << s.supplier_name << ","
+             << s.timestamp_added << ","
+             << s.expiry_date << "\n";
+    }
+
+    file.close();
+}
