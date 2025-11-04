@@ -7,6 +7,7 @@
 #include "entities.hpp"
 #include "stack.hpp"
 #include "message_handler.hpp"
+#include "path_utils.hpp"
 
 namespace fs = std::filesystem;
 
@@ -21,47 +22,6 @@ namespace fs = std::filesystem;
 class MedicalSupplyManager {
 private:
     SupplyStack stack; /// Stack for storing supply records
-
-    /**
-     * @brief Returns a full and safe path to a data file in the "data" folder
-     *
-     * @param filename Name of the file
-     * @return std::string Full path to the file
-     */
-    std::string getDataFilePath(const std::string& filename) const {
-        fs::path currentPath = fs::current_path();
-        fs::path projectRoot;
-
-        // Traverse up the directory tree to find the project root (where CMakeLists.txt is located)
-        fs::path tempPath = currentPath;
-        while (tempPath.has_parent_path()) {
-            if (fs::exists(tempPath / "CMakeLists.txt")) {
-                projectRoot = tempPath;
-                break;
-            }
-            tempPath = tempPath.parent_path();
-        }
-
-        if (projectRoot.empty()) {
-            MessageHandler::error("Could not find project root (CMakeLists.txt not found in parent directories).");
-            return "";
-        }
-
-        fs::path dataDir = projectRoot / "data";
-
-        if (!fs::exists(dataDir)) {
-            if (!fs::create_directories(dataDir)) {
-                MessageHandler::error("Failed to create data directory: " + dataDir.string());
-                return "";
-            }
-        } else if (!fs::is_directory(dataDir)) {
-            MessageHandler::error("Path exists but is not a directory: " + dataDir.string());
-            return "";
-        }
-
-        fs::path filePath = dataDir / filename;
-        return filePath.string();
-    }
 
 public:
     /**
