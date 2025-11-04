@@ -6,6 +6,8 @@
 
 #include "entities.hpp"
 #include "stack.hpp"
+#include "message_handler.hpp"
+#include "path_utils.hpp"
 
 namespace fs = std::filesystem;
 
@@ -20,25 +22,6 @@ namespace fs = std::filesystem;
 class MedicalSupplyManager {
 private:
     SupplyStack stack; /// Stack for storing supply records
-
-    /**
-     * @brief Returns a full and safe path to a data file in the "data" folder
-     *
-     * @param filename Name of the file
-     * @return std::string Full path to the file
-     */
-    std::string getDataFilePath(const std::string& filename) const {
-        fs::path currentPath = fs::current_path();
-        fs::path parentDir = currentPath.parent_path();
-        fs::path dataDir = parentDir / "data";
-
-        if (!fs::exists(dataDir)) {
-            fs::create_directories(dataDir);
-        }
-
-        fs::path filePath = dataDir / filename;
-        return filePath.string();
-    }
 
 public:
     /**

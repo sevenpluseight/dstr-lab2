@@ -48,14 +48,18 @@ Before building, ensure you have CMake and a C++ compiler (like GCC for Linux/ma
 
 **macOS / Linux**
 ```bash
+rm -rf build # Clean previous build (if any)
 mkdir build
 cmake -B build -S .
 cmake --build build
 ./build/main_app
 ```
 
+**Note:** The `data` directory and its necessary CSV files will be automatically created/copied into the `build/data` directory during the build process.
+
 **Windows**
 ```bash
+rmdir /s /q build # Clean previous build (if any)
 mkdir build
 cmake -B build -S .
 cmake --build build --config Release

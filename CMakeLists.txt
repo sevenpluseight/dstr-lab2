@@ -16,11 +16,12 @@ add_library(core STATIC
         auth/src/login.cpp
         auth/src/session_manager.cpp
         supplies/src/add_supply.cpp
-        supplies/src/load_supply_data.cpp
+        supplies/src/data_handler.cpp
         supplies/src/medical_supply_manager.cpp
         supplies/src/removed_supply.cpp
         supplies/src/stack.cpp
         supplies/src/view_supply.cpp
+        utils/path_utils.cpp
 )
 
 # Include directories for core library
