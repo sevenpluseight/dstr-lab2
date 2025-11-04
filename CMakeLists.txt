@@ -21,6 +21,7 @@ add_library(core STATIC
         supplies/src/removed_supply.cpp
         supplies/src/stack.cpp
         supplies/src/view_supply.cpp
+        utils/path_utils.cpp
 )
 
 # Include directories for core library
