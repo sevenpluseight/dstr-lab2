@@ -7,6 +7,7 @@
 #include "message_handler.hpp"
 #include "string_utils.hpp"
 #include "stack.hpp"
+#include "path_utils.hpp"
 
 /**
 * @brief Loads CSV file
