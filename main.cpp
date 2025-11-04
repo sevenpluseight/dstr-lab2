@@ -5,7 +5,7 @@
 namespace fs = std::filesystem;
 
 int main() {
-    std::string credentials_path = "data/user_credentials.csv";
+    std::string credentials_path = "user_credentials.csv";
     SessionManager::start(credentials_path);
     return 0;
 }

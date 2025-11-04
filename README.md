@@ -44,21 +44,35 @@ git stash apply
 
 ## Command-Line
 
+Before building, ensure you have CMake and a C++ compiler (like GCC for Linux/macOS or MSVC for Windows) installed and configured.
+
 **macOS / Linux**
 ```bash
+rm -rf build # Clean previous build (if any)
 mkdir build
 cmake -B build -S .
 cmake --build build
 ./build/main_app
 ```
 
+**Note:** The `data` directory and its necessary CSV files will be automatically created/copied into the `build/data` directory during the build process.
+
 **Windows**
 ```bash
+rmdir /s /q build # Clean previous build (if any)
 mkdir build
 cmake -B build -S .
 cmake --build build --config Release
-./build/Release/main_app.exe
+.\build\Release\main_app.exe
 ```
+
+**Note for Windows users:** The path to the executable might differ based on your CMake generator. If the above command fails, look for `main_app.exe` inside the `build` directory. It might be in `build\main_app.exe` or `build\Debug\main_app.exe`.
+
+### Why this might happen
+
+The exact location of the compiled application (`main_app.exe`) can vary depending on the tools you have installed on your Windows machine. CMake uses a "generator" to create the project files for a specific build system (like Visual Studio or Ninja).
+
+Some generators create configuration-specific folders (e.g., `build\Release` or `build\Debug`), while others place the executable directly in the build folder (e.g., `build\`). The updated instructions and note are designed to help you locate the executable regardless of the generator used.
 
 ## IDE
 

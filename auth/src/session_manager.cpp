@@ -1,4 +1,5 @@
 #include "session_manager.hpp"
+#include "path_utils.hpp"
 
 /**
  * @brief Starts the login loop
@@ -6,7 +7,8 @@
  */
 void SessionManager::start(const std::string& credentials_path) {
     MessageHandler::info("\nHospital Management System");
-    Login login(credentials_path);
+    std::string full_path = getDataFilePath(credentials_path);
+    Login login(full_path);
     while (login.promptLogin()) {
         // Loop continues as long as promptLogin returns true (user wants to re-login)
     }
