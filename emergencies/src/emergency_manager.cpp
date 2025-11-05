@@ -72,7 +72,7 @@ void printCaseRow(const EmergencyCase& ec) {
               << std::setw(12) << ec.status
               << std::setw(22) << ec.timestamp_logged;
 
-    if (ec.status == "Completed") {
+    if (!ec.timestamp_processed.empty()) {
         std::cout << std::setw(22) << ec.timestamp_processed
                   << std::setw(10) << ec.ambulance_id;
     }
