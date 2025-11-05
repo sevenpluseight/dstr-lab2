@@ -128,3 +128,23 @@ void EmergencyManager::updateCase(const EmergencyCase& ec) {
     // If not found, add it (e.g., reinsert after processing if needed)
     addCase(ec);
 }
+
+std::string EmergencyManager::generateNextCaseID() {
+    int maxID = 0;
+    Node* current = head;
+
+    while (current) {
+        const std::string& id = current->data.case_id;
+        if (id.rfind("C", 0) == 0) {
+            try {
+                int num = std::stoi(id.substr(1));
+                if (num > maxID) maxID = num;
+            } catch (...) {}
+        }
+        current = current->next;
+    }
+
+    std::ostringstream oss;
+    oss << "C" << std::setw(4) << std::setfill('0') << (maxID + 1);
+    return oss.str();
+}

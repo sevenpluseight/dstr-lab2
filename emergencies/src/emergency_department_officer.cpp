@@ -48,7 +48,9 @@ void EmergencyDepartmentOfficer::viewCases() {
 // Add new case
 void EmergencyDepartmentOfficer::addCase() {
     EmergencyCase ec;
-    ec.case_id = getValidatedInput("Enter Case ID: ", [](const std::string &s){ return !s.empty(); }, "Case ID cannot be empty.");
+    // Auto-generate Case ID
+    ec.case_id = manager.generateNextCaseID();
+    std::cout << "\nGenerated Case ID: " << ec.case_id << "\n";
     ec.patient_id = getValidatedInput("Enter Patient ID: ", [](const std::string &s){ return !s.empty(); }, "Patient ID cannot be empty.");
     ec.patient_name = getValidatedInput("Enter Patient Name: ", [](const std::string &s){ return !s.empty(); }, "Patient name cannot be empty.");
     ec.emergency_type = getValidatedInput("Enter Emergency Type: ", [](const std::string &s){ return !s.empty(); }, "Emergency type cannot be empty.");
