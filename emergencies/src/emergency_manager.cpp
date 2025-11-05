@@ -61,23 +61,89 @@ void EmergencyManager::saveToCSV(const std::string& filename) {
     file.close();
 }
 
-// Print all cases
+// Helper function to print a single case row
+void printCaseRow(const EmergencyCase& ec) {
+    std::cout << std::left
+              << std::setw(8)  << ec.case_id
+              << std::setw(11)  << ec.patient_id
+              << std::setw(20)  << ec.patient_name
+              << std::setw(28) << ec.emergency_type
+              << std::setw(10)  << std::to_string(ec.priority_level)
+              << std::setw(12) << ec.status
+              << std::setw(22) << ec.timestamp_logged;
+
+    if (ec.status == "Completed") {
+        std::cout << std::setw(22) << ec.timestamp_processed
+                  << std::setw(10) << ec.ambulance_id;
+    }
+
+    std::cout << "\n";
+}
+
 void EmergencyManager::printAllCases() const {
     if (!head) {
         MessageHandler::info("No emergency cases available.");
         return;
     }
 
-    std::cout << "\n--- Emergency Cases ---\n";
+    std::cout << "\n--- " << "All Cases ---\n";
+    
+    // Print header
+    std::cout << std::left
+              << std::setw(8)  << "CaseID"
+              << std::setw(11)  << "PatientID"
+              << std::setw(20) << "PatientName"
+              << std::setw(28) << "EmergencyType"
+              << std::setw(10)  << "Priority"
+              << std::setw(12) << "Status"
+              << std::setw(22) << "Logged"
+              << std::setw(22) << "Processed"
+              << std::setw(10) << "Ambulance"
+              << "\n";
+    std::cout << std::string(143, '-') << "\n";
+
     Node* current = head;
     while (current) {
-        const EmergencyCase& ec = current->data;
-        std::cout << ec.case_id << " | " << ec.patient_name
-                  << " | " << ec.emergency_type
-                  << " | Priority: " << ec.priority_level
-                  << " | Status: " << ec.status << "\n";
+        printCaseRow(current->data);
         current = current->next;
     }
+}
+
+// Print cases by status
+void EmergencyManager::printCasesByStatus(const std::string& status) const {
+    if (!head) {
+        MessageHandler::info("No emergency cases available.");
+        return;
+    }
+
+    std::cout << "\n--- " << status << " Cases ---\n";
+
+    // Print header
+    std::cout << std::left
+              << std::setw(8)  << "CaseID"
+              << std::setw(11)  << "PatientID"
+              << std::setw(20) << "PatientName"
+              << std::setw(28) << "EmergencyType"
+              << std::setw(10) << "Priority"
+              << std::setw(12) << "Status"
+              << std::setw(22) << "Logged"
+              << std::setw(22) << "Processed"
+              << std::setw(10) << "Ambulance"
+              << "\n";
+    std::cout << std::string(143, '-') << "\n"; 
+
+    Node* current = head;
+    bool found = false;
+    while (current) {
+        if (current->data.status == status) {
+            printCaseRow(current->data);
+            found = true;
+        }
+        current = current->next;
+    }
+
+    if (!found)
+        std::cout << "(No " << status << " cases found)\n";
 }
 
 // Add case (insert by priority)
@@ -125,7 +191,6 @@ void EmergencyManager::updateCase(const EmergencyCase& ec) {
         }
         current = current->next;
     }
-    // If not found, add it (e.g., reinsert after processing if needed)
     addCase(ec);
 }
 

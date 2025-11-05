@@ -1,4 +1,3 @@
-
 #include "emergency_department_officer.hpp"
 #include "string_utils.hpp"
 #include "message_handler.hpp"
@@ -18,7 +17,7 @@ void EmergencyDepartmentOfficer::run() {
 void EmergencyDepartmentOfficer::displayMenu() {
     while (true) {
         std::cout << "\n--- Emergency Department Officer Menu ---\n";
-        std::cout << "1. View all emergency cases\n";
+        std::cout << "1. View emergency cases\n";
         std::cout << "2. Add new emergency case\n";
         std::cout << "3. Process highest priority case\n";
         std::cout << "4. Exit\n";
@@ -42,7 +41,31 @@ void EmergencyDepartmentOfficer::displayMenu() {
 
 // View cases
 void EmergencyDepartmentOfficer::viewCases() {
-    manager.printAllCases();
+    while (true) {
+        std::cout << "\n--- View Emergency Cases ---\n";
+        std::cout << "1. View Pending Cases\n";
+        std::cout << "2. View Processing Cases\n";
+        std::cout << "3. View Completed Cases\n";
+        std::cout << "4. View All Cases\n";
+        std::cout << "5. Back to Main Menu\n";
+        std::cout << "Select an option: ";
+
+        std::string choice;
+        std::getline(std::cin, choice);
+
+        if (choice == "1")
+            manager.printCasesByStatus("Pending");
+        else if (choice == "2")
+            manager.printCasesByStatus("Processing");
+        else if (choice == "3")
+            manager.printCasesByStatus("Completed");
+        else if (choice == "4")
+            manager.printAllCases();
+        else if (choice == "5")
+            break;
+        else
+            MessageHandler::warning("Invalid option. Please try again.");
+    }
 }
 
 // Add new case
@@ -77,15 +100,29 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
         return;
     }
 
+    // Pop the highest-priority case (lowest number = most critical)
     EmergencyCase ec = manager.popHighestPriorityCase();
-    std::cout << "\nProcessing Case: " << ec.case_id << " | " << ec.patient_name << "\n";
 
-    // Here we can assign ambulance or update status
+    std::cout << "\nProcessing Case: " << ec.case_id
+              << " | " << ec.patient_name
+              << " | Emergency: " << ec.emergency_type
+              << " | Priority: " << ec.priority_level << "\n";
+
+    // Automatically mark as Processing (optional step for realism)
+    ec.status = "Processing";
+    ec.timestamp_processed = getCurrentTimestamp(); // mark processing timestamp
+
+    // Here we can optionally assign an ambulance
+    if (ec.ambulance_id.empty()) {
+        ec.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
+    }
+
+    // After processing, mark as Completed immediately (simplified simulation)
     ec.status = "Completed";
-    ec.timestamp_processed = getCurrentTimestamp();
 
-    manager.updateCase(ec);  // Re-insert to maintain linked list if needed
+    // Re-insert or update in the list and save to CSV
+    manager.updateCase(ec);
     manager.saveToCSV(dataFile);
 
-    MessageHandler::info("Case processed successfully.");
+    MessageHandler::info("Case processed and completed successfully.");
 }
