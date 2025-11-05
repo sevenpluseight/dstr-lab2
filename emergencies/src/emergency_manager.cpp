@@ -5,6 +5,13 @@
 
 #include "emergency_manager.hpp"
 
+namespace Color {
+    const std::string RESET   = "\033[0m";
+    const std::string RED     = "\033[31m"; // Completed
+    const std::string YELLOW  = "\033[33m"; // Processing
+    const std::string GREEN   = "\033[32m"; // Pending
+}
+
 EmergencyManager::~EmergencyManager() {
     Node* current = head;
     while (current) {
@@ -63,13 +70,26 @@ void EmergencyManager::saveToCSV(const std::string& filename) {
 
 // Helper function to print a single case row
 void printCaseRow(const EmergencyCase& ec) {
+    std::string statusColor;
+    std::string statusSymbol;
+
+    if (ec.status == "Pending") {
+        statusColor = Color::GREEN;
+    } else if (ec.status == "Processing") {
+        statusColor = Color::YELLOW;
+    } else if (ec.status == "Completed") {
+        statusColor = Color::RED;
+    } else {
+        statusColor = Color::RESET;
+    }
+
     std::cout << std::left
               << std::setw(8)  << ec.case_id
-              << std::setw(11)  << ec.patient_id
-              << std::setw(20)  << ec.patient_name
+              << std::setw(11) << ec.patient_id
+              << std::setw(20) << ec.patient_name
               << std::setw(28) << ec.emergency_type
-              << std::setw(10)  << std::to_string(ec.priority_level)
-              << std::setw(12) << ec.status
+              << std::setw(10) << std::to_string(ec.priority_level)
+              << statusColor << std::setw(12) << ec.status << Color::RESET
               << std::setw(22) << ec.timestamp_logged;
 
     if (!ec.timestamp_processed.empty()) {
@@ -86,15 +106,14 @@ void EmergencyManager::printAllCases() const {
         return;
     }
 
-    std::cout << "\n--- " << "All Cases ---\n";
-    
-    // Print header
+    std::cout << "\n--- All Emergency Cases ---\n";
+
     std::cout << std::left
               << std::setw(8)  << "CaseID"
-              << std::setw(11)  << "PatientID"
+              << std::setw(11) << "PatientID"
               << std::setw(20) << "PatientName"
               << std::setw(28) << "EmergencyType"
-              << std::setw(10)  << "Priority"
+              << std::setw(10) << "Priority"
               << std::setw(12) << "Status"
               << std::setw(22) << "Logged"
               << std::setw(22) << "Processed"
@@ -118,10 +137,9 @@ void EmergencyManager::printCasesByStatus(const std::string& status) const {
 
     std::cout << "\n--- " << status << " Cases ---\n";
 
-    // Print header
     std::cout << std::left
               << std::setw(8)  << "CaseID"
-              << std::setw(11)  << "PatientID"
+              << std::setw(11) << "PatientID"
               << std::setw(20) << "PatientName"
               << std::setw(28) << "EmergencyType"
               << std::setw(10) << "Priority"
