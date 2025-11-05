@@ -47,8 +47,21 @@ struct Supply {
 };
 
 // Emergency Department Officer
-
-
+/**
+ * @struct EmergencyCase
+ * @brief Represents a single emergency admission record
+ */
+struct EmergencyCase {
+    std::string case_id;           
+    std::string patient_id;        
+    std::string patient_name;      
+    std::string emergency_type;    
+    int priority_level;            
+    std::string status;            
+    std::string timestamp_logged;  
+    std::string timestamp_processed; 
+    std::string ambulance_id;      
+};
 
 // Ambulance Dispatcher
 
