@@ -7,9 +7,9 @@
 
 namespace Color {
     const std::string RESET   = "\033[0m";
-    const std::string RED     = "\033[31m"; // Completed
+    const std::string RED     = "\033[31m"; // Pending
     const std::string YELLOW  = "\033[33m"; // Processing
-    const std::string GREEN   = "\033[32m"; // Pending
+    const std::string GREEN   = "\033[32m"; // Completed
 }
 
 EmergencyManager::~EmergencyManager() {
@@ -71,14 +71,13 @@ void EmergencyManager::saveToCSV(const std::string& filename) {
 // Helper function to print a single case row
 void printCaseRow(const EmergencyCase& ec) {
     std::string statusColor;
-    std::string statusSymbol;
 
     if (ec.status == "Pending") {
-        statusColor = Color::GREEN;
+        statusColor = Color::RED;
     } else if (ec.status == "Processing") {
         statusColor = Color::YELLOW;
     } else if (ec.status == "Completed") {
-        statusColor = Color::RED;
+        statusColor = Color::GREEN;
     } else {
         statusColor = Color::RESET;
     }
