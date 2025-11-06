@@ -59,11 +59,12 @@ cmake --build build
 
 **Windows**
 ```bash
-rmdir /s /q build # Clean previous build (if any)
+rm -rf build # Clean previous build (if any)
 mkdir build
 cmake -B build -S .
 cmake --build build --config Release
 .\build\Release\main_app.exe
+.\build\main_app.exe # Run this if .\build\Release\main_app.exe doesn't work
 ```
 
 **Note for Windows users:** The path to the executable might differ based on your CMake generator. If the above command fails, look for `main_app.exe` inside the `build` directory. It might be in `build\main_app.exe` or `build\Debug\main_app.exe`.
