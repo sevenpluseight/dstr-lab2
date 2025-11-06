@@ -4,6 +4,34 @@
 #include <iomanip>
 
 #include "emergency_manager.hpp"
+#include "path_utils.hpp"
+
+#include "../utils/path_utils.hpp" // for getDataFilePath if needed
+
+std::string getPatientNameByID(const std::string& patientID) {
+    std::string patientFile = getDataFilePath("patient_data.csv");
+    std::ifstream file(patientFile);
+    if (!file.is_open()) {
+        MessageHandler::warning("patient_data.csv not found.");
+        return "Unknown";
+    }
+
+    std::string line;
+    std::getline(file, line); // skip header
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string id, name;
+        std::getline(ss, id, ',');
+        std::getline(ss, name, ','); // 2nd column is Name
+        if (id == patientID) {
+            file.close();
+            return name;
+        }
+    }
+
+    file.close();
+    return "Unknown";
+}
 
 namespace Color {
     const std::string RESET   = "\033[0m";
@@ -36,7 +64,6 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
         EmergencyCase ec;
         std::getline(ss, ec.case_id, ',');
         std::getline(ss, ec.patient_id, ',');
-        std::getline(ss, ec.patient_name, ',');
         std::getline(ss, ec.emergency_type, ',');
         std::string prio;
         std::getline(ss, prio, ',');
@@ -45,6 +72,8 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
         std::getline(ss, ec.timestamp_logged, ',');
         std::getline(ss, ec.timestamp_processed, ',');
         std::getline(ss, ec.ambulance_id, ',');
+
+        ec.patient_name = getPatientNameByID(ec.patient_id);
 
         addCase(ec); // insert in priority order
     }
@@ -83,9 +112,9 @@ void printCaseRow(const EmergencyCase& ec) {
     }
 
     std::cout << std::left
-              << std::setw(8)  << ec.case_id
-              << std::setw(11) << ec.patient_id
-              << std::setw(20) << ec.patient_name
+              << std::setw(12)  << ec.case_id
+              << std::setw(12) << ec.patient_id
+              << std::setw(18) << ec.patient_name
               << std::setw(28) << ec.emergency_type
               << std::setw(10) << std::to_string(ec.priority_level)
               << statusColor << std::setw(12) << ec.status << Color::RESET
@@ -108,9 +137,9 @@ void EmergencyManager::printAllCases() const {
     std::cout << "\n--- All Emergency Cases ---\n";
 
     std::cout << std::left
-              << std::setw(8)  << "CaseID"
-              << std::setw(11) << "PatientID"
-              << std::setw(20) << "PatientName"
+              << std::setw(12)  << "CaseID"
+              << std::setw(12) << "PatientID"
+              << std::setw(18) << "PatientName"
               << std::setw(28) << "EmergencyType"
               << std::setw(10) << "Priority"
               << std::setw(12) << "Status"
@@ -137,9 +166,9 @@ void EmergencyManager::printCasesByStatus(const std::string& status) const {
     std::cout << "\n--- " << status << " Cases ---\n";
 
     std::cout << std::left
-              << std::setw(8)  << "CaseID"
-              << std::setw(11) << "PatientID"
-              << std::setw(20) << "PatientName"
+              << std::setw(12)  << "CaseID"
+              << std::setw(12) << "PatientID"
+              << std::setw(18) << "PatientName"
               << std::setw(28) << "EmergencyType"
               << std::setw(10) << "Priority"
               << std::setw(12) << "Status"
