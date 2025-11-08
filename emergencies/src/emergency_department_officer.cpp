@@ -97,7 +97,7 @@ void EmergencyDepartmentOfficer::displayMenu() {
         else if (choice == "3") processHighestPriorityCase();
         else if (choice == "4") {
             manager.saveToCSV(dataFile);
-            MessageHandler::info("Exiting Emergency Department Officer menu...");
+            MessageHandler::info("Exiting Emergency Department Officer menu...\n");
             break;
         } else {
             MessageHandler::warning("Invalid option. Please try again.");
