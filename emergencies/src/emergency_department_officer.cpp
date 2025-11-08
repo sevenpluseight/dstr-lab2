@@ -242,36 +242,84 @@ void EmergencyDepartmentOfficer::addCase() {
     MessageHandler::info("Emergency case added successfully.");
 }
 
-// Process highest priority case (Unchanged)
 void EmergencyDepartmentOfficer::processHighestPriorityCase() {
-    if (manager.isEmpty()) {
-        MessageHandler::warning("No emergency cases to process.");
+    // 1. "Peek" at the next PENDING case
+    EmergencyCase ec = manager.getHighestPriorityPendingCase();
+
+    // Check if the case ID is empty, which means no pending cases were found
+    if (ec.case_id.empty()) {
+        MessageHandler::warning("No pending emergency cases to process.");
         return;
     }
 
-    // Pop the highest-priority case (lowest number = most critical)
-    EmergencyCase ec = manager.popHighestPriorityCase();
-
-    std::cout << "\nProcessing Case: " << ec.case_id
-              << " | " << ec.patient_name
-              << " | Emergency: " << ec.emergency_type
-              << " | Priority: " << ec.priority_level << "\n";
-
-    // Automatically mark as Processing (optional step for realism)
-    ec.status = "Processing";
-    ec.timestamp_processed = getCurrentTimestamp(); // mark processing timestamp
-
-    // Here we can optionally assign an ambulance
-    if (ec.ambulance_id.empty()) {
-        ec.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
+    // 2. Show the user the details
+    std::cout << "\n--- Highest Priority Pending Case ---\n";
+    std::cout << "  Case ID:    " << ec.case_id << "\n";
+    std::cout << "  Patient:    " << ec.patient_name << " (ID: " << ec.patient_id << ")\n";
+    std::cout << "  Emergency:  " << ec.emergency_type << "\n";
+    std::cout << "  Priority:   " << ec.priority_level << "\n";
+    std::cout << "  Logged:     " << ec.timestamp_logged << "\n";
+    std::cout << "\n";
+    
+    // 3. Get confirmation
+    std::string confirm;
+    while (true) {
+        std::cout << "Move this case to 'Processing'? (y/n): ";
+        if (!std::getline(std::cin, confirm)) { /* ... EOF check ... */
+            if (std::cin.eof()) { MessageHandler::error("\nEnd-of-File detected. Aborting."); return; }
+            std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            MessageHandler::warning("An input error occurred. Please try again.");
+            continue;
+        }
+        trim(confirm);
+        confirm = toUpper(confirm); 
+        if (confirm == "Y" || confirm == "N") break;
+        MessageHandler::warning("Please enter 'y' or 'n'.");
     }
 
-    // After processing, mark as Completed immediately (simplified simulation)
-    ec.status = "Completed";
+    // 4. Act on confirmation
+    if (confirm == "Y") {
+        // Now we actually POP the case from the list
+        EmergencyCase processedCase = manager.popHighestPriorityPendingCase();
 
-    // Re-insert or update in the list and save to CSV
-    manager.updateCase(ec);
-    manager.saveToCSV(dataFile);
+        // --- THIS IS THE KEY ---
+        // Change status to "Processing", NOT "Completed"
+        processedCase.status = "Processing"; 
+        processedCase.timestamp_processed = getCurrentTimestamp();
 
-    MessageHandler::info("Case processed and completed successfully.");
+        // Let's ask, as you suggested
+        std::string assignAmbulance;
+        while (true) {
+            std::cout << "Assign an ambulance? (y/n): ";
+            if (!std::getline(std::cin, assignAmbulance)) { 
+                 if (std::cin.eof()) { MessageHandler::error("\nEnd-of-File detected. Aborting."); return; }
+                 std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                 MessageHandler::warning("An input error occurred. Please try again.");
+                 continue;
+            }
+            trim(assignAmbulance);
+            assignAmbulance = toUpper(assignAmbulance);
+            if (assignAmbulance == "Y" || assignAmbulance == "N") break;
+            MessageHandler::warning("Please enter 'y' or 'n'.");
+        }
+
+        std::cout << "\n"; // Add the blank line you requested
+
+        if (assignAmbulance == "Y") {
+            processedCase.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
+            // Print both messages together
+            MessageHandler::info("Ambulance " + processedCase.ambulance_id + " assigned.");
+            MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+        } else {
+            // Print only the processing message
+            MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+        }
+
+        // Re-insert the updated, "Processing" case into the list
+        manager.updateCase(processedCase);
+        manager.saveToCSV(dataFile);
+    } else {
+        std::cout << "\n";
+        MessageHandler::info("Action cancelled. Case remains pending.");
+    }
 }

@@ -338,18 +338,53 @@ void EmergencyManager::addCase(const EmergencyCase& ec) {
     current->next = newNode;
 }
 
-// Pop the highest-priority case
-EmergencyCase EmergencyManager::popHighestPriorityCase() {
+// "Peeks" at the highest priority "Pending" case
+EmergencyCase EmergencyManager::getHighestPriorityPendingCase() const {
+    Node* current = head;
+    while (current) {
+        if (current->data.status == "Pending") {
+            // Because the list is already sorted by priority,
+            // the first "Pending" case we find IS the one.
+            return current->data;
+        }
+        current = current->next;
+    }
+    // If no "Pending" cases are found, return an empty one.
+    return EmergencyCase{}; 
+}
+
+// Finds and REMOVES the highest-priority "Pending" case
+EmergencyCase EmergencyManager::popHighestPriorityPendingCase() {
     if (!head) {
-        MessageHandler::error("No cases to pop!");
-        return EmergencyCase{};
+        return EmergencyCase{}; // List is empty
     }
 
-    Node* tmp = head;
-    EmergencyCase ec = head->data;
-    head = head->next;
-    delete tmp;
+    Node* current = head;
+    Node* prev = nullptr;
 
+    // Loop until we find the first "Pending" case
+    while (current && current->data.status != "Pending") {
+        prev = current;
+        current = current->next;
+    }
+
+    // Case 1: No "Pending" cases were found
+    if (!current) {
+        return EmergencyCase{}; 
+    }
+
+    // Case 2: The "Pending" case is the head of the list
+    if (prev == nullptr) {
+        head = current->next; // Re-point head
+    } 
+    // Case 3: The "Pending" case is in the middle or at the end
+    else {
+        prev->next = current->next; // Unlink the node
+    }
+
+    // Save the data, delete the node, and return the data
+    EmergencyCase ec = current->data;
+    delete current;
     return ec;
 }
 

@@ -51,10 +51,15 @@ public:
     // Managing emergency cases
     void loadFromCSV(const std::string& filename);
     void saveToCSV(const std::string& filename);
+    
     void printAllCases() const;
     void printCasesByStatus(const std::string& status) const;
+    
     void addCase(const EmergencyCase& ec);
-    EmergencyCase popHighestPriorityCase();
+
+    EmergencyCase getHighestPriorityPendingCase() const;
+    EmergencyCase popHighestPriorityPendingCase();
+
     void updateCase(const EmergencyCase& ec);
 
     std::string generateNextCaseID();
