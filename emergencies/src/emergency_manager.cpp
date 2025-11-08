@@ -4,9 +4,6 @@
 #include <iomanip>
 
 #include "emergency_manager.hpp"
-// Note: path_utils.hpp is no longer needed here, it's used in emergency_department_officer.cpp
-
-// (The standalone getPatientNameByID function is removed)
 
 namespace Color {
     const std::string RESET   = "\033[0m";
@@ -31,9 +28,15 @@ EmergencyManager::~EmergencyManager() {
         pCurrent = pCurrent->next;
         delete pTmp;
     }
-}
 
-// --- New functions implementation ---
+    // Clear the emergency type list
+    TypeNode* tCurrent = typeHead;
+    while (tCurrent) {
+        TypeNode* tTmp = tCurrent;
+        tCurrent = tCurrent->next;
+        delete tTmp;
+    }
+}
 
 // Adds a new patient to the front of the patient list
 void EmergencyManager::addPatient(const std::string& id, const std::string& name) {
@@ -83,7 +86,74 @@ std::string EmergencyManager::getPatientName(const std::string& patientID) const
     return "Unknown"; // Not found
 }
 
-// --- Modified loadFromCSV ---
+// Checks if a type already exists in our list (case-insensitive)
+bool EmergencyManager::typeExists(const std::string& type) const {
+    std::string upperType = toUpper(type); // <-- Convert to upper
+    TypeNode* current = typeHead;
+    while (current) {
+        // No need to convert current->typeName, it's already upper
+        if (current->typeName == upperType) { 
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
+// Adds a new type to the list in alphabetical order (case-insensitive)
+void EmergencyManager::addType(const std::string& type) {
+    std::string upperType = toUpper(type); // <-- Convert to upper
+
+    if (upperType.empty() || typeExists(upperType)) {
+        return; // Don't add empty or duplicate types
+    }
+
+    TypeNode* newNode = new TypeNode;
+    newNode->typeName = upperType; // <-- Store the upper version
+    newNode->next = nullptr;
+
+    // Case 1: The list is empty or the new type comes before the head
+    if (!typeHead || upperType < typeHead->typeName) {
+        newNode->next = typeHead;
+        typeHead = newNode;
+        return;
+    }
+
+    // Case 2: Insert in the middle or at the end
+    TypeNode* current = typeHead;
+    while (current->next && current->next->typeName < upperType) {
+        current = current->next;
+    }
+
+    newNode->next = current->next;
+    current->next = newNode;
+}
+
+// Prints a numbered list of all unique types
+int EmergencyManager::printAllTypes() const {
+    TypeNode* current = typeHead;
+    int i = 0;
+    while (current) {
+        i++;
+        std::cout << i << ". " << current->typeName << "\n";
+        current = current->next;
+    }
+    return i; // Return the count of types
+}
+
+// Gets a type name string by its 1-based index
+std::string EmergencyManager::getTypeByIndex(int index) const {
+    TypeNode* current = typeHead;
+    int i = 0;
+    while (current) {
+        i++;
+        if (i == index) {
+            return current->typeName;
+        }
+        current = current->next;
+    }
+    return "Unknown"; // Should not happen if index is validated
+}
 
 // Load from CSV
 void EmergencyManager::loadFromCSV(const std::string& filename) {
@@ -130,20 +200,15 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
         std::getline(ss, ec.timestamp_processed, ',');
         std::getline(ss, ec.ambulance_id, ',');
 
-        // The old, slow call is no longer needed:
-        // ec.patient_name = getPatientNameByID(ec.patient_id);
-
         addCase(ec); // insert in priority order
     }
     file.close();
 }
 
-// --- Unchanged Functions Below ---
-
 // Save to CSV (This function was already correct)
 void EmergencyManager::saveToCSV(const std::string& filename) {
     std::ofstream file(filename);
-    file << "case_id,patient_id,patient_name,emergency_type,priority_level,status,timestamp_logged,timestamp_processed,ambulance_id\n";
+    file << "Case_ID,Patient_ID,Patient_Name,Emergency_Type,Priority_Level,Status,Timestamp_Logged,Timestamp_Processed,Ambulance_ID\n";
 
     Node* current = head;
     while (current) {
@@ -255,6 +320,7 @@ void EmergencyManager::printCasesByStatus(const std::string& status) const {
 // Add case (insert by priority)
 void EmergencyManager::addCase(const EmergencyCase& ec) {
     Node* newNode = new Node{ec, nullptr};
+    addType(ec.emergency_type);
 
     // Empty list or higher priority than head
     if (!head || ec.priority_level < head->data.priority_level) {
@@ -302,7 +368,7 @@ void EmergencyManager::updateCase(const EmergencyCase& ec) {
 
 // Generate next Case ID
 std::string EmergencyManager::generateNextCaseID() {
-    int maxID = 3100; // Start from a base, e.g., CASE-3101
+    int maxID = 3350; // Start from a base, e.g., CASE-3101
     Node* current = head;
 
     while (current) {
@@ -314,6 +380,8 @@ std::string EmergencyManager::generateNextCaseID() {
                 if (num > maxID) maxID = num;
             } catch (...) {}
         }
+
+        current = current->next;
     }
 
     std::ostringstream oss;
