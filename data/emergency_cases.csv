@@ -1,251 +1,251 @@
-case_id,patient_id,patient_name,emergency_type,priority_level,status,timestamp_logged,timestamp_processed,ambulance_id
-C1001,P2001,Noor Ng,Severe Allergic Reaction,1,Completed,2025-11-05 23:27:45,2025-11-06 00:21:45,AMB41
-C1002,P2002,Wei Wong,Severe Allergic Reaction,1,Processing,2025-11-05 18:48:31,2025-11-05 18:55:31,AMB45
-C1003,P2003,Wei Basbousa,Burn,4,Completed,2025-11-05 16:12:30,2025-11-05 19:12:30,AMB49
-C1004,P2004,Sara Lim,Burn,4,Pending,2025-11-05 23:52:43,,
-C1005,P2005,Noor Lee,Minor Injury,5,Pending,2025-11-05 22:38:56,,
-C1006,P2006,Raj Chen,Burn,4,Pending,2025-11-05 21:25:27,,
-C1007,P2007,Wei Ng,Severe Allergic Reaction,1,Processing,2025-11-06 00:08:33,2025-11-06 00:20:33,AMB48
-C1008,P2008,Wei Chen,Severe Allergic Reaction,1,Pending,2025-11-05 22:35:37,,
-C1009,P2009,Wei Tan,Stroke,3,Processing,2025-11-05 21:40:37,2025-11-05 22:06:37,AMB41
-C1010,P2010,Chong Singh,Stroke,3,Processing,2025-11-05 21:38:40,2025-11-05 22:33:40,AMB48
-C1011,P2011,Raj Lim,Cardiac Arrest,1,Completed,2025-11-05 22:59:34,2025-11-05 23:56:34,AMB43
-C1012,P2012,John Singh,Minor Injury,5,Completed,2025-11-06 00:30:29,2025-11-06 00:36:49,AMB42
-C1013,P2013,Wei Lee,Cardiac Arrest,1,Processing,2025-11-05 22:28:59,2025-11-05 22:33:59,AMB42
-C1014,P2014,Wei Smith,Burn,4,Processing,2025-11-05 20:58:08,2025-11-05 21:29:08,AMB44
-C1015,P2015,Chong Wong,Cardiac Arrest,1,Pending,2025-11-06 00:17:37,,
-C1016,P2016,Noor Rahman,Stroke,3,Completed,2025-11-05 23:59:43,2025-11-06 00:36:49,AMB43
-C1017,P2017,John Wong,Trauma,2,Pending,2025-11-05 15:40:35,,
-C1018,P2018,Ali Chen,Minor Injury,5,Completed,2025-11-05 17:17:43,2025-11-06 00:36:49,AMB43
-C1019,P2019,Sara Ng,Minor Injury,5,Processing,2025-11-05 21:17:21,2025-11-05 22:36:21,AMB42
-C1020,P2020,Aisha Singh,Severe Allergic Reaction,1,Processing,2025-11-05 20:51:53,2025-11-05 21:01:53,AMB41
-C1021,P2021,Rahim Basbousa,Minor Injury,5,Completed,2025-11-05 18:43:33,2025-11-06 00:36:49,AMB48
-C1022,P2022,Noor Ng,Stroke,3,Pending,2025-11-05 18:19:05,,
-C1023,P2023,Aisha Chen,Burn,4,Pending,2025-11-05 19:28:17,,
-C1024,P2024,Rahim Abdullah,Severe Allergic Reaction,1,Processing,2025-11-05 22:48:24,2025-11-05 23:02:24,AMB41
-C1025,P2025,Sara Wong,Severe Allergic Reaction,1,Pending,2025-11-05 20:04:36,,
-C1026,P2026,Noor Chen,Cardiac Arrest,1,Completed,2025-11-05 21:53:08,2025-11-05 22:32:08,AMB48
-C1027,P2027,Wei Wong,Stroke,3,Processing,2025-11-05 22:51:55,2025-11-05 23:38:55,AMB42
-C1028,P2028,Raj Smith,Poisoning,3,Pending,2025-11-05 22:41:54,,
-C1029,P2029,Wei Lim,Trauma,2,Processing,2025-11-05 22:09:54,2025-11-05 22:21:54,AMB42
-C1030,P2030,Raj Lee,Stroke,3,Pending,2025-11-05 18:28:49,,
-C1031,P2031,Rahim Singh,Stroke,3,Processing,2025-11-05 15:41:57,2025-11-05 16:33:57,AMB47
-C1032,P2032,David Abdullah,Accident,4,Pending,2025-11-05 16:24:04,,
-C1033,P2033,Aisha Wong,Poisoning,3,Pending,2025-11-05 23:42:43,,
-C1034,P2034,David Singh,Minor Injury,5,Pending,2025-11-06 00:16:55,,
-C1035,P2035,Ali Lee,Accident,4,Processing,2025-11-05 20:09:36,2025-11-05 21:35:36,AMB42
-C1036,P2036,Noor Tan,Minor Injury,5,Pending,2025-11-05 21:40:04,,
-C1037,P2037,Noor Smith,Minor Injury,5,Completed,2025-11-05 15:58:26,2025-11-06 00:36:49,AMB41
-C1038,P2038,Rahim Smith,Stroke,3,Pending,2025-11-05 23:20:28,,
-C1039,P2039,Chong Basbousa,Cardiac Arrest,1,Completed,2025-11-05 23:08:59,2025-11-05 23:58:59,AMB48
-C1040,P2040,Sara Abdullah,Severe Allergic Reaction,1,Completed,2025-11-05 23:45:39,2025-11-06 00:11:39,AMB48
-C1041,P2041,David Abdullah,Stroke,3,Processing,2025-11-05 21:50:29,2025-11-05 22:41:29,AMB42
-C1042,P2042,Amira Smith,Severe Allergic Reaction,1,Pending,2025-11-05 21:55:20,,
-C1043,P2043,David Abdullah,Accident,4,Pending,2025-11-06 00:02:45,,
-C1044,P2044,Aisha Chen,Minor Injury,5,Pending,2025-11-05 18:25:52,,
-C1045,P2045,Raj Lee,Minor Injury,5,Processing,2025-11-05 15:55:05,2025-11-05 17:52:05,AMB44
-C1046,P2046,John Smith,Stroke,3,Processing,2025-11-05 19:08:49,2025-11-05 19:40:49,AMB43
-C1047,P2047,Sara Chen,Severe Allergic Reaction,1,Pending,2025-11-05 19:32:29,,
-C1048,P2048,Sara Abdullah,Minor Injury,5,Processing,2025-11-05 23:41:35,2025-11-06 00:36:49,AMB45
-C1049,P2049,Sara Tan,Cardiac Arrest,1,Pending,2025-11-05 19:30:54,,
-C1050,P2050,Ali Abdullah,Cardiac Arrest,1,Pending,2025-11-05 23:11:06,,
-C1051,P2051,Sara Abdullah,Minor Injury,5,Completed,2025-11-05 15:41:26,2025-11-06 00:36:49,AMB48
-C1052,P2052,Sara Lee,Severe Allergic Reaction,1,Pending,2025-11-05 22:13:38,,
-C1053,P2053,John Singh,Accident,4,Processing,2025-11-05 17:46:56,2025-11-05 18:18:56,AMB48
-C1054,P2054,Chong Basbousa,Burn,4,Pending,2025-11-05 20:16:31,,
-C1055,P2055,Aisha Singh,Burn,4,Completed,2025-11-05 22:35:31,2025-11-06 00:36:49,AMB47
-C1056,P2056,John Abdullah,Trauma,2,Pending,2025-11-05 21:33:54,,
-C1057,P2057,David Lim,Stroke,3,Completed,2025-11-05 16:53:47,2025-11-05 20:53:47,AMB46
-C1058,P2058,Sara Basbousa,Severe Allergic Reaction,1,Completed,2025-11-05 23:00:27,2025-11-05 23:50:27,AMB41
-C1059,P2059,Chong Singh,Burn,4,Pending,2025-11-05 22:04:08,,
-C1060,P2060,Noor Basbousa,Poisoning,3,Processing,2025-11-05 22:31:38,2025-11-05 22:53:38,AMB41
-C1061,P2061,Sara Smith,Burn,4,Pending,2025-11-05 21:36:02,,
-C1062,P2062,Chong Chen,Minor Injury,5,Pending,2025-11-05 17:07:01,,
-C1063,P2063,Sara Smith,Minor Injury,5,Processing,2025-11-05 22:02:33,2025-11-06 00:36:33,AMB48
-C1064,P2064,John Chen,Trauma,2,Processing,2025-11-05 19:49:33,2025-11-05 20:02:33,AMB49
-C1065,P2065,Raj Singh,Severe Allergic Reaction,1,Completed,2025-11-05 22:36:41,2025-11-05 23:33:41,AMB45
-C1066,P2066,Amira Tan,Trauma,2,Pending,2025-11-06 00:16:31,,
-C1067,P2067,Raj Basbousa,Burn,4,Pending,2025-11-05 19:24:23,,
-C1068,P2068,Chong Basbousa,Accident,4,Pending,2025-11-05 19:44:11,,
-C1069,P2069,David Smith,Severe Allergic Reaction,1,Completed,2025-11-05 18:42:58,2025-11-05 19:41:58,AMB47
-C1070,P2070,Noor Lee,Severe Allergic Reaction,1,Pending,2025-11-06 00:06:30,,
-C1071,P2071,Wei Lee,Trauma,2,Completed,2025-11-05 17:50:29,2025-11-05 19:50:29,AMB43
-C1072,P2072,Noor Smith,Accident,4,Pending,2025-11-05 20:13:20,,
-C1073,P2073,Wei Chen,Accident,4,Processing,2025-11-05 20:31:35,2025-11-05 21:35:35,AMB46
-C1074,P2074,Aisha Ng,Accident,4,Processing,2025-11-05 15:55:17,2025-11-05 17:09:17,AMB46
-C1075,P2075,Raj Chen,Cardiac Arrest,1,Pending,2025-11-05 22:50:20,,
-C1076,P2076,Raj Smith,Cardiac Arrest,1,Pending,2025-11-05 23:13:40,,
-C1077,P2077,Aisha Ng,Poisoning,3,Pending,2025-11-05 21:49:11,,
-C1078,P2078,Ali Chen,Severe Allergic Reaction,1,Pending,2025-11-05 21:31:27,,
-C1079,P2079,Noor Lee,Poisoning,3,Processing,2025-11-05 20:18:00,2025-11-05 20:45:00,AMB48
-C1080,P2080,John Abdullah,Cardiac Arrest,1,Pending,2025-11-05 20:10:37,,
-C1081,P2081,Rahim Basbousa,Minor Injury,5,Pending,2025-11-05 18:38:13,,
-C1082,P2082,Amira Tan,Accident,4,Completed,2025-11-06 00:26:05,2025-11-06 00:36:49,AMB43
-C1083,P2083,Aisha Ng,Burn,4,Pending,2025-11-06 00:30:50,,
-C1084,P2084,Raj Rahman,Trauma,2,Pending,2025-11-05 16:54:58,,
-C1085,P2085,Ali Chen,Minor Injury,5,Processing,2025-11-05 18:13:08,2025-11-05 19:54:08,AMB47
-C1086,P2086,Rahim Wong,Burn,4,Pending,2025-11-05 17:06:18,,
-C1087,P2087,Amira Chen,Cardiac Arrest,1,Pending,2025-11-05 22:21:25,,
-C1088,P2088,Sara Abdullah,Poisoning,3,Completed,2025-11-05 20:38:27,2025-11-06 00:36:49,AMB45
-C1089,P2089,David Rahman,Minor Injury,5,Pending,2025-11-05 19:15:22,,
-C1090,P2090,Raj Tan,Burn,4,Pending,2025-11-05 17:52:14,,
-C1091,P2091,Rahim Smith,Poisoning,3,Pending,2025-11-05 19:43:57,,
-C1092,P2092,Amira Wong,Minor Injury,5,Completed,2025-11-05 21:13:30,2025-11-06 00:36:49,AMB44
-C1093,P2093,David Rahman,Minor Injury,5,Pending,2025-11-05 20:44:27,,
-C1094,P2094,Noor Ng,Stroke,3,Pending,2025-11-05 22:07:36,,
-C1095,P2095,Noor Wong,Minor Injury,5,Pending,2025-11-06 00:25:21,,
-C1096,P2096,Raj Basbousa,Trauma,2,Pending,2025-11-05 21:35:08,,
-C1097,P2097,Amira Ng,Minor Injury,5,Completed,2025-11-05 15:40:09,2025-11-06 00:36:49,AMB49
-C1098,P2098,John Tan,Burn,4,Pending,2025-11-05 23:23:23,,
-C1099,P2099,Amira Singh,Trauma,2,Pending,2025-11-05 17:34:23,,
-C1100,P2100,Noor Lee,Severe Allergic Reaction,1,Processing,2025-11-06 00:27:29,2025-11-06 00:36:49,AMB47
-C1101,P2101,David Smith,Trauma,2,Pending,2025-11-05 17:26:36,,
-C1102,P2102,Noor Chen,Accident,4,Pending,2025-11-05 22:32:16,,
-C1103,P2103,Chong Lim,Minor Injury,5,Processing,2025-11-05 17:21:57,2025-11-05 19:10:57,AMB48
-C1104,P2104,Raj Ng,Trauma,2,Pending,2025-11-05 17:20:02,,
-C1105,P2105,Ali Lee,Poisoning,3,Pending,2025-11-05 23:06:15,,
-C1106,P2106,Rahim Abdullah,Poisoning,3,Pending,2025-11-05 19:27:02,,
-C1107,P2107,John Lee,Minor Injury,5,Processing,2025-11-05 19:15:34,2025-11-05 20:57:34,AMB41
-C1108,P2108,David Lee,Poisoning,3,Pending,2025-11-05 17:12:04,,
-C1109,P2109,Raj Chen,Trauma,2,Pending,2025-11-05 17:43:50,,
-C1110,P2110,Ali Rahman,Accident,4,Pending,2025-11-06 00:05:24,,
-C1111,P2111,Amira Lim,Stroke,3,Completed,2025-11-05 19:27:24,2025-11-06 00:27:24,AMB42
-C1112,P2112,Aisha Basbousa,Accident,4,Processing,2025-11-05 21:44:47,2025-11-05 22:47:47,AMB42
-C1113,P2113,Chong Basbousa,Trauma,2,Pending,2025-11-05 19:15:52,,
-C1114,P2114,Noor Lim,Stroke,3,Pending,2025-11-05 17:41:45,,
-C1115,P2115,David Lim,Minor Injury,5,Completed,2025-11-05 21:35:00,2025-11-06 00:36:49,AMB46
-C1116,P2116,John Chen,Accident,4,Pending,2025-11-05 19:59:50,,
-C1117,P2117,David Singh,Poisoning,3,Pending,2025-11-05 19:40:01,,
-C1118,P2118,Rahim Lee,Cardiac Arrest,1,Completed,2025-11-06 00:29:57,2025-11-06 00:36:49,AMB49
-C1119,P2119,John Rahman,Minor Injury,5,Pending,2025-11-05 22:39:54,,
-C1120,P2120,Wei Singh,Poisoning,3,Pending,2025-11-05 22:31:10,,
-C1121,P2121,Aisha Singh,Burn,4,Pending,2025-11-05 18:02:33,,
-C1122,P2122,Sara Abdullah,Burn,4,Pending,2025-11-05 22:33:43,,
-C1123,P2123,John Smith,Trauma,2,Completed,2025-11-06 00:08:08,2025-11-06 00:36:49,AMB46
-C1124,P2124,Noor Lee,Minor Injury,5,Pending,2025-11-05 16:26:26,,
-C1125,P2125,Sara Basbousa,Accident,4,Completed,2025-11-05 16:34:44,2025-11-05 20:34:44,AMB40
-C1126,P2126,Raj Basbousa,Minor Injury,5,Pending,2025-11-05 18:50:28,,
-C1127,P2127,Wei Basbousa,Trauma,2,Pending,2025-11-05 18:08:04,,
-C1128,P2128,John Rahman,Trauma,2,Processing,2025-11-05 18:50:09,2025-11-05 19:18:09,AMB43
-C1129,P2129,Aisha Wong,Accident,4,Completed,2025-11-05 16:28:14,2025-11-05 22:28:14,AMB41
-C1130,P2130,Wei Lee,Minor Injury,5,Pending,2025-11-05 22:04:17,,
-C1131,P2131,Ali Abdullah,Stroke,3,Pending,2025-11-05 23:32:32,,
-C1132,P2132,Rahim Singh,Minor Injury,5,Processing,2025-11-05 16:33:33,2025-11-05 19:17:33,AMB48
-C1133,P2133,Ali Lim,Poisoning,3,Pending,2025-11-05 20:26:57,,
-C1134,P2134,Rahim Tan,Poisoning,3,Pending,2025-11-05 22:46:39,,
-C1135,P2135,David Rahman,Severe Allergic Reaction,1,Pending,2025-11-05 23:17:57,,
-C1136,P2136,Aisha Lim,Accident,4,Pending,2025-11-05 20:08:02,,
-C1137,P2137,Aisha Lim,Minor Injury,5,Completed,2025-11-05 23:48:58,2025-11-06 00:36:49,AMB41
-C1138,P2138,Ali Wong,Cardiac Arrest,1,Pending,2025-11-06 00:26:55,,
-C1139,P2139,Aisha Tan,Burn,4,Pending,2025-11-05 18:22:39,,
-C1140,P2140,Sara Ng,Minor Injury,5,Pending,2025-11-05 22:22:41,,
-C1141,P2141,Sara Lee,Cardiac Arrest,1,Processing,2025-11-05 21:53:58,2025-11-05 22:02:58,AMB49
-C1142,P2142,Rahim Wong,Trauma,2,Processing,2025-11-05 20:01:53,2025-11-05 20:21:53,AMB49
-C1143,P2143,Wei Smith,Accident,4,Pending,2025-11-05 22:34:41,,
-C1144,P2144,Amira Abdullah,Trauma,2,Processing,2025-11-05 20:04:45,2025-11-05 20:14:45,AMB45
-C1145,P2145,John Basbousa,Cardiac Arrest,1,Pending,2025-11-05 22:23:25,,
-C1146,P2146,Chong Singh,Accident,4,Pending,2025-11-05 21:24:30,,
-C1147,P2147,Aisha Lee,Poisoning,3,Pending,2025-11-05 17:13:13,,
-C1148,P2148,Noor Abdullah,Trauma,2,Pending,2025-11-05 18:41:31,,
-C1149,P2149,Amira Tan,Accident,4,Processing,2025-11-05 23:40:44,2025-11-06 00:36:49,AMB44
-C1150,P2150,Raj Rahman,Burn,4,Pending,2025-11-06 00:27:58,,
-C1151,P2151,Amira Lee,Burn,4,Pending,2025-11-05 22:44:40,,
-C1152,P2152,Rahim Ng,Cardiac Arrest,1,Completed,2025-11-05 19:51:43,2025-11-05 20:31:43,AMB45
-C1153,P2153,Wei Lee,Burn,4,Pending,2025-11-06 00:33:59,,
-C1154,P2154,Rahim Wong,Cardiac Arrest,1,Processing,2025-11-05 19:41:43,2025-11-05 19:47:43,AMB45
-C1155,P2155,Rahim Lim,Stroke,3,Pending,2025-11-05 19:07:51,,
-C1156,P2156,Aisha Tan,Stroke,3,Processing,2025-11-05 22:37:49,2025-11-05 22:58:49,AMB44
-C1157,P2157,Amira Tan,Poisoning,3,Pending,2025-11-05 21:40:24,,
-C1158,P2158,Chong Ng,Cardiac Arrest,1,Pending,2025-11-05 23:59:32,,
-C1159,P2159,Raj Lee,Minor Injury,5,Pending,2025-11-05 17:28:17,,
-C1160,P2160,Ali Chen,Minor Injury,5,Pending,2025-11-05 19:03:47,,
-C1161,P2161,Chong Abdullah,Minor Injury,5,Processing,2025-11-06 00:06:17,2025-11-06 00:36:49,AMB48
-C1162,P2162,Ali Wong,Severe Allergic Reaction,1,Pending,2025-11-06 00:20:38,,
-C1163,P2163,Ali Rahman,Poisoning,3,Pending,2025-11-05 16:28:57,,
-C1164,P2164,Ali Rahman,Stroke,3,Pending,2025-11-05 17:16:39,,
-C1165,P2165,Raj Smith,Minor Injury,5,Pending,2025-11-05 22:35:13,,
-C1166,P2166,Ali Abdullah,Accident,4,Processing,2025-11-05 21:43:49,2025-11-05 23:08:49,AMB47
-C1167,P2167,Chong Chen,Poisoning,3,Pending,2025-11-05 23:33:33,,
-C1168,P2168,John Wong,Burn,4,Pending,2025-11-05 22:28:34,,
-C1169,P2169,Raj Basbousa,Trauma,2,Processing,2025-11-05 19:19:05,2025-11-05 19:29:05,AMB44
-C1170,P2170,John Ng,Accident,4,Pending,2025-11-05 16:14:26,,
-C1171,P2171,Sara Wong,Stroke,3,Completed,2025-11-05 18:06:10,2025-11-05 23:06:10,AMB49
-C1172,P2172,Sara Lee,Trauma,2,Pending,2025-11-05 20:07:42,,
-C1173,P2173,Wei Singh,Burn,4,Pending,2025-11-05 20:57:34,,
-C1174,P2174,David Tan,Cardiac Arrest,1,Processing,2025-11-05 22:29:07,2025-11-05 22:42:07,AMB41
-C1175,P2175,Amira Tan,Minor Injury,5,Completed,2025-11-05 19:12:33,2025-11-06 00:36:49,AMB44
-C1176,P2176,David Chen,Minor Injury,5,Pending,2025-11-05 20:35:18,,
-C1177,P2177,Raj Tan,Minor Injury,5,Completed,2025-11-05 23:08:03,2025-11-06 00:36:49,AMB45
-C1178,P2178,Wei Basbousa,Accident,4,Processing,2025-11-05 19:29:56,2025-11-05 20:27:56,AMB46
-C1179,P2179,Rahim Chen,Accident,4,Processing,2025-11-05 15:46:03,2025-11-05 16:52:03,AMB44
-C1180,P2180,Ali Lee,Stroke,3,Pending,2025-11-05 22:03:15,,
-C1181,P2181,Rahim Chen,Minor Injury,5,Processing,2025-11-05 17:17:22,2025-11-05 20:12:22,AMB49
-C1182,P2182,Wei Wong,Burn,4,Processing,2025-11-05 22:23:24,2025-11-05 22:53:24,AMB45
-C1183,P2183,Rahim Rahman,Cardiac Arrest,1,Pending,2025-11-05 23:23:16,,
-C1184,P2184,Noor Abdullah,Cardiac Arrest,1,Pending,2025-11-05 22:59:30,,
-C1185,P2185,Amira Basbousa,Poisoning,3,Pending,2025-11-05 21:59:10,,
-C1186,P2186,Aisha Lim,Severe Allergic Reaction,1,Pending,2025-11-05 23:21:00,,
-C1187,P2187,Raj Basbousa,Cardiac Arrest,1,Pending,2025-11-05 20:58:45,,
-C1188,P2188,Rahim Smith,Stroke,3,Pending,2025-11-05 15:58:05,,
-C1189,P2189,David Smith,Trauma,2,Completed,2025-11-05 23:32:24,2025-11-06 00:36:49,AMB41
-C1190,P2190,Rahim Tan,Cardiac Arrest,1,Processing,2025-11-05 23:05:45,2025-11-05 23:12:45,AMB46
-C1191,P2191,David Lim,Burn,4,Pending,2025-11-05 20:23:15,,
-C1192,P2192,Wei Lee,Burn,4,Pending,2025-11-05 20:39:49,,
-C1193,P2193,Amira Ng,Trauma,2,Pending,2025-11-05 19:28:20,,
-C1194,P2194,Amira Smith,Trauma,2,Pending,2025-11-05 19:26:41,,
-C1195,P2195,Raj Rahman,Cardiac Arrest,1,Pending,2025-11-06 00:36:27,,
-C1196,P2196,Wei Rahman,Burn,4,Completed,2025-11-05 18:32:27,2025-11-06 00:36:49,AMB43
-C1197,P2197,John Chen,Cardiac Arrest,1,Pending,2025-11-05 20:03:27,,
-C1198,P2198,Aisha Abdullah,Severe Allergic Reaction,1,Pending,2025-11-05 21:31:06,,
-C1199,P2199,Chong Smith,Burn,4,Pending,2025-11-05 23:53:42,,
-C1200,P2200,Noor Chen,Accident,4,Processing,2025-11-05 18:22:58,2025-11-05 19:21:58,AMB48
-C1201,P2201,Chong Singh,Accident,4,Processing,2025-11-05 16:24:40,2025-11-05 17:26:40,AMB49
-C1202,P2202,Ali Rahman,Poisoning,3,Pending,2025-11-06 00:08:24,,
-C1203,P2203,Sara Abdullah,Trauma,2,Completed,2025-11-05 18:21:33,2025-11-05 19:21:33,AMB46
-C1204,P2204,Ali Ng,Stroke,3,Pending,2025-11-05 16:23:27,,
-C1205,P2205,Sara Smith,Cardiac Arrest,1,Completed,2025-11-05 21:07:46,2025-11-05 21:48:46,AMB47
-C1206,P2206,Amira Smith,Severe Allergic Reaction,1,Processing,2025-11-05 23:28:19,2025-11-05 23:34:19,AMB41
-C1207,P2207,Rahim Rahman,Burn,4,Pending,2025-11-05 20:09:23,,
-C1208,P2208,Aisha Lee,Trauma,2,Pending,2025-11-05 16:59:13,,
-C1209,P2209,Rahim Lee,Stroke,3,Completed,2025-11-05 17:01:33,2025-11-05 19:01:33,AMB45
-C1210,P2210,Ali Rahman,Poisoning,3,Pending,2025-11-05 21:59:11,,
-C1211,P2211,Noor Abdullah,Poisoning,3,Processing,2025-11-05 16:12:29,2025-11-05 16:58:29,AMB46
-C1212,P2212,Aisha Chen,Stroke,3,Pending,2025-11-05 16:32:30,,
-C1213,P2213,Sara Smith,Burn,4,Pending,2025-11-05 23:23:44,,
-C1214,P2214,Aisha Tan,Severe Allergic Reaction,1,Completed,2025-11-05 23:51:48,2025-11-06 00:36:49,AMB47
-C1215,P2215,Chong Abdullah,Trauma,2,Pending,2025-11-05 23:06:01,,
-C1216,P2216,Rahim Ng,Trauma,2,Pending,2025-11-05 19:25:22,,
-C1217,P2217,John Lee,Minor Injury,5,Processing,2025-11-05 16:10:04,2025-11-05 18:55:04,AMB49
-C1218,P2218,John Smith,Cardiac Arrest,1,Processing,2025-11-05 19:00:42,2025-11-05 19:07:42,AMB42
-C1219,P2219,Noor Basbousa,Trauma,2,Pending,2025-11-05 18:37:52,,
-C1220,P2220,Amira Singh,Cardiac Arrest,1,Pending,2025-11-05 23:53:49,,
-C1221,P2221,John Lee,Stroke,3,Completed,2025-11-05 20:10:57,2025-11-05 22:10:57,AMB43
-C1222,P2222,Rahim Wong,Poisoning,3,Pending,2025-11-05 22:58:53,,
-C1223,P2223,Chong Smith,Severe Allergic Reaction,1,Processing,2025-11-06 00:18:39,2025-11-06 00:29:39,AMB49
-C1224,P2224,Amira Smith,Burn,4,Pending,2025-11-05 22:51:32,,
-C1225,P2225,David Abdullah,Cardiac Arrest,1,Completed,2025-11-05 21:58:26,2025-11-05 22:30:26,AMB44
-C1226,P2226,Amira Ng,Severe Allergic Reaction,1,Pending,2025-11-05 21:42:28,,
-C1227,P2227,David Lee,Trauma,2,Pending,2025-11-05 19:41:23,,
-C1228,P2228,Ali Abdullah,Burn,4,Completed,2025-11-05 21:19:22,2025-11-06 00:36:49,AMB40
-C1229,P2229,Aisha Smith,Accident,4,Pending,2025-11-05 16:17:32,,
-C1230,P2230,Raj Ng,Poisoning,3,Processing,2025-11-05 15:56:17,2025-11-05 16:32:17,AMB47
-C1231,P2231,Ali Tan,Accident,4,Pending,2025-11-06 00:31:43,,
-C1232,P2232,Rahim Chen,Burn,4,Pending,2025-11-05 21:32:24,,
-C1233,P2233,Ali Wong,Poisoning,3,Pending,2025-11-05 19:37:34,,
-C1234,P2234,David Abdullah,Trauma,2,Pending,2025-11-05 23:01:46,,
-C1235,P2235,David Wong,Poisoning,3,Completed,2025-11-05 16:44:38,2025-11-05 20:44:38,AMB49
-C1236,P2236,Wei Basbousa,Minor Injury,5,Processing,2025-11-05 23:23:56,2025-11-06 00:36:49,AMB49
-C1237,P2237,Wei Ng,Minor Injury,5,Pending,2025-11-05 15:41:29,,
-C1238,P2238,Raj Rahman,Stroke,3,Pending,2025-11-05 22:45:54,,
-C1239,P2239,John Chen,Poisoning,3,Pending,2025-11-05 21:39:59,,
-C1240,P2240,Ali Chen,Poisoning,3,Pending,2025-11-05 17:09:19,,
-C1241,P2241,David Basbousa,Stroke,3,Pending,2025-11-05 20:50:25,,
-C1242,P2242,John Smith,Accident,4,Pending,2025-11-05 19:29:04,,
-C1243,P2243,Rahim Lim,Burn,4,Processing,2025-11-05 20:35:37,2025-11-05 21:31:37,AMB43
-C1244,P2244,Aisha Singh,Poisoning,3,Pending,2025-11-05 17:17:47,,
-C1245,P2245,Ali Lim,Trauma,2,Pending,2025-11-05 21:28:41,,
-C1246,P2246,Amira Tan,Minor Injury,5,Pending,2025-11-06 00:25:58,,
-C1247,P2247,Wei Tan,Burn,4,Pending,2025-11-05 20:15:15,,
-C1248,P2248,Rahim Lim,Poisoning,3,Pending,2025-11-05 18:18:07,,
-C1249,P2249,Raj Tan,Minor Injury,5,Pending,2025-11-06 00:26:43,,
-C1250,P2250,Noor Smith,Minor Injury,5,Pending,2025-11-05 20:50:14,,
+Case_ID,Patient_ID,Emergency_Type,Priority_Level,Status,Timestamp_Logged,Timestamp_Processed,Ambulance_ID
+CASE-3101,PAT-0001,Severe Allergic Reaction,1,Completed,2025-11-08 09:23:53,2025-11-08 10:13:53,AMB001
+CASE-3102,PAT-0002,Stroke,2,Pending,2025-11-07 15:50:42,,
+CASE-3103,PAT-0003,Accident (Vehicle),4,Pending,2025-11-03 18:31:18,,
+CASE-3104,PAT-0004,Cardiac Arrest,1,Processing,2025-11-08 23:12:57,2025-11-08 23:26:57,AMB004
+CASE-3105,PAT-0005,Cardiac Arrest,1,Pending,2025-11-08 20:16:21,,
+CASE-3106,PAT-0006,Severe Allergic Reaction,1,Pending,2025-11-06 09:27:18,,
+CASE-3107,PAT-0007,Accident (Vehicle),4,Pending,2025-11-06 14:18:11,,
+CASE-3108,PAT-0008,Minor Injury,5,Completed,2025-11-06 19:08:57,2025-11-07 03:08:57,AMB008
+CASE-3109,PAT-0009,Stroke,2,Completed,2025-11-06 13:54:13,2025-11-06 14:54:13,AMB009
+CASE-3110,PAT-0010,Poisoning,3,Pending,2025-11-06 10:27:04,,
+CASE-3111,PAT-0011,Respiratory Distress,2,Pending,2025-11-07 21:29:34,,
+CASE-3112,PAT-0012,Severe Allergic Reaction,1,Pending,2025-11-06 11:54:32,,
+CASE-3113,PAT-0013,Severe Burn,3,Pending,2025-11-06 10:10:18,,
+CASE-3114,PAT-0014,Severe Allergic Reaction,1,Completed,2025-11-07 08:51:06,2025-11-07 09:24:06,AMB004
+CASE-3115,PAT-0015,Respiratory Distress,2,Processing,2025-11-05 10:53:42,2025-11-05 11:12:42,AMB005
+CASE-3116,PAT-0016,Minor Injury,5,Pending,2025-11-05 11:05:23,,
+CASE-3117,PAT-0017,Minor Injury,5,Processing,2025-11-08 13:27:49,2025-11-08 16:22:49,AMB007
+CASE-3118,PAT-0018,Poisoning,3,Completed,2025-11-04 08:03:36,2025-11-04 10:03:36,AMB008
+CASE-3119,PAT-0019,Severe Burn,3,Pending,2025-11-08 16:07:12,,
+CASE-3120,PAT-0020,Minor Injury,5,Pending,2025-11-04 19:43:22,,
+CASE-3121,PAT-0021,Poisoning,3,Pending,2025-11-08 23:20:16,,
+CASE-3122,PAT-0022,Cardiac Arrest,1,Processing,2025-11-07 10:52:45,2025-11-07 11:01:45,AMB002
+CASE-3123,PAT-0023,Accident (Vehicle),4,Processing,2025-11-04 20:27:53,2025-11-04 21:41:53,AMB003
+CASE-3124,PAT-0024,Minor Injury,5,Pending,2025-11-05 23:01:51,,
+CASE-3125,PAT-0025,Minor Injury,5,Processing,2025-11-06 06:32:48,2025-11-06 07:42:48,AMB005
+CASE-3126,PAT-0026,Accident (Vehicle),4,Processing,2025-11-07 16:06:04,2025-11-07 16:58:04,AMB006
+CASE-3127,PAT-0027,Stroke,2,Processing,2025-11-08 18:50:10,2025-11-08 19:01:10,AMB007
+CASE-3128,PAT-0028,Minor Injury,5,Pending,2025-11-05 18:33:27,,
+CASE-3129,PAT-0029,Minor Injury,5,Completed,2025-11-02 21:08:54,2025-11-03 12:08:54,AMB009
+CASE-3130,PAT-0030,Respiratory Distress,2,Processing,2025-11-05 17:47:16,2025-11-05 17:58:16,AMB010
+CASE-3131,PAT-0031,Cardiac Arrest,1,Processing,2025-11-08 15:11:39,2025-11-08 15:25:39,AMB001
+CASE-3132,PAT-0032,Severe Allergic Reaction,1,Pending,2025-11-08 20:07:43,,
+CASE-3133,PAT-0033,Severe Burn,3,Pending,2025-11-05 15:57:34,,
+CASE-3134,PAT-0034,Respiratory Distress,2,Processing,2025-11-07 23:54:08,2025-11-08 00:19:08,AMB004
+CASE-3135,PAT-0035,Severe Burn,3,Completed,2025-11-05 10:13:10,2025-11-05 12:13:10,AMB005
+CASE-3136,PAT-0036,Severe Allergic Reaction,1,Processing,2025-11-08 07:19:46,2025-11-08 07:32:46,AMB006
+CASE-3137,PAT-0037,Stroke,2,Pending,2025-11-08 16:08:54,,
+CASE-3138,PAT-0038,Accident (Vehicle),4,Pending,2025-11-06 06:13:26,,
+CASE-3139,PAT-0039,Stroke,2,Pending,2025-11-08 20:11:15,,
+CASE-3140,PAT-0040,Minor Injury,5,Pending,2025-11-02 16:09:37,,
+CASE-3141,PAT-0041,Severe Burn,3,Pending,2025-11-08 16:34:07,,
+CASE-3142,PAT-0042,Cardiac Arrest,1,Processing,2025-11-06 16:23:02,2025-11-06 16:28:02,AMB002
+CASE-3143,PAT-0043,Accident (Vehicle),4,Processing,2025-11-05 17:54:56,2025-11-05 19:03:56,AMB003
+CASE-3144,PAT-0044,Cardiac Arrest,1,Pending,2025-11-08 12:10:11,,
+CASE-3145,PAT-0045,Poisoning,3,Completed,2025-11-05 19:13:02,2025-11-06 00:13:02,AMB005
+CASE-3146,PAT-0046,Stroke,2,Processing,2025-11-06 16:23:12,2025-11-06 16:45:12,AMB006
+CASE-3147,PAT-0047,Severe Allergic Reaction,1,Completed,2025-11-06 06:17:58,2025-11-06 07:04:58,AMB007
+CASE-3148,PAT-0048,Severe Burn,3,Pending,2025-11-07 20:28:20,,
+CASE-3149,PAT-0049,Minor Injury,5,Pending,2025-11-02 18:56:47,,
+CASE-3150,PAT-0050,Poisoning,3,Pending,2025-11-05 16:26:56,,
+CASE-3151,PAT-0051,Severe Allergic Reaction,1,Pending,2025-11-08 10:46:01,,
+CASE-3152,PAT-0052,Severe Burn,3,Pending,2025-11-08 17:22:28,,
+CASE-3153,PAT-0053,Poisoning,3,Pending,2025-11-07 20:09:48,,
+CASE-3154,PAT-0054,Cardiac Arrest,1,Completed,2025-11-06 07:30:11,2025-11-06 07:48:11,AMB004
+CASE-3155,PAT-0055,Severe Burn,3,Pending,2025-11-06 07:27:23,,
+CASE-3156,PAT-0056,Minor Injury,5,Processing,2025-11-05 22:24:01,2025-11-05 23:36:01,AMB006
+CASE-3157,PAT-0057,Accident (Vehicle),4,Processing,2025-11-05 15:49:36,2025-11-05 16:55:36,AMB007
+CASE-3158,PAT-0058,Minor Injury,5,Pending,2025-11-06 06:05:55,,
+CASE-3159,PAT-0059,Cardiac Arrest,1,Completed,2025-11-08 20:21:28,2025-11-08 20:59:28,AMB009
+CASE-3160,PAT-0060,Severe Burn,3,Pending,2025-11-07 08:14:55,,
+CASE-3161,PAT-0061,Severe Allergic Reaction,1,Pending,2025-11-07 22:39:00,,
+CASE-3162,PAT-0062,Minor Injury,5,Pending,2025-11-07 21:58:13,,
+CASE-3163,PAT-0063,Stroke,2,Processing,2025-11-05 07:06:42,2025-11-05 07:21:42,AMB003
+CASE-3164,PAT-0064,Severe Allergic Reaction,1,Pending,2025-11-06 18:15:39,,
+CASE-3165,PAT-0065,Minor Injury,5,Completed,2025-11-08 06:17:48,2025-11-08 19:17:48,AMB005
+CASE-3166,PAT-0066,Poisoning,3,Pending,2025-11-04 08:33:37,,
+CASE-3167,PAT-0067,Cardiac Arrest,1,Pending,2025-11-06 19:39:59,,
+CASE-3168,PAT-0068,Severe Burn,3,Completed,2025-11-04 15:43:59,2025-11-04 19:43:59,AMB008
+CASE-3169,PAT-0069,Poisoning,3,Pending,2025-11-06 07:52:10,,
+CASE-3170,PAT-0070,Minor Injury,5,Pending,2025-11-03 17:58:19,,
+CASE-3171,PAT-0071,Severe Burn,3,Pending,2025-11-04 18:34:38,,
+CASE-3172,PAT-0072,Minor Injury,5,Pending,2025-11-02 21:56:18,,
+CASE-3173,PAT-0073,Stroke,2,Pending,2025-11-08 18:17:30,,
+CASE-3174,PAT-0074,Poisoning,3,Processing,2025-11-04 09:41:51,2025-11-04 10:03:51,AMB004
+CASE-3175,PAT-0075,Stroke,2,Pending,2025-11-06 14:59:41,,
+CASE-3176,PAT-0076,Severe Burn,3,Pending,2025-11-05 06:44:53,,
+CASE-3177,PAT-0077,Respiratory Distress,2,Completed,2025-11-05 22:36:35,2025-11-06 01:36:35,AMB007
+CASE-3178,PAT-0078,Severe Burn,3,Pending,2025-11-05 21:32:23,,
+CASE-3179,PAT-0079,Stroke,2,Pending,2025-11-05 18:06:19,,
+CASE-3180,PAT-0080,Minor Injury,5,Pending,2025-11-03 13:59:51,,
+CASE-3181,PAT-0081,Poisoning,3,Completed,2025-11-08 21:11:02,2025-11-09 01:11:02,AMB001
+CASE-3182,PAT-0082,Minor Injury,5,Pending,2025-11-03 07:42:28,,
+CASE-3183,PAT-0083,Respiratory Distress,2,Completed,2025-11-05 07:57:14,2025-11-05 09:57:14,AMB003
+CASE-3184,PAT-0084,Cardiac Arrest,1,Processing,2025-11-07 12:05:28,2025-11-07 12:16:28,AMB004
+CASE-3185,PAT-0085,Cardiac Arrest,1,Pending,2025-11-06 23:32:54,,
+CASE-3186,PAT-0086,Stroke,2,Pending,2025-11-06 06:07:02,,
+CASE-3187,PAT-0087,Cardiac Arrest,1,Completed,2025-11-06 13:12:44,2025-11-06 14:05:44,AMB007
+CASE-3188,PAT-0088,Minor Injury,5,Processing,2025-11-08 23:25:34,2025-11-09 00:40:34,AMB008
+CASE-3189,PAT-0089,Severe Burn,3,Pending,2025-11-08 13:20:37,,
+CASE-3190,PAT-0090,Severe Allergic Reaction,1,Completed,2025-11-08 09:15:08,2025-11-08 10:02:08,AMB010
+CASE-3191,PAT-0091,Minor Injury,5,Completed,2025-11-03 23:33:11,2025-11-04 21:33:11,AMB001
+CASE-3192,PAT-0092,Cardiac Arrest,1,Pending,2025-11-08 14:43:05,,
+CASE-3193,PAT-0093,Minor Injury,5,Pending,2025-11-07 18:31:29,,
+CASE-3194,PAT-0094,Severe Burn,3,Pending,2025-11-07 18:13:14,,
+CASE-3195,PAT-0095,Minor Injury,5,Processing,2025-11-04 18:00:09,2025-11-04 19:00:09,AMB005
+CASE-3196,PAT-0096,Poisoning,3,Completed,2025-11-04 14:15:18,2025-11-04 19:15:18,AMB006
+CASE-3197,PAT-0097,Severe Allergic Reaction,1,Pending,2025-11-07 18:11:11,,
+CASE-3198,PAT-0098,Respiratory Distress,2,Pending,2025-11-05 17:31:08,,
+CASE-3199,PAT-0099,Severe Burn,3,Processing,2025-11-08 07:22:59,2025-11-08 08:16:59,AMB009
+CASE-3200,PAT-0100,Respiratory Distress,2,Pending,2025-11-05 18:45:44,,
+CASE-3201,PAT-0101,Minor Injury,5,Pending,2025-11-02 22:20:49,,
+CASE-3202,PAT-0102,Severe Burn,3,Pending,2025-11-07 09:36:16,,
+CASE-3203,PAT-0103,Respiratory Distress,2,Pending,2025-11-05 08:14:18,,
+CASE-3204,PAT-0104,Poisoning,3,Pending,2025-11-07 16:09:22,,
+CASE-3205,PAT-0105,Respiratory Distress,2,Pending,2025-11-08 09:50:50,,
+CASE-3206,PAT-0106,Severe Allergic Reaction,1,Processing,2025-11-08 11:16:41,2025-11-08 11:30:41,AMB006
+CASE-3207,PAT-0107,Respiratory Distress,2,Pending,2025-11-07 19:59:33,,
+CASE-3208,PAT-0108,Accident (Vehicle),4,Pending,2025-11-04 15:28:20,,
+CASE-3209,PAT-0109,Accident (Vehicle),4,Pending,2025-11-03 12:29:06,,
+CASE-3210,PAT-0110,Minor Injury,5,Pending,2025-11-06 11:21:45,,
+CASE-3211,PAT-0111,Respiratory Distress,2,Pending,2025-11-06 10:26:27,,
+CASE-3212,PAT-0112,Severe Burn,3,Completed,2025-11-05 14:58:58,2025-11-05 16:58:58,AMB002
+CASE-3213,PAT-0113,Cardiac Arrest,1,Pending,2025-11-07 19:23:55,,
+CASE-3214,PAT-0114,Poisoning,3,Pending,2025-11-05 09:08:20,,
+CASE-3215,PAT-0115,Severe Burn,3,Pending,2025-11-07 20:20:33,,
+CASE-3216,PAT-0116,Accident (Vehicle),4,Processing,2025-11-04 22:30:06,2025-11-04 23:22:06,AMB006
+CASE-3217,PAT-0117,Cardiac Arrest,1,Processing,2025-11-08 14:32:35,2025-11-08 14:41:35,AMB007
+CASE-3218,PAT-0118,Stroke,2,Pending,2025-11-06 18:29:15,,
+CASE-3219,PAT-0119,Minor Injury,5,Processing,2025-11-05 13:40:34,2025-11-05 14:44:34,AMB009
+CASE-3220,PAT-0120,Severe Burn,3,Processing,2025-11-08 19:07:23,2025-11-08 19:29:23,AMB010
+CASE-3221,PAT-0121,Respiratory Distress,2,Pending,2025-11-08 11:41:50,,
+CASE-3222,PAT-0122,Accident (Vehicle),4,Pending,2025-11-03 20:32:20,,
+CASE-3223,PAT-0123,Stroke,2,Pending,2025-11-07 22:36:01,,
+CASE-3224,PAT-0124,Respiratory Distress,2,Pending,2025-11-08 06:38:16,,
+CASE-3225,PAT-0125,Accident (Vehicle),4,Completed,2025-11-05 06:33:26,2025-11-05 10:33:26,AMB005
+CASE-3226,PAT-0126,Cardiac Arrest,1,Pending,2025-11-08 14:13:49,,
+CASE-3227,PAT-0127,Minor Injury,5,Pending,2025-11-07 22:04:17,,
+CASE-3228,PAT-0128,Minor Injury,5,Pending,2025-11-03 13:50:09,,
+CASE-3229,PAT-0129,Severe Allergic Reaction,1,Pending,2025-11-08 07:42:43,,
+CASE-3230,PAT-0130,Severe Allergic Reaction,1,Pending,2025-11-06 18:02:30,,
+CASE-3231,PAT-0131,Severe Allergic Reaction,1,Pending,2025-11-07 16:54:53,,
+CASE-3232,PAT-0132,Severe Burn,3,Pending,2025-11-08 06:48:58,,
+CASE-3233,PAT-0133,Accident (Vehicle),4,Completed,2025-11-03 14:16:45,2025-11-03 17:16:45,AMB003
+CASE-3234,PAT-0134,Accident (Vehicle),4,Pending,2025-11-04 18:50:03,,
+CASE-3235,PAT-0135,Minor Injury,5,Pending,2025-11-02 10:54:41,,
+CASE-3236,PAT-0136,Cardiac Arrest,1,Pending,2025-11-08 14:15:05,,
+CASE-3237,PAT-0137,Severe Burn,3,Pending,2025-11-05 13:50:52,,
+CASE-3238,PAT-0138,Accident (Vehicle),4,Pending,2025-11-05 12:59:25,,
+CASE-3239,PAT-0139,Accident (Vehicle),4,Pending,2025-11-06 22:29:46,,
+CASE-3240,PAT-0140,Cardiac Arrest,1,Pending,2025-11-08 13:33:37,,
+CASE-3241,PAT-0141,Severe Allergic Reaction,1,Pending,2025-11-06 18:45:39,,
+CASE-3242,PAT-0142,Stroke,2,Processing,2025-11-06 18:22:10,2025-11-06 18:33:10,AMB002
+CASE-3243,PAT-0143,Respiratory Distress,2,Processing,2025-11-06 19:59:24,2025-11-06 20:19:24,AMB003
+CASE-3244,PAT-0144,Poisoning,3,Pending,2025-11-05 16:04:21,,
+CASE-3245,PAT-0145,Stroke,2,Pending,2025-11-05 07:24:26,,
+CASE-3246,PAT-0146,Cardiac Arrest,1,Pending,2025-11-07 19:46:15,,
+CASE-3247,PAT-0147,Poisoning,3,Processing,2025-11-04 21:07:19,2025-11-04 21:54:19,AMB007
+CASE-3248,PAT-0148,Accident (Vehicle),4,Pending,2025-11-07 15:40:51,,
+CASE-3249,PAT-0149,Severe Burn,3,Processing,2025-11-04 18:43:30,2025-11-04 19:21:30,AMB009
+CASE-3250,PAT-0150,Poisoning,3,Processing,2025-11-04 06:07:03,2025-11-04 06:29:03,AMB010
+CASE-3251,PAT-0151,Cardiac Arrest,1,Pending,2025-11-06 09:29:01,,
+CASE-3252,PAT-0152,Poisoning,3,Pending,2025-11-07 16:20:16,,
+CASE-3253,PAT-0153,Poisoning,3,Pending,2025-11-07 19:26:57,,
+CASE-3254,PAT-0154,Cardiac Arrest,1,Pending,2025-11-07 22:57:08,,
+CASE-3255,PAT-0155,Accident (Vehicle),4,Processing,2025-11-07 08:25:00,2025-11-07 09:52:00,AMB005
+CASE-3256,PAT-0156,Severe Allergic Reaction,1,Processing,2025-11-08 15:48:08,2025-11-08 16:01:08,AMB006
+CASE-3257,PAT-0157,Minor Injury,5,Completed,2025-11-02 10:07:36,2025-11-03 06:07:36,AMB007
+CASE-3258,PAT-0158,Severe Allergic Reaction,1,Pending,2025-11-06 20:17:17,,
+CASE-3259,PAT-0159,Respiratory Distress,2,Pending,2025-11-05 06:05:57,,
+CASE-3260,PAT-0160,Severe Allergic Reaction,1,Processing,2025-11-08 10:31:38,2025-11-08 10:45:38,AMB010
+CASE-3261,PAT-0161,Minor Injury,5,Pending,2025-11-06 20:21:10,,
+CASE-3262,PAT-0162,Minor Injury,5,Pending,2025-11-08 22:54:38,,
+CASE-3263,PAT-0163,Poisoning,3,Processing,2025-11-07 17:31:03,2025-11-07 18:30:03,AMB003
+CASE-3264,PAT-0164,Severe Burn,3,Processing,2025-11-06 09:31:10,2025-11-06 10:11:10,AMB004
+CASE-3265,PAT-0165,Cardiac Arrest,1,Processing,2025-11-07 20:31:29,2025-11-07 20:43:29,AMB005
+CASE-3266,PAT-0166,Cardiac Arrest,1,Completed,2025-11-06 13:49:06,2025-11-06 14:36:06,AMB006
+CASE-3267,PAT-0167,Severe Allergic Reaction,1,Pending,2025-11-07 21:21:42,,
+CASE-3268,PAT-0168,Accident (Vehicle),4,Processing,2025-11-04 07:18:27,2025-11-04 08:04:27,AMB008
+CASE-3269,PAT-0169,Poisoning,3,Pending,2025-11-08 20:27:55,,
+CASE-3270,PAT-0170,Severe Burn,3,Pending,2025-11-05 09:27:39,,
+CASE-3271,PAT-0171,Minor Injury,5,Pending,2025-11-08 17:28:15,,
+CASE-3272,PAT-0172,Cardiac Arrest,1,Pending,2025-11-08 07:27:41,,
+CASE-3273,PAT-0173,Respiratory Distress,2,Pending,2025-11-07 08:10:05,,
+CASE-3274,PAT-0174,Stroke,2,Pending,2025-11-05 14:50:56,,
+CASE-3275,PAT-0175,Respiratory Distress,2,Pending,2025-11-05 08:38:39,,
+CASE-3276,PAT-0176,Severe Allergic Reaction,1,Completed,2025-11-06 06:20:45,2025-11-06 07:00:45,AMB006
+CASE-3277,PAT-0177,Accident (Vehicle),4,Processing,2025-11-08 16:01:18,2025-11-08 16:33:18,AMB007
+CASE-3278,PAT-0178,Severe Allergic Reaction,1,Pending,2025-11-06 20:15:58,,
+CASE-3279,PAT-0179,Accident (Vehicle),4,Processing,2025-11-07 09:58:17,2025-11-07 10:51:17,AMB009
+CASE-3280,PAT-0180,Poisoning,3,Pending,2025-11-08 15:24:11,,
+CASE-3281,PAT-0181,Stroke,2,Completed,2025-11-06 19:12:55,2025-11-06 20:12:55,AMB001
+CASE-3282,PAT-0182,Stroke,2,Pending,2025-11-05 22:39:29,,
+CASE-3283,PAT-0183,Poisoning,3,Completed,2025-11-05 23:07:44,2025-11-06 03:07:44,AMB003
+CASE-3284,PAT-0184,Cardiac Arrest,1,Pending,2025-11-06 07:36:36,,
+CASE-3285,PAT-0185,Poisoning,3,Completed,2025-11-05 22:34:56,2025-11-06 02:34:56,AMB005
+CASE-3286,PAT-0186,Severe Allergic Reaction,1,Processing,2025-11-07 15:23:22,2025-11-07 15:31:22,AMB006
+CASE-3287,PAT-0187,Cardiac Arrest,1,Pending,2025-11-06 10:25:09,,
+CASE-3288,PAT-0188,Severe Allergic Reaction,1,Processing,2025-11-07 21:51:51,2025-11-07 22:00:51,AMB008
+CASE-3289,PAT-0189,Poisoning,3,Processing,2025-11-07 08:04:38,2025-11-07 08:55:38,AMB009
+CASE-3290,PAT-0190,Minor Injury,5,Completed,2025-11-07 15:11:21,2025-11-08 09:11:21,AMB010
+CASE-3291,PAT-0191,Poisoning,3,Pending,2025-11-05 09:03:55,,
+CASE-3292,PAT-0192,Accident (Vehicle),4,Processing,2025-11-05 16:55:28,2025-11-05 18:00:28,AMB002
+CASE-3293,PAT-0193,Minor Injury,5,Processing,2025-11-02 14:50:17,2025-11-02 16:10:17,AMB003
+CASE-3294,PAT-0194,Cardiac Arrest,1,Pending,2025-11-08 20:13:43,,
+CASE-3295,PAT-0195,Cardiac Arrest,1,Pending,2025-11-07 07:35:32,,
+CASE-3296,PAT-0196,Severe Burn,3,Processing,2025-11-07 08:48:23,2025-11-07 09:14:23,AMB006
+CASE-3297,PAT-0197,Respiratory Distress,2,Processing,2025-11-06 12:10:01,2025-11-06 12:38:01,AMB007
+CASE-3298,PAT-0198,Respiratory Distress,2,Pending,2025-11-07 10:45:49,,
+CASE-3299,PAT-0199,Minor Injury,5,Pending,2025-11-04 19:37:06,,
+CASE-3300,PAT-0200,Severe Burn,3,Pending,2025-11-06 09:51:27,,
+CASE-3301,PAT-0201,Poisoning,3,Processing,2025-11-06 21:27:07,2025-11-06 22:14:07,AMB001
+CASE-3302,PAT-0202,Stroke,2,Processing,2025-11-08 08:49:30,2025-11-08 09:04:30,AMB002
+CASE-3303,PAT-0203,Cardiac Arrest,1,Pending,2025-11-07 19:04:16,,
+CASE-3304,PAT-0204,Cardiac Arrest,1,Pending,2025-11-06 08:00:21,,
+CASE-3305,PAT-0205,Respiratory Distress,2,Pending,2025-11-08 23:54:46,,
+CASE-3306,PAT-0206,Minor Injury,5,Processing,2025-11-04 22:04:57,2025-11-04 23:23:57,AMB006
+CASE-3307,PAT-0207,Severe Burn,3,Pending,2025-11-05 22:04:28,,
+CASE-3308,PAT-0208,Severe Allergic Reaction,1,Processing,2025-11-08 21:57:46,2025-11-08 22:05:46,AMB008
+CASE-3309,PAT-0209,Respiratory Distress,2,Pending,2025-11-06 17:14:15,,
+CASE-3310,PAT-0210,Respiratory Distress,2,Processing,2025-11-08 06:04:39,2025-11-08 06:29:39,AMB010
+CASE-3311,PAT-0211,Respiratory Distress,2,Pending,2025-11-05 07:29:56,,
+CASE-3312,PAT-0212,Stroke,2,Pending,2025-11-05 15:11:53,,
+CASE-3313,PAT-0213,Severe Burn,3,Processing,2025-11-07 10:02:12,2025-11-07 10:59:12,AMB003
+CASE-3314,PAT-0214,Cardiac Arrest,1,Pending,2025-11-06 15:11:13,,
+CASE-3315,PAT-0215,Respiratory Distress,2,Completed,2025-11-07 16:39:21,2025-11-07 19:39:21,AMB005
+CASE-3316,PAT-0216,Severe Burn,3,Pending,2025-11-05 13:28:34,,
+CASE-3317,PAT-0217,Stroke,2,Pending,2025-11-05 18:54:51,,
+CASE-3318,PAT-0218,Stroke,2,Pending,2025-11-08 07:56:05,,
+CASE-3319,PAT-0219,Accident (Vehicle),4,Pending,2025-11-04 23:58:31,,
+CASE-3320,PAT-0220,Minor Injury,5,Pending,2025-11-03 11:40:01,,
+CASE-3321,PAT-0221,Poisoning,3,Pending,2025-11-08 08:08:29,,
+CASE-3322,PAT-0222,Accident (Vehicle),4,Completed,2025-11-08 21:32:34,2025-11-09 03:32:34,AMB002
+CASE-3323,PAT-0223,Poisoning,3,Processing,2025-11-08 15:48:51,2025-11-08 16:37:51,AMB003
+CASE-3324,PAT-0224,Stroke,2,Processing,2025-11-08 13:42:01,2025-11-08 13:56:01,AMB004
+CASE-3325,PAT-0225,Severe Allergic Reaction,1,Completed,2025-11-07 17:57:40,2025-11-07 18:43:40,AMB005
+CASE-3326,PAT-0226,Accident (Vehicle),4,Completed,2025-11-04 06:54:17,2025-11-04 10:54:17,AMB006
+CASE-3327,PAT-0227,Cardiac Arrest,1,Pending,2025-11-06 19:16:22,,
+CASE-3328,PAT-0228,Minor Injury,5,Pending,2025-11-07 18:01:15,,
+CASE-3329,PAT-0229,Cardiac Arrest,1,Completed,2025-11-07 21:31:20,2025-11-07 21:48:20,AMB009
+CASE-3330,PAT-0230,Poisoning,3,Pending,2025-11-08 06:01:51,,
+CASE-3331,PAT-0231,Severe Burn,3,Pending,2025-11-04 21:21:28,,
+CASE-3332,PAT-0232,Accident (Vehicle),4,Processing,2025-11-05 15:08:33,2025-11-05 16:30:33,AMB002
+CASE-3333,PAT-0233,Severe Allergic Reaction,1,Pending,2025-11-07 18:56:15,,
+CASE-3334,PAT-0234,Poisoning,3,Pending,2025-11-05 09:35:08,,
+CASE-3335,PAT-0235,Poisoning,3,Completed,2025-11-05 20:36:03,2025-11-06 01:36:03,AMB005
+CASE-3336,PAT-0236,Severe Burn,3,Processing,2025-11-07 09:06:02,2025-11-07 10:01:02,AMB006
+CASE-3337,PAT-0237,Stroke,2,Pending,2025-11-05 23:05:35,,
+CASE-3338,PAT-0238,Stroke,2,Pending,2025-11-06 10:50:56,,
+CASE-3339,PAT-0239,Stroke,2,Pending,2025-11-08 10:58:24,,
+CASE-3340,PAT-0240,Respiratory Distress,2,Completed,2025-11-05 15:16:59,2025-11-05 18:16:59,AMB010
+CASE-3341,PAT-0241,Minor Injury,5,Processing,2025-11-03 21:34:01,2025-11-03 22:44:01,AMB001
+CASE-3342,PAT-0242,Accident (Vehicle),4,Completed,2025-11-06 07:30:07,2025-11-06 13:30:07,AMB002
+CASE-3343,PAT-0243,Respiratory Distress,2,Processing,2025-11-08 18:44:09,2025-11-08 18:59:09,AMB003
+CASE-3344,PAT-0244,Cardiac Arrest,1,Processing,2025-11-06 07:08:59,2025-11-06 07:19:59,AMB004
+CASE-3345,PAT-0245,Stroke,2,Pending,2025-11-05 06:14:44,,
+CASE-3346,PAT-0246,Stroke,2,Completed,2025-11-08 23:33:56,2025-11-09 02:33:56,AMB006
+CASE-3347,PAT-0247,Stroke,2,Pending,2025-11-06 11:43:59,,
+CASE-3348,PAT-0248,Minor Injury,5,Pending,2025-11-07 12:38:57,,
+CASE-3349,PAT-0249,Cardiac Arrest,1,Processing,2025-11-06 18:58:10,2025-11-06 19:10:10,AMB009
+CASE-3350,PAT-0250,Severe Burn,3,Processing,2025-11-06 08:19:47,2025-11-06 09:03:47,AMB010
