@@ -4,12 +4,13 @@
 #include <iostream>
 #include <string>
 #include "emergency_manager.hpp"
-#include "../utils/path_utils.hpp"
+#include "path_utils.hpp" 
 
 class EmergencyDepartmentOfficer {
 private:
     EmergencyManager manager;
     std::string dataFile;
+    std::string patientDataFile; 
 
     void displayMenu();
     void viewCases();
