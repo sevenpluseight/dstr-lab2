@@ -239,6 +239,7 @@ void EmergencyDepartmentOfficer::addCase() {
 
     manager.addCase(ec);
     manager.saveToCSV(dataFile);
+    std::cout << "\n";
     MessageHandler::info("Emergency case added successfully.");
 }
 
