@@ -1,0 +1,254 @@
+Patient_ID,Name,Age,Gender,Blood_Type,Height (cm),Weight (kg),BMI,Temperature (C),Heart_Rate (bpm),Blood_Pressure (mmHg),Condition_Type
+PAT-0001,Maria,32,B-,185.55,110.65,32.14,36.26,70,96/89,Joint,Sore
+PAT-0002,Nushi,21,Male,B-,164.25,41.69,15.45,36.68,80,134/82,High
+PAT-0003,Mohammed,53,Female,A+,177.61,91.05,28.86,36.79,65,113/76,Sclerosis
+PAT-0004,Jose,49,Male,AB-,184.9,58.87,17.22,37.15,100,131/87,Liver Disease
+PAT-0005,Muhammad,46,Male,B-,164.84,96.74,35.61,36.45,76,128/83,Psoriasis
+PAT-0006,Mohamed,35,Male,B-,187.99,42.64,12.07,36,66,98/84,Bronchitis
+PAT-0007,Wei,31,Male,AB-,162.8,66.83,25.21,37.03,81,121/77,Osteoporosis
+PAT-0008,Mohammad,87,Female,B-,179.65,112.47,34.85,36.93,86,96/83,Migraine
+PAT-0009,Ahmed,29,Female,A-,175.59,148.96,48.32,36.68,64,99/81,Depression
+PAT-0010,Yan,72,Male,AB+,150.01,110.26,49,37.48,89,112/79,Lung Cancer
+PAT-0011,Ali,22,Female,B-,186.46,122.4,35.2,36.64,72,122/67,Schizophrenia
+PAT-0012,John,21,Male,AB+,196.36,132.46,34.36,37.48,65,103/82,Osteoporosis
+PAT-0013,David,29,Female,A+,172.09,87.71,29.62,37.28,71,126/81,Osteoporosis
+PAT-0014,Li,45,Female,B+,151.14,50.38,22.05,36.41,77,126/62,Depression
+PAT-0015,Abdul,47,Female,A-,193.16,99.5,26.67,36.83,74,127/75,Common Cold
+PAT-0016,Ana,82,Male,A-,171.54,65.74,22.34,36.25,69,136/81,Ulcerative Colitis
+PAT-0017,Ying,21,Female,B-,149.89,64.47,28.69,36.29,67,127/66,Rheumatoid Arthritis
+PAT-0018,Michael,89,Female,A-,172.2,61.92,20.88,36.92,97,116/76,Gout
+PAT-0019,Juan,43,Female,AB+,140.1,53.43,27.22,37.47,89,116/88,Schizophrenia
+PAT-0020,Anna,87,Female,AB+,185.84,124.04,35.92,36.97,96,107/65,Parkinson's Disease
+PAT-0021,Mary,71,Male,AB+,171.62,68.02,23.09,37.33,69,97/70,Osteoporosis
+PAT-0022,Jean,46,Male,B+,149.26,103.25,46.34,36.83,76,94/62,Gastroenteritis
+PAT-0023,Robert,75,Male,B-,162.42,74.85,28.38,37.33,90,136/64,Influenza
+PAT-0024,Daniel,53,Male,AB-,142.51,68.11,33.54,36.68,85,135/85,Multiple Sclerosis
+PAT-0025,Luis,18,Female,B-,193.9,129.15,34.35,37.12,67,115/62,Hepatitis
+PAT-0026,Carlos,38,Male,B+,170.86,58.78,20.14,37.4,89,90/78,Stroke
+PAT-0027,James,72,Female,B+,165.63,141.11,51.44,36.58,77,136/62,Cystic Fibrosis
+PAT-0028,Antonio,61,Female,A+,183.65,135.31,40.12,36.39,63,136/64,Kidney Cancer
+PAT-0029,Joseph,53,Female,AB+,180.9,116.46,35.59,37.45,74,123/82,Multiple Sclerosis
+PAT-0030,Hui,37,Male,AB+,189.91,72.2,20.02,36.02,80,99/75,Stroke
+PAT-0031,Elena,45,Male,AB+,169.1,123.43,43.17,37.17,100,121/70,Pancreatitis
+PAT-0032,Francisco,61,Female,AB+,164.58,59.56,21.99,36.18,73,114/81,Psoriasis
+PAT-0033,Hong,31,Female,A+,169.72,40.64,14.11,37.23,62,112/66,Rheumatoid Arthritis
+PAT-0034,Marie,29,Male,AB-,141.11,126.14,63.35,36.96,62,128/78,Pneumonia
+PAT-0035,Min,66,Male,A+,196.95,95.85,24.71,36.52,81,125/82,Rheumatoid Arthritis
+PAT-0036,Lei,30,Female,A+,156.72,113.87,46.36,37.32,84,103/75,Ebola Virus
+PAT-0037,Yu,63,Male,A+,188.11,100.38,28.37,36.68,93,117/82,Stroke
+PAT-0038,Ibrahim,62,Male,AB+,153.13,79.22,33.78,36.5,77,130/80,Stroke
+PAT-0039,Peter,51,Female,AB+,198.42,111.9,28.42,37.2,67,119/67,Asthma
+PAT-0040,Fatima,23,Female,AB+,184.05,45.24,13.35,36.39,88,100/73,Hyperthyroidism
+PAT-0041,Aleksandr,76,Female,B+,174.48,104.52,34.33,37.26,69,138/87,Migraine
+PAT-0042,Richard,86,Female,B-,189.86,149.94,41.6,36.65,91,109/65,Cholera
+PAT-0043,Xin,33,Female,A-,168.5,78.97,27.81,36.44,73,117/81,Gastroenteritis
+PAT-0044,Bin,66,Female,AB+,148.8,52.18,23.57,36.35,77,116/84,Anxiety Disorders
+PAT-0045,Paul,28,Female,A+,153.87,88.46,37.36,37.27,63,118/74,Asthma
+PAT-0046,Ping,88,Female,AB+,178.18,83.18,26.2,37.35,85,103/60,Eczema
+PAT-0047,Lin,55,Male,A-,144.87,40.4,19.25,36.41,96,95/68,Williams Syndrome
+PAT-0048,Olga,64,Male,AB-,168.66,146.95,51.66,36.34,91,98/86,Chronic Kidney Disease
+PAT-0049,Sri,42,Female,AB-,193.84,57.38,15.27,37.31,81,102/70,Allergic Rhinitis
+PAT-0050,Pedro,26,Female,B+,181.03,106.81,32.59,36.19,76,132/64,Eczema
+PAT-0051,William,23,Female,A-,182.55,58.29,17.49,36.57,67,121/81,Lung Cancer
+PAT-0052,Rosa,47,Female,A+,175.99,146.14,47.19,36.5,74,129/81,Hypertension
+PAT-0053,Thomas,55,Male,AB-,149.52,133.62,59.77,36.52,71,107/67,Stroke
+PAT-0054,Jorge,28,Female,A+,170.18,123.52,42.65,36.63,84,108/61,Kidney Disease
+PAT-0055,Yong,47,Male,AB+,177.36,92.5,29.4,36.88,72,119/62,Crohn's Disease
+PAT-0056,Elizabeth,30,Female,AB+,156.48,65.08,26.58,36.09,60,134/83,Hyperthyroidism
+PAT-0057,Sergey,66,Male,B-,182.52,118.38,35.54,36.44,66,137/72,Gastroenteritis
+PAT-0058,Ram,53,Male,AB-,197.93,70.65,18.03,36.39,80,99/84,Marfan Syndrome
+PAT-0059,Patricia,76,Male,AB+,145.22,140.99,66.85,36.53,63,136/75,Cholecystitis
+PAT-0060,Hassan,64,Female,B+,181.15,46.97,14.31,36.99,95,115/73,Sepsis
+PAT-0061,Anita,38,Male,B+,182.35,137.62,41.39,36.09,97,106/75,Hyperthyroidism
+PAT-0062,Manuel,65,Male,A-,157.47,72.49,29.23,36.53,68,123/82,Eczema
+PAT-0063,Victor,63,Male,AB-,171.6,45.96,15.61,36.29,68,134/69,HIV/AIDS
+PAT-0064,Sandra,44,Female,B+,181.04,130.02,39.67,37.02,99,123/73,Asthma
+PAT-0065,Ming,52,Female,B-,198.97,115.68,29.22,36.08,92,91/80,Diabetes
+PAT-0066,Siti,27,Male,B+,149.39,58.57,26.24,36.76,72,110/72,Hyperthyroidism
+PAT-0067,Miguel,39,Male,AB-,166.63,45.05,16.22,36.97,62,106/63,Pancreatitis
+PAT-0068,Emmanuel,86,Male,AB+,185.64,123.13,35.73,36.24,97,104/62,Liver Cancer
+PAT-0069,Samuel,49,Female,AB+,190.35,93.5,25.81,37.13,69,135/60,Asthma
+PAT-0070,Ling,38,Female,B+,179.12,106.04,33.05,36.28,69,115/72,Hypertension
+PAT-0071,Charles,77,Male,AB+,187.4,129.55,36.89,36.17,64,115/89,Zika Virus
+PAT-0072,Sarah,66,Female,AB-,177.13,126.72,40.39,36.32,74,139/61,Osteoporosis
+PAT-0073,Mario,52,Female,AB+,165.47,66.37,24.24,36.93,73,136/64,Turner Syndrome
+PAT-0074,Joao,89,Male,AB-,160.08,65.34,25.5,37.49,89,129/82,Hypoglycemia
+PAT-0075,Tatyana,46,Female,B-,156.1,145.64,59.77,36.73,61,121/64,Malaria
+PAT-0076,Mark,59,Male,AB+,164.38,72.53,26.84,36.32,76,129/69,Stroke
+PAT-0077,Rita,25,Male,B+,187.23,123.46,35.22,37.23,80,111/63,Asthma
+PAT-0078,Martin,47,Male,B-,144.32,142.48,68.41,36.46,62,102/83,Common Cold
+PAT-0079,Svetlana,22,Male,A-,161.5,147.03,56.37,37.4,73,112/87,Migraine
+PAT-0080,Patrick,58,Male,AB+,178.48,114.71,36.01,36.8,92,116/60,"Eating Disorders (Anorexia,..."
+PAT-0081,Natalya,69,Male,B+,158.65,65.52,26.03,37.02,86,128/78,Diabetes
+PAT-0082,Qing,52,Male,B-,146.7,110.66,51.42,36.55,61,93/62,Ebola Virus
+PAT-0083,Ahmad,26,Female,B+,164.2,79.03,29.31,36.87,91,132/68,Osteoporosis
+PAT-0084,Martha,45,Male,AB-,171.77,63.16,21.41,37.31,70,140/76,Tonsillitis
+PAT-0085,Andrey,90,Female,AB-,165.61,104.25,38.01,36.69,99,90/72,Hypothyroidism
+PAT-0086,Sunita,58,Female,AB+,196.13,69.27,18.01,37.16,79,125/62,Urinary Tract Infection
+PAT-0087,Andrea,45,Male,B+,140.48,132.73,67.26,36.61,72,93/88,Osteoporosis
+PAT-0088,Christine,81,Male,AB+,188.54,101.84,28.65,36.77,62,117/80,Atherosclerosis
+PAT-0089,Irina,68,Male,A-,173.95,79.2,26.18,36.77,86,111/87,Bronchitis
+PAT-0090,Laura,76,Female,AB+,152.4,97.7,42.07,36.59,68,127/86,Osteoarthritis
+PAT-0091,Linda,36,Male,AB-,184.19,61.02,17.99,37.2,92,137/71,Migraine
+PAT-0092,Marina,51,Male,A+,189.1,148.39,41.5,36.86,89,133/60,Parkinson's Disease
+PAT-0093,Carmen,35,Male,AB+,143.67,97.51,47.24,36.21,72,103/80,Ebola Virus
+PAT-0094,Ghulam,49,Female,A+,146.62,110.47,51.39,37.07,77,115/86,Mumps
+PAT-0095,Vladimir,89,Male,A-,187.06,130.33,37.25,37.05,81,103/81,Kidney Disease
+PAT-0096,Barbara,86,Male,A-,190.23,71.63,19.79,36.4,67,140/64,Liver Disease
+PAT-0097,Angela,51,Male,A+,145.16,85.27,40.47,36.73,68,117/65,Tetanus
+PAT-0098,George,72,Male,B-,184.19,67.04,19.76,36.61,96,104/75,Hepatitis B
+PAT-0099,Roberto,69,Male,AB-,174.54,54.09,17.75,36.63,83,110/60,Hyperthyroidism
+PAT-0100,Peng,64,Female,AB+,179.14,111.38,34.71,36.26,67,111/83,Heart Attack
+PAT-0101,Ivan,46,Male,B-,149.32,96.69,43.37,36.75,99,130/69,Hepatitis B
+PAT-0102,Alexander,35,Male,AB-,195.32,129.34,33.9,36.12,88,103/64,Bronchitis
+PAT-0103,Ekaterina,83,Female,AB+,148.68,76.6,34.65,37.22,69,101/83,Anxiety Disorders
+PAT-0104,Qiang,81,Male,AB+,171.46,46.3,15.75,37.45,94,116/60,Coronary Artery Disease
+PAT-0105,Yun,29,Female,AB-,185.56,131.29,38.13,36.66,81,100/75,Asthma
+PAT-0106,Jesus,24,Female,AB-,187.52,143.11,40.7,37.29,81,125/68,Spina Bifida
+PAT-0107,Susan,32,Female,AB-,152.9,96.23,41.16,37.45,94,114/90,Multiple Sclerosis
+PAT-0108,Sara,37,Female,A+,186.34,94.52,27.22,36.51,84,134/89,Depression
+PAT-0109,Noor,38,Female,A-,176.02,51.64,16.67,37.14,91,101/69,Ovarian Cancer
+PAT-0110,Mariam,72,Male,B+,168.78,104.31,36.62,36.52,99,93/72,Influenza
+PAT-0111,Dmitriy,26,Female,AB+,164.62,131.99,48.71,36.29,75,134/76,Common Cold
+PAT-0112,Eric,67,Male,AB+,142.93,52.98,25.93,36.4,67,103/90,Bronchitis
+PAT-0113,Zahra,66,Male,A-,177.71,53.78,17.03,36.55,84,118/86,Asthma
+PAT-0114,Fatma,77,Male,AB-,185.98,63.26,18.29,36.07,62,111/79,Lung Cancer
+PAT-0115,Fernando,85,Male,AB+,166.16,93.71,33.94,37,69,137/68,Diabetes
+PAT-0116,Esther,50,Male,B-,181.65,51.53,15.62,36.78,90,135/71,Coronary Artery Disease
+PAT-0117,Jin,88,Male,A+,197.3,107.58,27.64,36.51,92,123/75,Kidney Disease
+PAT-0118,Diana,19,Male,B-,188.27,93.17,26.28,37.17,87,134/61,Liver Disease
+PAT-0119,Mahmoud,32,Female,A+,192.46,71.79,19.38,36.19,72,99/66,Liver Disease
+PAT-0120,Chao,86,Female,B+,198.25,91.76,23.35,36.4,78,138/60,Hyperthyroidism
+PAT-0121,Rong,52,Female,AB+,156.48,116,47.38,36.62,94,120/80,Hypertension
+PAT-0122,Santosh,61,Female,AB+,187.62,102.49,29.11,37.17,88,140/62,Eczema
+PAT-0123,Nancy,32,Female,B+,151.8,116.1,50.39,36.09,86,92/83,Migraine
+PAT-0124,Musa,55,Male,B+,158.01,91.89,36.81,36.86,83,111/72,Stroke
+PAT-0125,Anh,73,Female,B+,140.31,93.29,47.39,36.69,85,109/61,Testicular Cancer
+PAT-0126,Omar,38,Male,A+,190.32,67.66,18.68,36.23,66,137/60,Malaria
+PAT-0127,Jennifer,76,Female,B+,160.02,118.57,46.3,36.5,68,116/74,Liver Disease
+PAT-0128,Gang,18,Male,A-,153.16,43.26,18.44,37.04,93,109/63,Hyperthyroidism
+PAT-0129,Yue,51,Female,B-,184.87,118.11,34.56,36.42,63,113/76,Hypertension
+PAT-0130,Claudia,82,Male,B-,162.49,79.22,30.01,36.67,86,114/75,Urinary Tract Infection
+PAT-0131,Maryam,40,Male,A-,192.87,98.07,26.36,36.31,98,129/70,Osteoporosis
+PAT-0132,Gloria,82,Female,AB+,163.95,137.87,51.29,37.25,82,133/64,Osteoporosis
+PAT-0133,Ruth,31,Male,B-,199.21,115.66,29.15,36.92,80,108/83,Lung Cancer
+PAT-0134,Teresa,56,Male,AB+,169.16,140.69,49.17,37.37,70,91/80,Migraine
+PAT-0135,Sanjay,82,Female,A+,195.72,98.3,25.66,36.13,67,124/75,Zika Virus
+PAT-0136,Na,43,Male,A+,159.58,76.26,29.94,37.35,66,134/68,Hypertension
+PAT-0137,Nur,37,Male,A-,156.36,142.68,58.36,37.06,62,96/70,Urinary Tract Infection (UTI)
+PAT-0138,Kyaw,65,Female,AB-,192.85,122.98,33.07,36.39,98,138/87,Asthma
+PAT-0139,Francis,38,Female,A-,160.71,92.68,35.89,37.37,81,131/86,Atherosclerosis
+PAT-0140,Amina,87,Female,AB-,175.15,125.89,41.04,36.53,73,131/71,Mumps
+PAT-0141,Denis,85,Female,A+,193.55,105.88,28.26,36.47,65,91/74,Hypertension
+PAT-0142,Stephen,18,Female,A-,142.46,84.54,41.66,37.31,85,111/75,Sleep Apnea
+PAT-0143,Sunil,59,Male,AB+,193.44,144.02,38.49,37.31,67,116/68,Asthma
+PAT-0144,Gabriel,80,Male,AB+,169.08,88.68,31.02,36.87,81,109/78,Multiple Sclerosis
+PAT-0145,Andrew,20,Female,B+,156.04,64.11,26.33,36.69,84,114/80,Chronic Obstructive Pulmonary Disease (COPD)
+PAT-0146,Eduardo,32,Female,B-,184.87,81.63,23.89,36.58,85,105/87,Stroke
+PAT-0147,Abdullah,64,Male,AB+,199.44,46.39,11.66,36.47,90,139/78,Allergic Rhinitis
+PAT-0148,Grace,57,Female,A+,177.98,72.15,22.77,36.21,95,101/63,Urinary Tract Infection
+PAT-0149,Anastasiya,48,Male,A+,148.27,136.99,62.31,37.43,81,109/77,Stroke
+PAT-0150,Mei,25,Male,AB+,148.17,91.7,41.77,36.54,99,97/78,Hyperthyroidism
+PAT-0151,Rafael,48,Male,A-,177.75,51.39,16.27,36.39,88,115/69,Eczema
+PAT-0152,Ricardo,90,Female,AB+,184.97,40.74,11.91,36.46,66,100/87,Hemophilia
+PAT-0153,Christian,28,Female,B-,163.71,51.62,19.26,37.42,73,107/82,Thyroid Cancer
+PAT-0154,Aleksey,28,Male,AB+,181.81,40.18,12.15,36.56,77,93/87,Hepatitis
+PAT-0155,Steven,80,Male,A+,187.6,88,25,37.12,64,108/84,Anxiety Disorders
+PAT-0156,Gita,26,Female,B+,177.45,105.37,33.46,37.04,67,102/72,Migraine
+PAT-0157,Frank,86,Male,B+,143.78,95.12,46.01,36.95,68,113/69,Influenza
+PAT-0158,Jianhua,34,Male,AB+,175.96,56.93,18.39,36.7,98,137/70,Pneumothorax
+PAT-0159,Mo,34,Male,A+,149.19,132.43,59.5,37.39,69,95/78,Tourette Syndrome
+PAT-0160,Karen,78,Male,A+,171.85,54.61,18.49,36.03,100,94/82,Polycystic Ovary Syndrome (PCOS)
+PAT-0161,Masmaat,88,Male,AB-,198.89,98.69,24.95,36.55,94,117/61,Psoriasis
+PAT-0162,Brian,39,Female,AB+,164.53,143.86,53.14,37.38,93,93/80,Dementia
+PAT-0163,Christopher,51,Male,AB-,184.34,108.77,32.01,36.65,64,101/82,Influenza
+PAT-0164,Xiaoyan,85,Male,AB-,195.53,40.53,10.6,37.4,60,98/64,Hypertension
+PAT-0165,Rajesh,72,Male,AB+,149.22,63.76,28.63,37.2,77,117/81,Bipolar Disorder
+PAT-0166,Mustafa,45,Male,AB-,170.08,67.18,23.22,36.35,70,111/89,Pancreatitis
+PAT-0167,Eva,87,Female,A-,184.28,80.16,23.6,37.45,73,135/73,Anemia
+PAT-0168,Bibi,43,Male,A+,150.25,84.24,37.32,37.18,95,121/88,Parkinson's Disease
+PAT-0169,Monica,57,Male,B-,145.13,55.05,26.13,36.99,100,128/79,Liver Cancer
+PAT-0170,Oscar,69,Female,B-,192.88,106.85,28.72,36.66,80,100/73,Bronchitis
+PAT-0171,Andre,65,Male,AB+,161.45,117.95,45.25,37.22,100,114/64,Influenza
+PAT-0172,Catherine,74,Male,A+,159.26,93.15,36.72,36.73,71,109/67,Psoriasis
+PAT-0173,Kai,84,Female,B+,193.17,88.53,23.73,36.12,76,107/88,Sleep Apnea
+PAT-0174,Ramesh,75,Male,B+,187.09,54.57,15.59,36.97,88,135/83,Hypertension
+PAT-0175,Liping,33,Female,A-,190.31,140.99,38.93,36.87,99,137/63,Asthma
+PAT-0176,Sonia,49,Male,AB+,153.06,86.07,36.74,36.59,85,119/85,Osteoporosis
+PAT-0177,Anthony,46,Female,B-,154.76,71.87,30.01,36.98,80,124/81,Asthma
+PAT-0178,Mina,26,Female,B-,141.18,101.49,50.92,37.15,82,94/87,Rheumatoid Arthritis
+PAT-0179,Manoj,61,Female,AB+,169.83,45.65,15.83,37.45,78,109/76,Asthma
+PAT-0180,Ashok,20,Male,A-,160.42,113.31,44.03,36.15,82,133/83,Pneumonia
+PAT-0181,Rose,88,Female,A-,159.21,50.86,20.06,37.28,62,92/77,Ulcerative Colitis
+PAT-0182,Alberto,47,Female,B+,148.33,61.6,28,36.03,92,129/82,Tuberculosis
+PAT-0183,Ning,46,Female,A+,194.86,91.69,24.15,36.25,80,114/71,Tourette Syndrome
+PAT-0184,Rekha,18,Male,AB-,163.18,47.65,17.89,37.2,80,136/80,Urinary Tract Infection
+PAT-0185,Chen,27,Male,AB-,165.01,74.67,27.42,36.34,76,125/72,Diabetes
+PAT-0186,Lan,25,Female,B+,153.06,68.78,29.36,37.43,94,96/69,Chronic Obstructive Pulmonary Disease (COPD)
+PAT-0187,Aung,47,Female,AB-,176.45,111.23,35.73,36.61,93,116/79,Hyperthyroidism
+PAT-0188,Alex,26,Male,AB+,163.86,47.38,17.64,36.54,81,99/81,Liver Cancer
+PAT-0189,Suresh,22,Male,AB+,178.49,77.22,24.24,36.06,98,97/82,Bronchitis
+PAT-0190,Anil,60,Male,A+,156.02,93.63,38.46,36.18,92,94/87,Turner Syndrome
+PAT-0191,Fatemeh,27,Female,AB-,184.91,137.51,40.22,37.11,100,127/67,Stroke
+PAT-0192,Julio,83,Female,B-,140.16,57.25,29.14,36.75,62,133/72,Coronary Artery Disease
+PAT-0193,Zhen,48,Male,AB-,173.68,131.3,43.53,36.77,84,124/74,Mumps
+PAT-0194,Simon,53,Female,A+,186.61,144.15,41.4,36.85,96,138/71,Hyperthyroidism
+PAT-0195,Paulo,80,Male,AB-,141.35,65.31,32.69,36.21,63,120/68,Turner Syndrome
+PAT-0196,Juana,45,Male,B+,168.83,107.47,37.7,36.88,79,95/65,Hypertension
+PAT-0197,Irene,87,Female,A-,160.61,41.26,15.99,37.23,75,101/82,Osteoarthritis
+PAT-0198,Adam,34,Male,A-,179.98,145.2,44.82,36.13,97,122/75,Polio
+PAT-0199,Kevin,78,Male,AB-,193.63,123.92,33.05,37.05,95,117/75,Stroke
+PAT-0200,Vijay,49,Male,B-,181.82,79.37,24.01,36.93,90,90/81,Common Cold
+PAT-0201,Syed,78,Male,A+,196.29,105.94,27.49,36.01,92,106/68,Pneumothorax
+PAT-0202,Mehmet,70,Male,AB-,176.43,54.93,17.64,36.88,93,109/89,Ulcerative Colitis
+PAT-0203,Angel,42,Male,AB-,143.89,116.81,56.42,36.53,94,120/85,Hyperthyroidism
+PAT-0204,Edward,30,Female,A+,169,133.42,46.72,36.1,98,94/77,Scoliosis
+PAT-0205,Julia,30,Female,A+,162.22,44.6,16.95,37.1,97,114/78,Osteomyelitis
+PAT-0206,Victoria,73,Male,AB+,149.2,111.89,50.27,36.46,96,108/81,Hepatitis
+PAT-0207,Ronald,63,Female,A-,180.66,147.99,45.34,36.39,78,94/67,Osteoporosis
+PAT-0208,Cheng,72,Female,AB+,156.65,60.71,24.74,37.01,99,128/61,Migraine
+PAT-0209,Lakshmi,70,Female,A+,145.76,106.01,49.9,37.27,100,106/61,Rubella
+PAT-0210,Francisca,77,Female,A+,158.41,101.48,40.44,36.26,94,124/61,Pancreatitis
+PAT-0211,Veronica,24,Male,A-,186.85,91.48,26.2,36.86,79,122/89,Anxiety Disorders
+PAT-0212,Roman,30,Female,AB+,160.35,66.05,25.69,37.06,77,116/64,Cerebral Palsy
+PAT-0213,Ismail,25,Male,A-,180.34,117.53,36.14,37.5,60,135/83,Mumps
+PAT-0214,Margaret,69,Male,AB+,165.77,43.33,15.77,36.48,85,123/84,Kidney Cancer
+PAT-0215,Luz,61,Male,B-,156.54,49.25,20.1,36.36,62,135/67,Stroke
+PAT-0216,Anne,31,Male,B+,172.49,108.14,36.34,36.76,69,110/83,Influenza
+PAT-0217,Silvia,49,Female,A-,171.21,106.27,36.26,37.04,84,134/70,Diabetes
+PAT-0218,Kamal,42,Male,AB-,180.38,131.94,40.55,36.04,97,130/75,Tourette Syndrome
+PAT-0219,Raju,42,Male,B+,154.68,73.51,30.72,36.92,62,96/69,Common Cold
+PAT-0220,Sergio,86,Male,B+,186.84,147.62,42.29,37.37,96,101/74,Urinary Tract Infection
+PAT-0221,Walter,75,Female,A+,160.19,69.96,27.27,36.52,100,92/78,Asthma
+PAT-0222,Lisa,35,Male,A-,174.23,93.84,30.92,37.05,83,103/89,Migraine
+PAT-0223,Marta,72,Female,AB-,156.33,113.92,46.61,36.44,98,95/79,Lyme Disease
+PAT-0224,Nadezhda,41,Male,B-,166.7,111.97,40.29,36.57,79,95/83,Colorectal Cancer
+PAT-0225,Marco,53,Female,A+,161.04,134.19,51.75,36.82,63,101/89,Liver Cancer
+PAT-0226,Albert,77,Female,AB+,186.81,44.07,12.63,36.43,82,135/62,Asthma
+PAT-0227,Alice,49,Male,A+,174.95,123.7,40.42,37.24,68,99/70,Ulcerative Colitis
+PAT-0228,Asha,27,Female,AB-,142.21,144.81,71.61,36.35,66,140/80,Urinary Tract Infection (UTI)
+PAT-0229,Xiang,74,Male,AB+,141.13,44.39,22.29,36.32,96,127/86,Hepatitis
+PAT-0230,Isabel,88,Male,B+,159.57,148.13,58.17,37.42,93,111/67,Osteoarthritis
+PAT-0231,Zainab,30,Female,AB+,183.52,90.48,26.86,37.17,96,111/66,Breast Cancer
+PAT-0232,Michelle,24,Female,A+,155.8,47.47,19.55,37.28,99,130/64,Asthma
+PAT-0233,Long,87,Female,AB+,187.63,74.11,21.05,36.84,61,136/69,Scoliosis
+PAT-0234,Michel,19,Male,AB-,152.62,130.52,56.04,37.34,71,97/65,Parkinson's Disease
+PAT-0235,Pierre,29,Male,A+,190.13,82.83,22.92,37.33,60,117/73,Kidney Cancer
+PAT-0236,Saleh,48,Male,A+,153.36,134.63,57.24,37.3,91,115/82,Rheumatoid Arthritis
+PAT-0237,Haiyan,39,Female,B+,185.96,103.25,29.86,36.51,89,101/90,Crohn's Disease
+PAT-0238,Felix,70,Female,B+,172.23,144.04,48.56,36.86,91,132/61,Pneumonia
+PAT-0239,Salma,80,Female,A+,179.44,65.64,20.38,36.06,72,117/77,Cholecystitis
+PAT-0240,Hector,79,Female,A-,146.12,82.35,38.57,37.07,63,110/72,Crohn's Disease
+PAT-0241,Manju,45,Female,B+,191.59,125.78,34.27,36.84,94,116/85,Typhoid Fever
+PAT-0242,Jan,69,Male,A-,188.05,43.45,12.29,37.19,92,138/89,Pancreatitis
+PAT-0243,Roger,25,Male,AB-,150.49,62.07,27.41,36.84,65,138/61,Polycystic Ovary Syndrome (PCOS)
+PAT-0244,Joyce,39,Female,B-,148.46,115.59,52.45,36.44,81,138/79,Depression
+PAT-0245,Margarita,66,Male,A-,140.17,42.34,21.55,36.31,74,90/82,Multiple Sclerosis
+PAT-0246,Joel,18,Female,B-,174.94,91.72,29.97,36.18,61,99/76,Sinusitis
+PAT-0247,Jessica,67,Female,A+,186.07,139.94,40.42,37.19,70,125/70,Migraine
+PAT-0248,Lucia,51,Female,B+,191.52,84.17,22.95,36.61,97,140/69,Liver Cancer
+PAT-0249,Pavel,76,Female,AB-,143.23,139.44,67.97,37.16,74,94/62,Common Cold
+PAT-0250,Hai,54,Male,AB+,164.3,120.23,44.54,36.38,73,94/82,Ebola Virus
+PAT-0251,Nomad,39,B-,168.90,50.98,17.87,36.00,80,96/80,Water
+PAT-0252,Jack,45,,O,144.33,50.87,24.42,30.05,78,98/80,Protruding
+PAT-0253,Rocky,39,,O+,180.87,67.56,20.65,39.81,76,96/75,Allergic Reaction

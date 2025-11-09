@@ -9,6 +9,7 @@
 #include "message_handler.hpp"
 #include "string_utils.hpp"
 #include "medical_supply_manager.hpp"
+#include "patient_admission_clerk.hpp"
 
 /**
  * @brief Constructor for Login
@@ -143,13 +144,13 @@ bool Login::promptLogin() {
 
         switch (user_role) {
             case PATIENT_ADMISSION_CLERK:
-                MessageHandler::warning("Patient Admission Clerk menu not implemented yet");
+                // MessageHandler::warning("Patient Admission Clerk menu not implemented yet");
                 // Once implemented, comment out the above MessageHandler line
                 // and uncomment the block below:
-                // {
-                //     PatientAdmissionClerk pac;
-                //     pac.displayMenu();
-                // }
+                {
+                    PatientAdmissionClerk pac;
+                    pac.displayMenu();
+                }
                 break;
 
             case MEDICAL_SUPPLY_MANAGER:

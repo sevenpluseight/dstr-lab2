@@ -7,6 +7,9 @@
 
 #include "message_handler.hpp"
 
+#include <bits/stdc++.h>
+#include "dynamic_array.hpp"
+
 /**
  * @brief Common string helper and input validation utilities used across hospital system modules
  *
@@ -43,6 +46,15 @@ inline std::string trim(const std::string &str) {
     size_t end   = str.find_last_not_of(" \t\r\n");
     return (start == std::string::npos) ? "" : str.substr(start, end - start + 1);
 }
+
+inline DynamicArray split(std::string text, char delimeter, DynamicArray arr) {
+    std::stringstream rawStream(text);
+    std::string word = "";
+    while(getline(rawStream, word, delimeter)) {
+        arr.appendArray(trim(word));
+    }
+    return arr;
+};
 
 /**
  * @brief Prompts the user for input and validates it using a provided validator function

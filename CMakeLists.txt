@@ -22,6 +22,12 @@ add_library(core STATIC
         supplies/src/stack.cpp
         supplies/src/view_supply.cpp
         utils/path_utils.cpp
+
+        patients/src/patient_array.cpp
+        patients/src/queue.cpp
+        utils/patient.cpp
+        utils/dynamic_array.cpp
+        patients/src/patient_admission_clerk.cpp
 )
 
 # Include directories for core library
