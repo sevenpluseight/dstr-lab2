@@ -163,41 +163,44 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
     }
 
     std::string line;
-    std::getline(file, line); // skip header
+    std::getline(file, line);
 
-    // Check if the header contains "patient_name"
-    bool hasNameColumn = (line.find("patient_name") != std::string::npos);
+    bool hasNameColumn = (line.find("Patient_Name") != std::string::npos);
 
     while (std::getline(file, line)) {
         std::stringstream ss(line);
         EmergencyCase ec;
+        
         std::getline(ss, ec.case_id, ',');
         std::getline(ss, ec.patient_id, ',');
 
         if (hasNameColumn) {
-            // If file already has names (from a previous save), read it
             std::getline(ss, ec.patient_name, ',');
         } else {
-            // If not, look it up from fast in-memory list
             ec.patient_name = getPatientName(ec.patient_id);
         }
 
-        std::getline(ss, ec.emergency_type, ',');
+        std::getline(ss, ec.emergency_type, ','); 
+
         std::string prio;
         std::getline(ss, prio, ',');
         
-        if (prio.empty()) prio = "5"; // Handle empty priority
-
+        if (prio.empty()) prio = "5"; 
         try {
             ec.priority_level = std::stoi(prio);
         } catch (const std::invalid_argument&) {
-            ec.priority_level = 5; // Default priority on error
+            ec.priority_level = 5; 
         }
 
-        std::getline(ss, ec.status, ',');
-        std::getline(ss, ec.timestamp_logged, ',');
-        std::getline(ss, ec.timestamp_processed, ',');
-        std::getline(ss, ec.ambulance_id, ',');
+        std::getline(ss, ec.status, ','); 
+
+        std::getline(ss, ec.timestamp_logged, ','); 
+
+        std::getline(ss, ec.timestamp_processed, ','); 
+
+        std::getline(ss, ec.ambulance_id, ','); 
+
+        trim(ec.status); 
 
         addCase(ec); // insert in priority order
     }
@@ -207,12 +210,12 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
 // Save to CSV
 void EmergencyManager::saveToCSV(const std::string& filename) {
     std::ofstream file(filename);
-    file << "Case_ID,Patient_ID,Patient_Name,Emergency_Type,Priority_Level,Status,Timestamp_Logged,Timestamp_Processed,Ambulance_ID\n";
+    file << "Case_ID,Patient_ID,Emergency_Type,Priority_Level,Status,Timestamp_Logged,Timestamp_Processed,Ambulance_ID\n";
 
     Node* current = head;
     while (current) {
         EmergencyCase& ec = current->data;
-        file << ec.case_id << "," << ec.patient_id << "," << ec.patient_name << ","
+        file << ec.case_id << "," << ec.patient_id << ","
              << ec.emergency_type << "," << ec.priority_level << ","
              << ec.status << "," << ec.timestamp_logged << "," 
              << ec.timestamp_processed << "," << ec.ambulance_id << "\n";
@@ -273,10 +276,45 @@ void EmergencyManager::printAllCases() const {
               << "\n";
     std::cout << std::string(151, '-') << "\n";
 
-    Node* current = head;
-    while (current) {
-        printCaseRow(current->data);
-        current = current->next;
+    Node* current = nullptr;
+    bool casesFound = false;
+
+ // Loop for each priority level from 1 to 5
+    for (int priority = 1; priority <= 5; ++priority) {
+
+        // --- Pass 1: "Pending" ---
+        current = head; // Reset pointer to the start of the list
+        while (current) {
+            if (current->data.priority_level == priority && current->data.status == "Pending") {
+                printCaseRow(current->data);
+                casesFound = true;
+            }
+            current = current->next;
+        }
+
+        // --- Pass 2: "Processing" ---
+        current = head; // Reset pointer to the start of the list
+        while (current) {
+            if (current->data.priority_level == priority && current->data.status == "Processing") {
+                printCaseRow(current->data);
+                casesFound = true;
+            }
+            current = current->next;
+        }
+
+        // --- Pass 3: "Completed" ---
+        current = head; // Reset pointer to the start of the list
+        while (current) {
+            if (current->data.priority_level == priority && current->data.status == "Completed") {
+                printCaseRow(current->data);
+                casesFound = true;
+            }
+            current = current->next;
+        }
+    }
+    
+    if (!casesFound) {
+         std::cout << "(No emergency cases found)\n";
     }
 }
 
