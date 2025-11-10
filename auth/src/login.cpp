@@ -10,6 +10,7 @@
 #include "string_utils.hpp"
 #include "medical_supply_manager.hpp"
 #include "patient_admission_clerk.hpp"
+#include "emergency_department_officer.hpp"
 
 /**
  * @brief Constructor for Login
@@ -164,13 +165,13 @@ bool Login::promptLogin() {
                 break;
 
             case EMERGENCY_DEPARTMENT_OFFICER:
-                MessageHandler::warning("Emergency Department Officer menu not implemented yet");
+                // MessageHandler::warning("Emergency Department Officer menu not implemented yet");
                 // Once implemented, comment out the above MessageHandler line
                 // and uncomment the block below:
-                // {
-                //     EmergencyDepartmentOfficer eod;
-                //     eod.displayMenu();
-                // }
+                {
+                    EmergencyDepartmentOfficer eod;
+                    eod.run();
+                }
                 break;
 
             case AMBULANCE_DISPATCHER:
