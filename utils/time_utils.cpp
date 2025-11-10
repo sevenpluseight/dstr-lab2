@@ -1,8 +1,9 @@
-#include "time_utils.hpp"
 #include <chrono>
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+
+#include "time_utils.hpp"
 
 std::string getCurrentTimestamp() {
     auto now = std::chrono::system_clock::now();
@@ -17,4 +18,18 @@ std::string getCurrentTimestamp() {
     std::ostringstream oss;
     oss << std::put_time(&local_tm, "%Y-%m-%d %H:%M:%S");
     return oss.str();
+}
+
+std::string getCurrentTimeString(std::time_t t) {
+    std::tm tmStruct;
+
+#ifdef _WIN32
+    localtime_s(&tmStruct, &t);  // Windows thread-safe
+#else
+    localtime_r(&t, &tmStruct);  // POSIX thread-safe
+#endif
+
+    std::stringstream ss;
+    ss << std::put_time(&tmStruct, "%a %b %d %H:%M:%S %Y"); // mimic ctime() format
+    return ss.str();
 }
