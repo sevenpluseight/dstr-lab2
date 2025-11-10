@@ -47,7 +47,12 @@ int getValidatedInt(const std::string& prompt, int min, int max) {
         }
 
         try {
-            choice = std::stoi(input);
+            std::size_t charsProcessed = 0;
+            choice = std::stoi(input, &charsProcessed);
+            if (charsProcessed != input.length()) {
+                MessageHandler::warning("Invalid input. Please enter a valid number without extra characters.");
+                continue;
+            }
             if (choice >= min && choice <= max) {
                 return choice; // Valid choice
             } else {
@@ -202,7 +207,8 @@ void EmergencyDepartmentOfficer::addCase() {
             } else if (containsDigits(ec.emergency_type)) {
                 MessageHandler::warning("Emergency Type cannot contain numbers.");
             } else {
-                if (manager.typeExists(toUpper(ec.emergency_type))) {
+                ec.emergency_type = toUpper(ec.emergency_type);
+                if (manager.typeExists(ec.emergency_type)) {
                     MessageHandler::info("Note: This emergency type already exists and will be used.");
                 }
                 break;
