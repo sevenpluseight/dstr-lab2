@@ -1,139 +1,230 @@
-#include <iostream>
+#include "ambulance_dispatcher.hpp"
+#include "time_utils.hpp"
+#include <fstream>
+#include <sstream>
 #include <iomanip>
-#include <algorithm>
-#include "../../ambulances/include/ambulance_dispatcher.hpp"
+#include <cstdlib> // rand()
 
-using namespace std;
-
-class MessageHandler {
-public:
-    static void info(const string& msg) { cout << msg << endl; }
-    static void error(const string& msg) { cout << "Error: " << msg << endl; }
-};
-
-void AmbulanceDispatcher::displayMenu() {
-    int choice = 0;
-    do {
-        cout << "\n=== Ambulance Dispatcher Menu ===\n";
-        cout << "1. View Ambulances\n";
-        cout << "2. Add Ambulance\n";
-        cout << "3. Remove Ambulance\n";
-        cout << "4. Dispatch Ambulance\n";
-        cout << "5. Rotate Ambulance Shift\n";
-        cout << "6. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            choice = -1;
-        }
-
-        switch (choice) {
-            case 1: displaySchedule(); break;
-            case 2: registerAmbulance(); break;
-            case 3: removeAmbulance(); break;
-            case 4: dispatchAmbulance(); break;
-            case 5: rotateAmbulanceShift(); break;
-            case 6: MessageHandler::info("Returning to login...\n"); break;
-            default: MessageHandler::error("Invalid choice!"); break;
-        }
-    } while (choice != 6);
+// Constructor
+AmbulanceDispatcher::AmbulanceDispatcher(const std::string& schedulePath,
+                                         const std::string& shiftPath)
+    : scheduleFile(schedulePath), shiftFile(shiftPath)
+{
+    loadSchedule();
+    loadShiftHistory();
 }
 
-// ---------------- View Schedule ----------------
-void AmbulanceDispatcher::displaySchedule() const {
-    if (ambulances.empty()) {
-        cout << "\n⚠️ No ambulance records found.\n";
-        return;
+// Destructor
+AmbulanceDispatcher::~AmbulanceDispatcher() {
+    // Clear queue
+    while (!isQueueEmpty()) {
+        dequeueAmbulance();
     }
 
-    cout << "\n===== 🚑 Current Ambulance Schedule =====\n";
-    cout << left << setw(10) << "ID"
-         << setw(15) << "Driver"
-         << setw(12) << "DrvStat"
-         << setw(20) << "Shift Start"
-         << setw(20) << "Shift End"
-         << setw(10) << "Hours"
-         << setw(15) << "Case ID"
-         << setw(15) << "AmbStat"
-         << setw(15) << "Location" << endl;
-    cout << string(140, '-') << endl;
-
-    for (const auto& amb : ambulances) {
-        cout << left << setw(10) << amb.ambulance_id
-             << setw(15) << amb.driver_name
-             << setw(12) << amb.driver_status
-             << setw(20) << amb.shift_start
-             << setw(20) << amb.shift_end
-             << setw(10) << amb.shift_duration
-             << setw(15) << amb.assigned_case_id
-             << setw(15) << amb.ambulance_status
-             << setw(15) << amb.location << endl;
+    // Clear stack
+    while (shiftTop) {
+        ShiftNode* tmp = shiftTop;
+        shiftTop = shiftTop->next;
+        delete tmp;
     }
-    cout << endl;
 }
 
-// ---------------- Add Ambulance ----------------
-void AmbulanceDispatcher::registerAmbulance() {
-    Ambulance amb;
-    cout << "\nEnter new Ambulance details:\n";
-    cout << "Ambulance ID: "; cin >> amb.ambulance_id;
-    cout << "Driver Name: "; cin.ignore(); getline(cin, amb.driver_name);
-    cout << "Driver Status (Available/OnDuty/Unavailable): "; getline(cin, amb.driver_status);
-    cout << "Shift Start (YYYY-MM-DD HH:MM): "; getline(cin, amb.shift_start);
-    cout << "Shift End (YYYY-MM-DD HH:MM): "; getline(cin, amb.shift_end);
-    cout << "Shift Duration (hours): "; cin >> amb.shift_duration;
-    cout << "Assigned Case ID (if any, '-' if none): "; cin >> amb.assigned_case_id;
-    cout << "Ambulance Status (Available/On Duty/Under Maintenance): "; cin >> amb.ambulance_status;
-    cout << "Location: "; cin.ignore(); getline(cin, amb.location);
-
-    ambulances.push_back(amb);
-    cout << "\n✅ Ambulance " << amb.ambulance_id << " successfully registered!\n";
-}
-
-// ---------------- Remove Ambulance ----------------
-void AmbulanceDispatcher::removeAmbulance() {
-    if (ambulances.empty()) {
-        MessageHandler::info("No ambulances to remove.\n");
-        return;
-    }
-
-    string id;
-    cout << "Enter Ambulance ID to remove: ";
-    cin >> id;
-
-    auto it = find_if(ambulances.begin(), ambulances.end(),
-                      [&id](const Ambulance& amb){ return amb.ambulance_id == id; });
-
-    if (it != ambulances.end()) {
-        ambulances.erase(it);
-        MessageHandler::info("Ambulance removed successfully.\n");
+// Queue operations
+void AmbulanceDispatcher::enqueueAmbulance(const Ambulance& amb) {
+    AmbulanceNode* newNode = new AmbulanceNode{amb, nullptr};
+    if (!rear) {
+        front = rear = newNode;
     } else {
-        MessageHandler::error("Ambulance ID not found!");
+        rear->next = newNode;
+        rear = newNode;
     }
 }
 
-// ---------------- Dispatch Ambulance (stub) ----------------
-void AmbulanceDispatcher::dispatchAmbulance() {
-    MessageHandler::info("Dispatching an ambulance (functionality not implemented yet).");
+Ambulance AmbulanceDispatcher::dequeueAmbulance() {
+    if (isQueueEmpty()) {
+        return Ambulance{};
+    }
+    AmbulanceNode* tmp = front;
+    Ambulance amb = tmp->data;
+    front = front->next;
+    if (!front) rear = nullptr;
+    delete tmp;
+    return amb;
 }
 
-// ---------------- Rotate Shift ----------------
-void AmbulanceDispatcher::rotateAmbulanceShift() {
-    if (ambulances.empty()) {
-        MessageHandler::info("No ambulances to rotate.\n");
+// Stack operations
+void AmbulanceDispatcher::pushShift(const ShiftNode& shift) {
+    ShiftNode* newNode = new ShiftNode(shift);
+    newNode->next = shiftTop;
+    shiftTop = newNode;
+}
+
+// Load ambulance schedule from CSV
+void AmbulanceDispatcher::loadSchedule() {
+    std::ifstream file(scheduleFile);
+    if (!file.is_open()) {
+        MessageHandler::warning("Schedule CSV not found, starting empty.");
         return;
     }
 
-    rotate(ambulances.begin(), ambulances.begin() + 1, ambulances.end());
-    MessageHandler::info("Ambulance shift rotation completed.\n");
+    std::string line;
+    std::getline(file, line); // skip header
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        Ambulance amb;
+        std::string duration;
+
+        std::getline(ss, amb.ambulance_id, ',');
+        std::getline(ss, amb.driver_name, ',');
+        std::getline(ss, amb.driver_status, ',');
+        std::getline(ss, amb.shift_start, ',');
+        std::getline(ss, amb.shift_end, ',');
+        std::getline(ss, duration, ',');
+        amb.shift_duration = duration.empty() ? 0 : std::stoi(duration);
+        std::getline(ss, amb.assigned_case_id, ',');
+        std::getline(ss, amb.ambulance_status, ',');
+        std::getline(ss, amb.location, ',');
+
+        // Only enqueue available ambulances
+        if (amb.ambulance_status == "Available" && amb.driver_status == "Available") {
+            enqueueAmbulance(amb);
+        }
+    }
+
+    file.close();
 }
 
-// ---------------- Sample Data ----------------
-void AmbulanceDispatcher::loadSampleData() {
-    ambulances.push_back({"AMB001", "John Lim", "OnDuty", "2025-11-03 08:00", "2025-11-03 16:00", 8, "CASE-3101", "On Duty", "City Center"});
-    ambulances.push_back({"AMB002", "Amira Tan", "Available", "2025-11-03 16:00", "2025-11-03 21:00", 5, "-", "Available", "Hospital HQ"});
-    ambulances.push_back({"AMB003", "Raj Kumar", "Unavailable", "2025-11-03 09:00", "2025-11-03 17:00", 8, "-", "Unavailable", "Maintenance Bay"});
+// Save ambulance schedule
+void AmbulanceDispatcher::saveSchedule() {
+    std::ofstream file(scheduleFile);
+    file << "ambulance_id,driver_name,driver_status,shift_start,shift_end,shift_duration,assigned_case_id,ambulance_status,location\n";
+    AmbulanceNode* current = front;
+    while (current) {
+        const Ambulance& amb = current->data;
+        file << amb.ambulance_id << "," << amb.driver_name << "," << amb.driver_status << ","
+             << amb.shift_start << "," << amb.shift_end << "," << amb.shift_duration << ","
+             << amb.assigned_case_id << "," << amb.ambulance_status << "," << amb.location << "\n";
+        current = current->next;
+    }
+    file.close();
+}
+
+// Load shift history
+void AmbulanceDispatcher::loadShiftHistory() {
+    std::ifstream file(shiftFile);
+    if (!file.is_open()) return;
+
+    std::string line;
+    std::getline(file, line); // skip header
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        ShiftNode shift;
+        std::getline(ss, shift.ambulance_id, ',');
+        std::getline(ss, shift.driver_name, ',');
+        std::getline(ss, shift.shift_start, ',');
+        std::getline(ss, shift.shift_end, ',');
+        shift.next = nullptr;
+        pushShift(shift);
+    }
+    file.close();
+}
+
+// Save shift history
+void AmbulanceDispatcher::saveShiftHistory() {
+    std::ofstream file(shiftFile);
+    file << "ambulance_id,driver_name,shift_start,shift_end\n";
+    ShiftNode* current = shiftTop;
+    while (current) {
+        file << current->ambulance_id << "," << current->driver_name << ","
+             << current->shift_start << "," << current->shift_end << "\n";
+        current = current->next;
+    }
+}
+
+// Dispatcher Menu
+void AmbulanceDispatcher::displayMenu() {
+    while (true) {
+        std::cout << "\n--- Ambulance Dispatcher Menu ---\n";
+        std::cout << "1. View available ambulances\n";
+        std::cout << "2. Assign ambulance\n";
+        std::cout << "3. View shift history\n";
+        std::cout << "4. Exit\n";
+        std::cout << "Select an option: ";
+
+        std::string choice;
+        std::getline(std::cin, choice);
+
+        if (choice == "1") viewSchedule();
+        else if (choice == "2") assignAmbulance();
+        else if (choice == "3") viewShiftHistory();
+        else if (choice == "4") break;
+        else MessageHandler::warning("Invalid option, please try again.");
+    }
+}
+
+// View schedule
+void AmbulanceDispatcher::viewSchedule() {
+    if (isQueueEmpty()) {
+        MessageHandler::info("No available ambulances.");
+        return;
+    }
+    std::cout << "\n--- Available Ambulances ---\n";
+    AmbulanceNode* current = front;
+    while (current) {
+        const Ambulance& amb = current->data;
+        std::cout << amb.ambulance_id << " | Driver: " << amb.driver_name
+                  << " | Status: " << amb.driver_status
+                  << " | Location: " << amb.location << "\n";
+        current = current->next;
+    }
+}
+
+// Assign ambulance
+void AmbulanceDispatcher::assignAmbulance() {
+    if (isQueueEmpty()) {
+        MessageHandler::warning("No available ambulances to assign.");
+        return;
+    }
+
+    Ambulance amb = dequeueAmbulance();
+    amb.assigned_case_id = "CASE-" + std::to_string(rand() % 1000 + 1);
+    amb.ambulance_status = "On Duty";
+    amb.driver_status = "OnDuty";
+
+    MessageHandler::info("Ambulance " + amb.ambulance_id + " assigned to case " + amb.assigned_case_id);
+
+    // Record in shift history
+    ShiftNode shift;
+    shift.ambulance_id = amb.ambulance_id;
+    shift.driver_name = amb.driver_name;
+    shift.shift_start = getCurrentTimestamp();
+    shift.shift_end = ""; // shift ongoing
+    shift.next = nullptr;
+    pushShift(shift);
+
+    saveShiftHistory();
+    saveSchedule();
+}
+
+// View shift history
+void AmbulanceDispatcher::viewShiftHistory() {
+    if (!shiftTop) {
+        MessageHandler::info("No shift history available.");
+        return;
+    }
+
+    std::cout << "\n--- Shift History (most recent first) ---\n";
+    ShiftNode* current = shiftTop;
+    while (current) {
+        std::cout << current->ambulance_id << " | Driver: " << current->driver_name
+                  << " | Start: " << current->shift_start
+                  << " | End: " << (current->shift_end.empty() ? "Ongoing" : current->shift_end)
+                  << "\n";
+        current = current->next;
+    }
+}
+
+// Run entry
+void AmbulanceDispatcher::run() {
+    displayMenu();
 }

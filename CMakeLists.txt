@@ -15,6 +15,7 @@ endif()
 add_library(core STATIC
         auth/src/login.cpp
         auth/src/session_manager.cpp
+        ambulances/src/ambulance_dispatcher.cpp
         emergencies/src/emergency_department_officer.cpp
         emergencies/src/emergency_manager.cpp
         patients/src/patient_array.cpp
