@@ -1,9 +1,9 @@
 #include <chrono>
-#include <ctime>
 #include <utility>
 #include "queue.hpp"
 #include "string_utils.hpp"
 #include "message_handler.hpp"
+#include "time_utils.hpp"
 
 Queue::Queue() {
     front = rear = nullptr;
@@ -47,7 +47,7 @@ bool Queue::enqueue(const std::string Patient_id, std::string Condition) {
 
     const auto admission_time_in_seconds = std::chrono::system_clock::now();
     const std::time_t formatted_admission_time = std::chrono::system_clock::to_time_t(admission_time_in_seconds);
-    newNode->admission = trim(std::ctime(&formatted_admission_time));
+    newNode->admission = getCurrentTimeString(formatted_admission_time);
 
     if (isEmpty()) {
         front = rear = newNode;
