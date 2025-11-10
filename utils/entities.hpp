@@ -2,6 +2,7 @@
 #define ENTITIES_HPP
 
 #include <string>
+#include "dynamic_array.hpp"
 // using namespace std;
 
 /**
@@ -23,7 +24,23 @@
 
 // Patient Admission Clerk
 
-
+struct Patient {
+        std::string patient_id;
+        std::string name;
+        std::string age;
+        std::string gender;
+        std::string bloodType;
+        std::string height;
+        std::string weight;
+        std::string BMI;
+        std::string temperature;
+        std::string heartRate;
+        std::string bloodPressure;
+        std::string condition;
+        Patient();
+        Patient(DynamicArray patientElement);
+        std::string getLine();
+};
 
 // Medical Supply Manager
 /**

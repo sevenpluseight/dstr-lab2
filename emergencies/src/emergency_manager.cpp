@@ -68,13 +68,13 @@ void EmergencyManager::loadPatientData(const std::string& patientDataFile) {
         if (!patientID.empty() && !patientName.empty()) {
             trim(patientID); 
             trim(patientName);
-            addPatient(patientID, patientName); // Use our new function
+            addPatient(patientID, patientName);
         }
     }
     file.close();
 }
 
-// Gets a patient name from the *in-memory list*
+// Gets a patient name from the in-memory list
 std::string EmergencyManager::getPatientName(const std::string& patientID) const {
     PatientNode* current = patientHead;
     while (current) {
@@ -86,12 +86,11 @@ std::string EmergencyManager::getPatientName(const std::string& patientID) const
     return "Unknown"; // Not found
 }
 
-// Checks if a type already exists in our list (case-insensitive)
+// Checks if a type already exists in the list (case-insensitive)
 bool EmergencyManager::typeExists(const std::string& type) const {
     std::string upperType = toUpper(type); // <-- Convert to upper
     TypeNode* current = typeHead;
     while (current) {
-        // No need to convert current->typeName, it's already upper
         if (current->typeName == upperType) { 
             return true;
         }
@@ -102,14 +101,14 @@ bool EmergencyManager::typeExists(const std::string& type) const {
 
 // Adds a new type to the list in alphabetical order (case-insensitive)
 void EmergencyManager::addType(const std::string& type) {
-    std::string upperType = toUpper(type); // <-- Convert to upper
+    std::string upperType = toUpper(type); // Convert to upper
 
     if (upperType.empty() || typeExists(upperType)) {
-        return; // Don't add empty or duplicate types
+        return;
     }
 
     TypeNode* newNode = new TypeNode;
-    newNode->typeName = upperType; // <-- Store the upper version
+    newNode->typeName = upperType;
     newNode->next = nullptr;
 
     // Case 1: The list is empty or the new type comes before the head
@@ -152,7 +151,7 @@ std::string EmergencyManager::getTypeByIndex(int index) const {
         }
         current = current->next;
     }
-    return "Unknown"; // Should not happen if index is validated
+    return "Unknown";
 }
 
 // Load from CSV
@@ -176,10 +175,10 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
         std::getline(ss, ec.patient_id, ',');
 
         if (hasNameColumn) {
-            // If file *already* has names (from a previous save), read it
+            // If file already has names (from a previous save), read it
             std::getline(ss, ec.patient_name, ',');
         } else {
-            // If not, look it up from our *fast in-memory list*
+            // If not, look it up from fast in-memory list
             ec.patient_name = getPatientName(ec.patient_id);
         }
 
@@ -205,7 +204,7 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
     file.close();
 }
 
-// Save to CSV (This function was already correct)
+// Save to CSV
 void EmergencyManager::saveToCSV(const std::string& filename) {
     std::ofstream file(filename);
     file << "Case_ID,Patient_ID,Patient_Name,Emergency_Type,Priority_Level,Status,Timestamp_Logged,Timestamp_Processed,Ambulance_ID\n";
@@ -222,7 +221,7 @@ void EmergencyManager::saveToCSV(const std::string& filename) {
     file.close();
 }
 
-// Helper function to print a single case row (This function was already correct)
+// Helper function to print a single case row
 void printCaseRow(const EmergencyCase& ec) {
     std::string statusColor;
 
@@ -338,7 +337,7 @@ void EmergencyManager::addCase(const EmergencyCase& ec) {
     current->next = newNode;
 }
 
-// "Peeks" at the highest priority "Pending" case
+// Peeks at the highest priority "Pending" case
 EmergencyCase EmergencyManager::getHighestPriorityPendingCase() const {
     Node* current = head;
     while (current) {
@@ -349,11 +348,11 @@ EmergencyCase EmergencyManager::getHighestPriorityPendingCase() const {
         }
         current = current->next;
     }
-    // If no "Pending" cases are found, return an empty one.
+    // If no "Pending" cases are found, return an empty one
     return EmergencyCase{}; 
 }
 
-// Finds and REMOVES the highest-priority "Pending" case
+// Finds and removes the highest-priority "Pending" case
 EmergencyCase EmergencyManager::popHighestPriorityPendingCase() {
     if (!head) {
         return EmergencyCase{}; // List is empty
@@ -362,7 +361,7 @@ EmergencyCase EmergencyManager::popHighestPriorityPendingCase() {
     Node* current = head;
     Node* prev = nullptr;
 
-    // Loop until we find the first "Pending" case
+    // Loop until it finds the first "Pending" case
     while (current && current->data.status != "Pending") {
         prev = current;
         current = current->next;
@@ -382,7 +381,7 @@ EmergencyCase EmergencyManager::popHighestPriorityPendingCase() {
         prev->next = current->next; // Unlink the node
     }
 
-    // Save the data, delete the node, and return the data
+    // Save the data, delete the node and return the data
     EmergencyCase ec = current->data;
     delete current;
     return ec;
@@ -408,7 +407,6 @@ std::string EmergencyManager::generateNextCaseID() {
 
     while (current) {
         const std::string& id = current->data.case_id;
-        // Assuming format is "CASE-XXXX"
         if (id.rfind("CASE-", 0) == 0) {
             try {
                 int num = std::stoi(id.substr(5)); // Get number after "CASE-"
