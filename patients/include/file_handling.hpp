@@ -3,7 +3,6 @@
 
 #include <fstream>
 #include <chrono>
-#include <ctime>
 #include <sstream>
 #include <iomanip>
 #include "patient_array.hpp"
@@ -11,20 +10,7 @@
 #include "queue.hpp"
 #include "string_utils.hpp"
 #include "config.hpp"
-
-inline std::string getCurrentTimeString(std::time_t t) {
-    std::tm tmStruct;
-
-#ifdef OS_WINDOWS
-    localtime_s(&tmStruct, &t);  // Windows thread-safe
-#else
-    localtime_r(&t, &tmStruct);  // POSIX thread-safe
-#endif
-
-    std::stringstream ss;
-    ss << std::put_time(&tmStruct, "%a %b %d %H:%M:%S %Y"); // mimic ctime() format
-    return ss.str();
-}
+#include "time_utils.hpp"
 
 inline PatientArray readPatientFile(PatientArray array, const std::string& filepath) {
     array.clearArray();
