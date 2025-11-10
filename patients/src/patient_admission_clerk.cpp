@@ -1,10 +1,11 @@
 #include "patient_admission_clerk.hpp"
-
-const std::string patientFilepath = "../data/patient_data.csv";
-const std::string queueFilePath = "../data/queue.csv";
+#include "path_utils.hpp"
+#include "message_handler.hpp"
 
 PatientAdmissionClerk::PatientAdmissionClerk() {
     name = "";
+    patientFilepath = getDataFilePath("patient_data.csv");
+    queueFilePath = getDataFilePath("queue.csv");
     allPatients = readPatientFile(allPatients, patientFilepath);
     patientQueue = readQueueFile(patientQueue, queueFilePath);
 }
@@ -62,7 +63,7 @@ void PatientAdmissionClerk::admitNewPatient() {
 
     Patient patient;
 
-    std::cout << "------------------ NEW PATIENT ADMISSION FORM ------------------"  << std::endl;
+    std::cout << "\n------------------ NEW PATIENT ADMISSION FORM ------------------"  << std::endl;
     std::cout << "Patient Name: " << std::flush;
     std::getline(std::cin, patient.name);
     std::cout << "Patient Age: " << std::flush;
@@ -104,7 +105,7 @@ void PatientAdmissionClerk::admitExistingPatient() {
 
     std::string ID, Condition;
 
-    std::cout << "--------------- EXISTING PATIENT ADMISSION FORM ---------------"  << std::endl;
+    std::cout << "\n--------------- EXISTING PATIENT ADMISSION FORM ---------------"  << std::endl;
     std::cout << "\nPatient ID: " << std::flush;
     std::getline(std::cin, ID);
 
@@ -141,14 +142,14 @@ void PatientAdmissionClerk::viewPatientQueue() {
     constexpr int columnWidthOfAdmissionTime = 30;
 
     std::cout << std::left <<
-        std::setw(columnWidthOfQueueID) << "Queue" <<
+        std::setw(columnWidthOfQueueID) << "\nQueue" <<
         std::setw(columnWidthOfPatientID) << "Patient ID" <<
         std::setw(columnWidthOfName) << "Name" <<
         std::setw(columnWidthOfCondition) << "Condition" <<
         std::setw(columnWidthOfAdmissionTime) << "Admission Time" <<
         std::endl;
 
-    std::cout << std::string(columnWidthOfQueueID + columnWidthOfPatientID + columnWidthOfName +
+    std::cout << "\n" << std::string(columnWidthOfQueueID + columnWidthOfPatientID + columnWidthOfName +
         columnWidthOfCondition + columnWidthOfAdmissionTime, '-') << "\n";
 
     Node* temp = patientQueue.getFront();
@@ -182,7 +183,7 @@ void PatientAdmissionClerk::viewPatient() {
         MessageHandler::info("Patient found.");
 
         std::cout << std::left <<
-            std::setw(columnWidthOfPatientID) << "Patient ID" <<
+            std::setw(columnWidthOfPatientID) << "\nPatient ID" <<
             std::setw(columnWidthOfName) << "Name" <<
             std::setw(columnWidthOfCondition) << "Condition" <<
             std::endl;
