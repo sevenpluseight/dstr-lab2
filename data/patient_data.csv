@@ -1,7 +1,7 @@
 Patient_ID,Name,Age,Gender,Blood_Type,Height (cm),Weight (kg),BMI,Temperature (C),Heart_Rate (bpm),Blood_Pressure (mmHg),Condition_Type
-PAT-0001,Maria,32,Female,B-,185.55,110.65,32.14,36.26,70,96/89,Osteoporosis
-PAT-0002,Nushi,21,Male,B-,164.25,41.69,15.45,36.68,80,134/82,Parkinson's Disease
-PAT-0003,Mohammed,53,Female,A+,177.61,91.05,28.86,36.79,65,113/76,Stroke
+PAT-0001,Maria,32,Female,B-,185.55,110.65,32.14,36.26,70,96/89,Sore
+PAT-0002,Nushi,21,Male,B-,164.25,41.69,15.45,36.68,80,134/82,Test condition 1
+PAT-0003,Mohammed,53,Female,A+,177.61,91.05,28.86,36.79,65,113/76,Sclerosis
 PAT-0004,Jose,49,Male,AB-,184.9,58.87,17.22,37.15,100,131/87,Liver Disease
 PAT-0005,Muhammad,46,Male,B-,164.84,96.74,35.61,36.45,76,128/83,Psoriasis
 PAT-0006,Mohamed,35,Male,B-,187.99,42.64,12.07,36,66,98/84,Bronchitis
@@ -98,7 +98,7 @@ PAT-0096,Barbara,86,Male,A-,190.23,71.63,19.79,36.4,67,140/64,Liver Disease
 PAT-0097,Angela,51,Male,A+,145.16,85.27,40.47,36.73,68,117/65,Tetanus
 PAT-0098,George,72,Male,B-,184.19,67.04,19.76,36.61,96,104/75,Hepatitis B
 PAT-0099,Roberto,69,Male,AB-,174.54,54.09,17.75,36.63,83,110/60,Hyperthyroidism
-PAT-0100,Peng,64,Female,AB+,179.14,111.38,34.71,36.26,67,111/83,Malaria
+PAT-0100,Peng,64,Female,AB+,179.14,111.38,34.71,36.26,67,111/83,Heart Attack
 PAT-0101,Ivan,46,Male,B-,149.32,96.69,43.37,36.75,99,130/69,Hepatitis B
 PAT-0102,Alexander,35,Male,AB-,195.32,129.34,33.9,36.12,88,103/64,Bronchitis
 PAT-0103,Ekaterina,83,Female,AB+,148.68,76.6,34.65,37.22,69,101/83,Anxiety Disorders
@@ -249,3 +249,9 @@ PAT-0247,Jessica,67,Female,A+,186.07,139.94,40.42,37.19,70,125/70,Migraine
 PAT-0248,Lucia,51,Female,B+,191.52,84.17,22.95,36.61,97,140/69,Liver Cancer
 PAT-0249,Pavel,76,Female,AB-,143.23,139.44,67.97,37.16,74,94/62,Common Cold
 PAT-0250,Hai,54,Male,AB+,164.3,120.23,44.54,36.38,73,94/82,Ebola Virus
+PAT-0251,Nomad,39,B-,168.90,50.98,17.87,36.00,80,96/80,Water
+PAT-0252,Jack,45,,O,144.33,50.87,24.42,30.05,78,98/80,Protruding
+PAT-0253,Rocky,39,,O+,180.87,67.56,20.65,39.81,76,96/75,Allergic Reaction
+PAT-0254,Patient Test 1,21,,A-,175,75,24.49,36.85,75,112/75,Condition test 1
+PAT-0255,Patient Test 2,35,,A+,185,75,21.91,36.45,75,112/75,Condition test 2
+PAT-0256,Patient test 3,25,,A+,188,76,21.50,37.80,56,112/75,Condition test 3

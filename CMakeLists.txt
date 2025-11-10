@@ -17,6 +17,9 @@ add_library(core STATIC
         auth/src/session_manager.cpp
         emergencies/src/emergency_department_officer.cpp
         emergencies/src/emergency_manager.cpp
+        patients/src/patient_array.cpp
+        patients/src/queue.cpp
+        patients/src/patient_admission_clerk.cpp
         supplies/src/add_supply.cpp
         supplies/src/data_handler.cpp
         supplies/src/medical_supply_manager.cpp
@@ -24,6 +27,8 @@ add_library(core STATIC
         supplies/src/stack.cpp
         supplies/src/view_supply.cpp
         utils/path_utils.cpp
+        utils/dynamic_array.cpp
+        utils/patient.cpp
         utils/time_utils.cpp
 )
 

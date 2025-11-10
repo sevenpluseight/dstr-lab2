@@ -3,10 +3,12 @@
 
 #include <string>
 #include <cctype>
-#include <algorithm>
 #include <functional>
+#include "algorithm"
+#include <sstream>
 
 #include "message_handler.hpp"
+#include "dynamic_array.hpp"
 
 /**
  * @brief Common string helper and input validation utilities used across hospital system modules
@@ -45,12 +47,62 @@ inline std::string trim(const std::string &str) {
     return (start == std::string::npos) ? "" : str.substr(start, end - start + 1);
 }
 
+/**
+ * @brief Convert all characters in a string to uppercase
+ *
+ * @details
+ * This function uses std::transform and std::toupper to convert each character
+ * in the given string to its uppercase equivalent. It operates directly on the
+ * provided string and returns a new uppercase version
+ *
+ * @param s The input string to convert
+ * @return A new string with all characters converted to uppercase
+ *
+ * @note
+ * Non-alphabetic characters are not affected. Works with ASCII characters
+ *
+ * @example
+ * std::string name = "John Doe";
+ * std::string upper = toUpper(name); // "JOHN DOE"
+ */
 inline std::string toUpper(std::string s) {
     std::transform(s.begin(), s.end(), s.begin(),
                    [](unsigned char c){ return static_cast<char>(std::toupper(c)); }
                   );
     return s;
 }
+
+
+/**
+ * @brief Split a string into substrings using a delimiter and store them in a DynamicArray
+ *
+ * @details
+ * This function separates the input text based on the specified delimiter character
+ * Each extracted substring is trimmed of leading and trailing whitespace using the
+ * `trim()` helper function, then appended to the provided DynamicArray.
+ *
+ * @param text The input string to split
+ * @param delimeter The character used to separate tokens in the input string
+ * @param arr The DynamicArray to append each trimmed token into
+ * @return A DynamicArray containing all split and trimmed substrings
+ *
+ * @note
+ * - The provided DynamicArray is returned after all tokens are appended
+ * - Empty tokens (e.g., consecutive delimiters) are also added as empty strings
+ *
+ * @example
+ * DynamicArray arr;
+ * arr = split("apple, banana, cherry", ',', arr);
+ * // Result: ["apple", "banana", "cherry"]
+ */
+inline DynamicArray split(std::string text, char delimeter, DynamicArray arr) {
+    std::stringstream rawStream(text);
+    std::string word = "";
+    while(getline(rawStream, word, delimeter)) {
+        arr.appendArray(trim(word));
+    }
+    return arr;
+};
 
 /**
  * @brief Prompts the user for input and validates it using a provided validator function
