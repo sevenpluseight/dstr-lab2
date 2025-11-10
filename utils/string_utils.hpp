@@ -7,9 +7,8 @@
 
 #include "message_handler.hpp"
 
-#include <bits/stdc++.h>
 #include "dynamic_array.hpp"
-
+#include <sstream>
 /**
  * @brief Common string helper and input validation utilities used across hospital system modules
  *

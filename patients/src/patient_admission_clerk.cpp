@@ -18,7 +18,7 @@ void PatientAdmissionClerk::displayMenu() {
         std::cout << "1. Admit New Patient"                                             << std::endl;
         std::cout << "2. Admit Existing Patient"                                        << std::endl;
         std::cout << "3. View Patient Queue"                                            << std::endl;
-        std::cout << "4. View Patient"                                                  << std::endl;
+        std::cout << "4. View Patient Latest Condition"                                 << std::endl;
         std::cout << "5. Discharge Patient"                                             << std::endl;
         std::cout << "6. Exit"                                                          << std::endl;
         std::cout << "---------------------------------------------------------------"  << std::endl;
