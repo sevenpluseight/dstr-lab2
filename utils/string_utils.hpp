@@ -3,6 +3,7 @@
 
 #include <string>
 #include <cctype>
+#include <algorithm>
 #include <functional>
 
 #include "message_handler.hpp"
@@ -42,6 +43,13 @@ inline std::string trim(const std::string &str) {
     size_t start = str.find_first_not_of(" \t\r\n");
     size_t end   = str.find_last_not_of(" \t\r\n");
     return (start == std::string::npos) ? "" : str.substr(start, end - start + 1);
+}
+
+inline std::string toUpper(std::string s) {
+    std::transform(s.begin(), s.end(), s.begin(),
+                   [](unsigned char c){ return static_cast<char>(std::toupper(c)); }
+                  );
+    return s;
 }
 
 /**
