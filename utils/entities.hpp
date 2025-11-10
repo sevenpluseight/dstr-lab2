@@ -63,7 +63,17 @@ struct EmergencyCase {
     std::string ambulance_id;      
 };
 
-// Ambulance Dispatcher
+struct Ambulance {
+    std::string ambulance_id;       /// Unique ID for each ambulance (e.g., "AMB001")
+    std::string driver_name;        /// Name of the assigned driver
+    std::string driver_status;      /// Current status of the driver (Available, OnDuty, Unavailable)
+    std::string shift_start;        /// Shift start time (YYYY-MM-DD HH:MM)
+    std::string shift_end;          /// Shift end time (YYYY-MM-DD HH:MM)
+    int shift_duration;             /// Duration of shift in hours
+    std::string assigned_case_id;   /// Linked case ID from Emergency Department (if any)
+    std::string ambulance_status;   /// Status of ambulance (Available, On Duty, Under Maintenance)
+    std::string location;           /// Current location or dispatch base
+};
 
 
 
