@@ -15,6 +15,8 @@ class PatientAdmissionClerk {
         std::string name;
         Queue patientQueue;
         PatientArray allPatients;
+        std::string patientFilepath;
+        std::string queueFilePath;
     public:
         PatientAdmissionClerk();
         void displayMenu();
