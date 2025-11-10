@@ -24,10 +24,9 @@ int getValidatedInt(const std::string& prompt, int min, int max) {
     int choice = 0;
     std::string input;
     while (true) {
-        std::cout << prompt; // <-- FIX #1: Prints the prompt every time
+        std::cout << prompt;
         
         if (!std::getline(std::cin, input)) {
-            // --- FIX #2: Handle ^Z (EOF) ---
             if (std::cin.eof()) {
                 MessageHandler::error("\nEnd-of-File detected. Exiting program.");
                 exit(1); // Exit gracefully
@@ -38,7 +37,6 @@ int getValidatedInt(const std::string& prompt, int min, int max) {
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
             MessageHandler::warning("An input error occurred. Please try again.");
             continue;
-            // --- END FIX #2 ---
         }
 
         trim(input);
@@ -71,7 +69,7 @@ EmergencyDepartmentOfficer::EmergencyDepartmentOfficer() {
     // Load patient names FIRST
     manager.loadPatientData(patientDataFile);
     
-    // THEN load cases (which will now use the patient names)
+    // Load cases
     manager.loadFromCSV(dataFile);
 }
 
@@ -79,7 +77,7 @@ void EmergencyDepartmentOfficer::run() {
     displayMenu();
 }
 
-// Main menu (Unchanged)
+// Main menu
 void EmergencyDepartmentOfficer::displayMenu() {
     while (true) {
         std::cout << "\n--- Emergency Department Officer Menu ---\n";
@@ -105,7 +103,7 @@ void EmergencyDepartmentOfficer::displayMenu() {
     }
 }
 
-// View cases (Unchanged)
+// View cases
 void EmergencyDepartmentOfficer::viewCases() {
     while (true) {
         std::cout << "\n--- View Emergency Cases ---\n";
@@ -139,7 +137,7 @@ void EmergencyDepartmentOfficer::addCase() {
     ec.case_id = manager.generateNextCaseID();
     std::cout << "\nGenerated Case ID: " << ec.case_id << "\n";
     
-// --- Patient ID Input (Now with Full Validation) ---
+// Patient ID Input
     while (true) {
         std::cout << "Enter Patient ID (e.g., PAT-0001): ";
         std::getline(std::cin, ec.patient_id);
@@ -150,33 +148,31 @@ void EmergencyDepartmentOfficer::addCase() {
             continue; // Ask again
         }
 
-        // 1. New Validation: Check format (must start with "PAT-")
+        // Check format (must start with "PAT-")
         // rfind() returns 0 if the string starts with the prefix
         if (ec.patient_id.rfind("PAT-", 0) != 0) {
             MessageHandler::error("Invalid Format. Patient ID must start with 'PAT-'.");
-            continue; // Ask again
+            continue;
         }
 
-        // 2. New Validation: Check if ID exists in the patient list
+        // Check if ID exists in the patient list
         ec.patient_name = manager.getPatientName(ec.patient_id);
         
         if (ec.patient_name == "Unknown") {
             MessageHandler::error("Patient ID not found in database. Please try again.");
-            // We do *not* ask for the name. We force a valid ID.
         } else {
-            // Success! The ID is valid and we found the name.
             MessageHandler::info("Found Patient: " + ec.patient_name);
-            break; // Exit the loop and proceed
+            break;
         }
     }
 
-    // --- NEW: Emergency Type Selection Menu ---
-    std::cout << "Select Emergency Type:\n";
-    int typeCount = manager.printAllTypes(); // Prints the list
+    // Emergency Type Selection Menu
+    std::cout << "\nSelect Emergency Type:\n";
+    int typeCount = manager.printAllTypes();
     int otherOption = typeCount + 1;
     std::cout << otherOption << ". Other (Enter a new emergency type)\n";
 
-    // Create the prompt string to pass to our new function
+    // Create the prompt string to pass to new function
     std::string typePrompt = "Select an option (1-" + std::to_string(otherOption) + "): ";
 
     // Call the new function with the prompt
@@ -209,7 +205,7 @@ void EmergencyDepartmentOfficer::addCase() {
                 if (manager.typeExists(toUpper(ec.emergency_type))) {
                     MessageHandler::info("Note: This emergency type already exists and will be used.");
                 }
-                break; // Good input
+                break;
             }
         }
     } else {
@@ -218,10 +214,10 @@ void EmergencyDepartmentOfficer::addCase() {
         MessageHandler::info("Selected type: " + ec.emergency_type);
     }
     
-    // --- Priority Level Input (Unchanged) ---
+    // Priority Level Input
     std::string prio;
     while (true) {
-        std::cout << "Enter Priority Level (1-5): ";
+        std::cout << "\nEnter Priority Level (1-5): ";
         std::getline(std::cin, prio);
         trim(prio);
         if (prio.size() == 1 && prio[0] >= '1' && prio[0] <= '5') {
@@ -230,8 +226,7 @@ void EmergencyDepartmentOfficer::addCase() {
         MessageHandler::warning("Priority must be a single number from 1 to 5.");
     }
     ec.priority_level = prio[0] - '0';
-    
-    // --- Final steps (Unchanged) ---
+
     ec.status = "Pending";
     ec.timestamp_logged = getCurrentTimestamp();
     ec.timestamp_processed = "";
@@ -244,16 +239,16 @@ void EmergencyDepartmentOfficer::addCase() {
 }
 
 void EmergencyDepartmentOfficer::processHighestPriorityCase() {
-    // 1. "Peek" at the next PENDING case
+    // Peek at the next PENDING case
     EmergencyCase ec = manager.getHighestPriorityPendingCase();
 
-    // Check if the case ID is empty, which means no pending cases were found
+    // Check if the case ID is empty which means no pending cases were found
     if (ec.case_id.empty()) {
         MessageHandler::warning("No pending emergency cases to process.");
         return;
     }
 
-    // 2. Show the user the details
+    //  Show the user the details
     std::cout << "\n--- Highest Priority Pending Case ---\n";
     std::cout << "  Case ID:    " << ec.case_id << "\n";
     std::cout << "  Patient:    " << ec.patient_name << " (ID: " << ec.patient_id << ")\n";
@@ -262,7 +257,7 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
     std::cout << "  Logged:     " << ec.timestamp_logged << "\n";
     std::cout << "\n";
     
-    // 3. Get confirmation
+    // Get confirmation
     std::string confirm;
     while (true) {
         std::cout << "Move this case to 'Processing'? (y/n): ";
@@ -278,17 +273,13 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
         MessageHandler::warning("Please enter 'y' or 'n'.");
     }
 
-    // 4. Act on confirmation
+    // Act on confirmation
     if (confirm == "Y") {
-        // Now we actually POP the case from the list
         EmergencyCase processedCase = manager.popHighestPriorityPendingCase();
 
-        // --- THIS IS THE KEY ---
-        // Change status to "Processing", NOT "Completed"
         processedCase.status = "Processing"; 
         processedCase.timestamp_processed = getCurrentTimestamp();
 
-        // Let's ask, as you suggested
         std::string assignAmbulance;
         while (true) {
             std::cout << "Assign an ambulance? (y/n): ";
@@ -304,19 +295,16 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
             MessageHandler::warning("Please enter 'y' or 'n'.");
         }
 
-        std::cout << "\n"; // Add the blank line you requested
+        std::cout << "\n";
 
         if (assignAmbulance == "Y") {
             processedCase.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
-            // Print both messages together
             MessageHandler::info("Ambulance " + processedCase.ambulance_id + " assigned.");
             MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
         } else {
-            // Print only the processing message
             MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
         }
 
-        // Re-insert the updated, "Processing" case into the list
         manager.updateCase(processedCase);
         manager.saveToCSV(dataFile);
     } else {
