@@ -1,5 +1,5 @@
 Supply_Batch_ID,Name,Supply_Type,Quantity,Status,Supplier_Name,Timestamp_Added,Expiry_Date
-PPE-FAC-9545,Face Shield,PPE,292,Expired,Deepspace Life Sciences,2025-05-05 12:34:56,2025-03-01
+PPE-FAC-9545,Face Shield,PPE,228,Expired,Deepspace Life Sciences,2025-05-05 12:34:56,2025-03-01
 PPE-FAC-1113,Face Shield,PPE,665,Expired,Breth Healthcare,2025-04-15 01:23:45,2024-12-09
 PPE-FAC-7958,Face Shield,PPE,227,Available,Deepspace Life Sciences,2025-06-08 08:09:10,2026-03-15
 PPE-SHO-6791,Shoe Covers,PPE,224,Available,Twinkle Medicine Supply,2025-07-28 11:12:13,2025-12-06
@@ -10,117 +10,117 @@ PPE-GLO-6776,Gloves,PPE,527,Expired,Twinkle Medicine Supply,2025-06-15 02:03:04,
 MED-IBU-5801,Ibuprofen,MED,235,Available,Breth Healthcare,2025-02-25 05:06:07,2026-03-08
 MED-MET-4853,Metformin,MED,391,Available,Hex Medical Supplies,2025-05-19 08:09:10,2026-05-25
 MED-CIP-4269,Ciprofloxacin,MED,318,Expired,Spigan HealthTech,2025-09-25 11:12:13,2025-09-06
-PPE-SHO-6767,Shoe Covers,PPE,131,Expired,Deepspace Life Sciences,2025-04-07 14:15:16,2025-02-17
+PPE-SHO-6767,Shoe Covers,PPE,109,Expired,Deepspace Life Sciences,2025-04-07 14:15:16,2025-02-17
 MED-CIP-1430,Ciprofloxacin,MED,306,Expired,Hex Medical Supplies,2025-10-02 17:18:19,2025-03-30
-EQP-ECG-8426,ECG Machine,EQP,632,Available,Breth Healthcare,2025-05-13 20:21:22,2026-08-04
-PPE-FAC-7393,Face Shield,PPE,134,Expired,Breth Healthcare,2025-09-13 23:24:25,2025-04-11
+EQP-ECG-8426,ECG Machine,EQP,631,Available,Breth Healthcare,2025-05-13 20:21:22,2026-08-04
+PPE-FAC-7393,Face Shield,PPE,118,Expired,Breth Healthcare,2025-09-13 23:24:25,2025-04-11
 MED-MET-8677,Metformin,MED,215,Available,Breth Healthcare,2025-06-28 02:03:04,2025-12-13
-PPE-GOW-8850,Gown,PPE,252,Available,Breth Healthcare,2024-11-17 05:06:07,2025-12-08
+PPE-GOW-8850,Gown,PPE,217,Available,Breth Healthcare,2024-11-17 05:06:07,2025-12-08
 EQP-ECG-8848,ECG Machine,EQP,206,Available,Hex Medical Supplies,2025-08-24 08:09:10,2026-04-06
 MED-MET-4076,Metformin,MED,276,Expired,Spigan HealthTech,2025-10-23 11:12:13,2025-08-14
 MED-AMO-4394,Amoxicillin,MED,246,Available,Twinkle Medicine Supply,2025-06-15 14:15:16,2026-05-26
 EQP-VEN-4314,Ventilator,EQP,692,Available,Deepspace Life Sciences,2025-09-22 17:18:19,2026-05-26
 EQP-ULT-5818,Ultrasound Machine,EQP,349,Available,Hex Medical Supplies,2025-04-07 20:21:22,2026-04-12
 MED-CIP-4341,Ciprofloxacin,MED,331,Available,Spigan HealthTech,2025-02-03 23:24:25,2025-12-21
-MED-CIP-1218,Ciprofloxacin,MED,104,Expired,Hex Medical Supplies,2025-06-27 02:03:04,2025-10-22
-EQP-INF-2154,Infusion Pump,EQP,490,Available,Breth Healthcare,2025-01-09 05:06:07,2026-02-16
+MED-CIP-1218,Ciprofloxacin,MED,63,Expired,Hex Medical Supplies,2025-06-27 02:03:04,2025-10-22
+EQP-INF-2154,Infusion Pump,EQP,489,Available,Breth Healthcare,2025-01-09 05:06:07,2026-02-16
 PPE-FAC-1570,Face Mask,PPE,371,Available,Spigan HealthTech,2025-07-04 08:09:10,2026-09-15
-MED-AMO-4813,Amoxicillin,MED,329,Available,Hex Medical Supplies,2025-04-11 11:12:13,2026-04-12
+MED-AMO-4813,Amoxicillin,MED,320,Available,Hex Medical Supplies,2025-04-11 11:12:13,2026-04-12
 MED-IBU-9670,Ibuprofen,MED,553,Available,Twinkle Medicine Supply,2025-03-19 14:15:16,2026-02-05
-EQP-VEN-2747,Ventilator,EQP,331,Available,Spigan HealthTech,2025-07-11 20:21:22,2025-12-27
-MED-IBU-4854,Ibuprofen,MED,598,Available,Spigan HealthTech,2025-04-14 23:24:25,2026-04-03
+EQP-VEN-2747,Ventilator,EQP,330,Available,Spigan HealthTech,2025-07-11 20:21:22,2025-12-27
+MED-IBU-4854,Ibuprofen,MED,592,Available,Spigan HealthTech,2025-04-14 23:24:25,2026-04-03
 EQP-INF-1752,Infusion Pump,EQP,300,Expired,Spigan HealthTech,2025-09-20 05:06:07,2024-12-04
-PPE-SHO-8850,Shoe Covers,PPE,191,Available,Spigan HealthTech,2025-06-24 08:09:10,2026-09-07
+PPE-SHO-8850,Shoe Covers,PPE,177,Available,Spigan HealthTech,2025-06-24 08:09:10,2026-09-07
 PPE-SHO-4375,Shoe Covers,PPE,174,Available,Hex Medical Supplies,2025-08-09 14:15:16,2026-01-12
 MED-IBU-9670,Ibuprofen,MED,160,Available,Twinkle Medicine Supply,2025-06-14 17:18:19,2026-02-05
 PPE-GLO-6058,Gloves,PPE,462,Available,Spigan HealthTech,2025-05-04 20:21:22,2026-08-21
 MED-IBU-5357,Ibuprofen,MED,174,Available,Twinkle Medicine Supply,2025-05-25 23:24:25,2026-01-16
-EQP-DEF-4433,Defibrillator,EQP,274,Available,Breth Healthcare,2025-08-05 02:03:04,2026-01-06
-EQP-DEF-6708,Defibrillator,EQP,213,Available,Hex Medical Supplies,2025-02-14 08:09:10,2026-02-15
+EQP-DEF-4433,Defibrillator,EQP,273,Available,Breth Healthcare,2025-08-05 02:03:04,2026-01-06
+EQP-DEF-6708,Defibrillator,EQP,211,Available,Hex Medical Supplies,2025-02-14 08:09:10,2026-02-15
 MED-MET-7211,Metformin,MED,212,Available,Breth Healthcare,2025-10-13 11:12:13,2026-04-25
 EQP-ECG-5624,ECG Machine,EQP,244,Expired,Spigan HealthTech,2025-09-23 14:15:16,2024-11-24
-PPE-GLO-2386,Gloves,PPE,658,Available,Twinkle Medicine Supply,2024-11-06 17:18:19,2026-03-09
+PPE-GLO-2386,Gloves,PPE,630,Available,Twinkle Medicine Supply,2024-11-06 17:18:19,2026-03-09
 PPE-GLO-2519,Gloves,PPE,488,Available,Twinkle Medicine Supply,2025-05-10 20:21:22,2026-02-09
-MED-CIP-1218,Ciprofloxacin,MED,170,Expired,Hex Medical Supplies,2025-01-20 23:24:25,2025-07-13
+MED-CIP-1218,Ciprofloxacin,MED,129,Expired,Hex Medical Supplies,2025-01-20 23:24:25,2025-07-13
 PPE-SHO-8686,Shoe Covers,PPE,655,Available,Spigan HealthTech,2025-09-23 02:03:04,2026-08-27
-MED-PAR-6120,Paracetamol,MED,443,Available,Twinkle Medicine Supply,2025-05-28 05:06:07,2025-12-19
-PPE-GLO-2386,Gloves,PPE,236,Available,Twinkle Medicine Supply,2025-04-21 17:18:19,2026-03-09
-MED-CIP-9793,Ciprofloxacin,MED,316,Available,Deepspace Life Sciences,2025-01-27 20:21:22,2026-05-19
+MED-PAR-6120,Paracetamol,MED,423,Available,Twinkle Medicine Supply,2025-05-28 05:06:07,2025-12-19
+PPE-GLO-2386,Gloves,PPE,208,Available,Twinkle Medicine Supply,2025-04-21 17:18:19,2026-03-09
+MED-CIP-9793,Ciprofloxacin,MED,302,Available,Deepspace Life Sciences,2025-01-27 20:21:22,2026-05-19
 EQP-INF-5141,Infusion Pump,EQP,354,Available,Breth Healthcare,2025-07-10 23:24:25,2026-10-06
 MED-PAR-9514,Paracetamol,MED,654,Expired,Twinkle Medicine Supply,2025-10-12 02:03:04,2025-05-02
-MED-MET-7694,Metformin,MED,363,Expired,Spigan HealthTech,2025-03-05 05:06:07,2025-08-09
-PPE-FAC-7856,Face Shield,PPE,191,Available,Hex Medical Supplies,2025-04-17 08:09:10,2025-12-25
+MED-MET-7694,Metformin,MED,343,Expired,Spigan HealthTech,2025-03-05 05:06:07,2025-08-09
+PPE-FAC-7856,Face Shield,PPE,177,Available,Hex Medical Supplies,2025-04-17 08:09:10,2025-12-25
 EQP-INF-8812,Infusion Pump,EQP,337,Available,Breth Healthcare,2025-06-25 11:12:13,2026-10-07
-MED-IBU-8543,Ibuprofen,MED,158,Available,Breth Healthcare,2025-08-23 14:15:16,2026-01-28
-MED-IBU-1845,Ibuprofen,MED,376,Available,Breth Healthcare,2025-10-27 17:18:19,2026-07-03
+MED-IBU-8543,Ibuprofen,MED,133,Available,Breth Healthcare,2025-08-23 14:15:16,2026-01-28
+MED-IBU-1845,Ibuprofen,MED,362,Available,Breth Healthcare,2025-10-27 17:18:19,2026-07-03
 MED-IBU-8816,Ibuprofen,MED,330,Available,Hex Medical Supplies,2025-01-15 20:21:22,2026-02-11
 EQP-ULT-9799,Ultrasound Machine,EQP,499,Available,Twinkle Medicine Supply,2025-01-12 23:24:25,2025-12-17
-PPE-GOW-9499,Gown,PPE,284,Available,Twinkle Medicine Supply,2024-12-09 02:03:04,2026-08-29
+PPE-GOW-9499,Gown,PPE,255,Available,Twinkle Medicine Supply,2024-12-09 02:03:04,2026-08-29
 PPE-FAC-6799,Face Mask,PPE,278,Available,Breth Healthcare,2024-11-30 05:06:07,2026-02-08
 PPE-GLO-6778,Gloves,PPE,175,Available,Twinkle Medicine Supply,2025-02-11 08:09:10,2026-06-14
 PPE-FAC-7837,Face Shield,PPE,159,Expired,Breth Healthcare,2025-08-29 11:12:13,2025-06-18
 MED-IBU-1749,Ibuprofen,MED,618,Expired,Twinkle Medicine Supply,2024-12-30 14:15:16,2025-10-04
-MED-AMO-8329,Amoxicillin,MED,359,Expired,Hex Medical Supplies,2025-03-10 23:24:25,2025-06-16
-MED-PAR-5033,Paracetamol,MED,695,Available,Hex Medical Supplies,2025-10-07 02:03:04,2026-10-29
-MED-CIP-6367,Ciprofloxacin,MED,348,Available,Hex Medical Supplies,2025-03-28 05:06:07,2026-01-21
+MED-AMO-8329,Amoxicillin,MED,344,Expired,Hex Medical Supplies,2025-03-10 23:24:25,2025-06-16
+MED-PAR-5033,Paracetamol,MED,677,Available,Hex Medical Supplies,2025-10-07 02:03:04,2026-10-29
+MED-CIP-6367,Ciprofloxacin,MED,342,Available,Hex Medical Supplies,2025-03-28 05:06:07,2026-01-21
 MED-PAR-9907,Paracetamol,MED,406,Available,Deepspace Life Sciences,2025-06-08 08:09:10,2026-04-20
-MED-AMO-8329,Amoxicillin,MED,270,Available,Hex Medical Supplies,2024-12-29 11:12:13,2026-03-05
+MED-AMO-8329,Amoxicillin,MED,255,Available,Hex Medical Supplies,2024-12-29 11:12:13,2026-03-05
 MED-PAR-9907,Paracetamol,MED,227,Expired,Deepspace Life Sciences,2025-08-26 14:15:16,2025-08-06
 EQP-INF-7771,Infusion Pump,EQP,348,Available,Hex Medical Supplies,2025-08-14 17:18:19,2026-08-27
-PPE-FAC-4162,Face Mask,PPE,510,Expired,Twinkle Medicine Supply,2024-12-09 23:24:25,2025-01-06
+PPE-FAC-4162,Face Mask,PPE,469,Expired,Twinkle Medicine Supply,2024-12-09 23:24:25,2025-01-06
 EQP-ULT-3407,Ultrasound Machine,EQP,12,Expired,Deepspace Life Sciences,2025-05-27 02:03:04,2025-02-19
 PPE-FAC-1437,Face Mask,PPE,169,Available,Twinkle Medicine Supply,2025-05-13 05:06:07,2026-05-05
-EQP-VEN-9940,Ventilator,EQP,214,Available,Breth Healthcare,2025-04-09 08:09:10,2026-02-18
+EQP-VEN-9940,Ventilator,EQP,213,Available,Breth Healthcare,2025-04-09 08:09:10,2026-02-18
 MED-PAR-8882,Paracetamol,MED,345,Available,Hex Medical Supplies,2025-03-19 11:12:13,2025-12-11
 EQP-VEN-1111,Ventilator,EQP,366,Available,Hex Medical Supplies,2025-05-01 14:15:16,2026-01-20
 PPE-FAC-4318,Face Shield,PPE,607,Available,Twinkle Medicine Supply,2025-05-22 17:18:19,2025-12-04
 PPE-GLO-1176,Gloves,PPE,258,Available,Breth Healthcare,2025-05-12 20:21:22,2026-05-08
 PPE-SHO-1319,Shoe Covers,PPE,454,Available,Breth Healthcare,2025-01-08 23:24:25,2026-09-13
 EQP-INF-1462,Infusion Pump,EQP,543,Available,Deepspace Life Sciences,2025-03-31 05:06:07,2026-06-26
-MED-IBU-7085,Ibuprofen,MED,182,Available,Spigan HealthTech,2025-02-03 08:09:10,2026-09-29
+MED-IBU-7085,Ibuprofen,MED,157,Available,Spigan HealthTech,2025-02-03 08:09:10,2026-09-29
 PPE-FAC-3957,Face Shield,PPE,521,Available,Spigan HealthTech,2025-03-02 14:15:16,2026-10-05
 EQP-ECG-4445,ECG Machine,EQP,89,Expired,Breth Healthcare,2024-11-29 17:18:19,2025-02-20
 EQP-VEN-7239,Ventilator,EQP,659,Expired,Deepspace Life Sciences,2024-11-23 20:21:22,2025-05-12
-MED-PAR-7507,Paracetamol,MED,331,Available,Spigan HealthTech,2025-04-24 23:24:25,2026-02-23
-PPE-FAC-7233,Face Mask,PPE,495,Expired,Hex Medical Supplies,2025-07-06 05:06:07,2025-09-16
+MED-PAR-7507,Paracetamol,MED,285,Available,Spigan HealthTech,2025-04-24 23:24:25,2026-02-23
+PPE-FAC-7233,Face Mask,PPE,484,Expired,Hex Medical Supplies,2025-07-06 05:06:07,2025-09-16
 EQP-DEF-4866,Defibrillator,EQP,733,Available,Hex Medical Supplies,2025-06-21 08:09:10,2026-01-10
-PPE-GOW-1142,Gown,PPE,91,Expired,Spigan HealthTech,2025-03-07 11:12:13,2025-09-11
+PPE-GOW-1142,Gown,PPE,26,Expired,Spigan HealthTech,2025-03-07 11:12:13,2025-09-11
 MED-IBU-1691,Ibuprofen,MED,674,Available,Hex Medical Supplies,2025-08-11 14:15:16,2025-11-30
-EQP-DEF-4433,Defibrillator,EQP,148,Available,Breth Healthcare,2024-11-08 17:18:19,2026-01-06
-EQP-ECG-7621,ECG Machine,EQP,285,Available,Twinkle Medicine Supply,2025-04-08 20:21:22,2026-09-16
-PPE-SHO-6767,Shoe Covers,PPE,224,Available,Deepspace Life Sciences,2025-05-07 23:24:25,2026-07-26
-MED-CIP-8062,Ciprofloxacin,MED,534,Available,Breth Healthcare,2025-09-21 02:03:04,2026-03-08
+EQP-DEF-4433,Defibrillator,EQP,147,Available,Breth Healthcare,2024-11-08 17:18:19,2026-01-06
+EQP-ECG-7621,ECG Machine,EQP,284,Available,Twinkle Medicine Supply,2025-04-08 20:21:22,2026-09-16
+PPE-SHO-6767,Shoe Covers,PPE,202,Available,Deepspace Life Sciences,2025-05-07 23:24:25,2026-07-26
+MED-CIP-8062,Ciprofloxacin,MED,521,Available,Breth Healthcare,2025-09-21 02:03:04,2026-03-08
 MED-MET-5659,Metformin,MED,292,Available,Twinkle Medicine Supply,2025-07-11 05:06:07,2026-01-11
 MED-PAR-2032,Paracetamol,MED,685,Available,Hex Medical Supplies,2025-01-08 08:09:10,2026-02-11
 PPE-GOW-4412,Gown,PPE,171,Available,Hex Medical Supplies,2025-01-31 11:12:13,2025-12-03
-EQP-VEN-8902,Ventilator,EQP,58,Expired,Twinkle Medicine Supply,2025-03-21 14:15:16,2025-05-29
-PPE-GOW-5289,Gown,PPE,608,Available,Deepspace Life Sciences,2024-11-07 17:18:19,2026-09-11
+EQP-VEN-8902,Ventilator,EQP,56,Expired,Twinkle Medicine Supply,2025-03-21 14:15:16,2025-05-29
+PPE-GOW-5289,Gown,PPE,591,Available,Deepspace Life Sciences,2024-11-07 17:18:19,2026-09-11
 EQP-ECG-4110,ECG Machine,EQP,261,Available,Deepspace Life Sciences,2025-08-31 20:21:22,2025-12-05
-MED-CIP-1218,Ciprofloxacin,MED,66,Expired,Hex Medical Supplies,2025-09-04 23:24:25,2025-08-05
-MED-PAR-7507,Paracetamol,MED,48,Expired,Spigan HealthTech,2025-05-22 02:03:04,2025-08-19
-EQP-ULT-9912,Ultrasound Machine,EQP,370,Available,Deepspace Life Sciences,2025-05-07 05:06:07,2026-03-04
+MED-CIP-1218,Ciprofloxacin,MED,25,Expired,Hex Medical Supplies,2025-09-04 23:24:25,2025-08-05
+MED-PAR-7507,Paracetamol,MED,2,Expired,Spigan HealthTech,2025-05-22 02:03:04,2025-08-19
+EQP-ULT-9912,Ultrasound Machine,EQP,369,Available,Deepspace Life Sciences,2025-05-07 05:06:07,2026-03-04
 EQP-INF-9980,Infusion Pump,EQP,514,Available,Twinkle Medicine Supply,2025-01-28 08:09:10,2026-07-19
 MED-MET-8606,Metformin,MED,559,Expired,Spigan HealthTech,2025-07-18 11:12:13,2025-06-14
-EQP-INF-5268,Infusion Pump,EQP,329,Available,Hex Medical Supplies,2025-03-08 17:18:19,2026-07-07
+EQP-INF-5268,Infusion Pump,EQP,327,Available,Hex Medical Supplies,2025-03-08 17:18:19,2026-07-07
 PPE-SHO-5215,Shoe Covers,PPE,585,Available,Twinkle Medicine Supply,2024-11-28 20:21:22,2026-09-20
-MED-MET-6947,Metformin,MED,238,Available,Twinkle Medicine Supply,2024-12-28 23:24:25,2026-04-27
+MED-MET-6947,Metformin,MED,228,Available,Twinkle Medicine Supply,2024-12-28 23:24:25,2026-04-27
 EQP-DEF-4023,Defibrillator,EQP,186,Expired,Breth Healthcare,2025-05-11 02:03:04,2025-01-18
 MED-AMO-9200,Amoxicillin,MED,310,Available,Twinkle Medicine Supply,2025-05-21 05:06:07,2026-05-15
 EQP-ECG-5624,ECG Machine,EQP,247,Expired,Spigan HealthTech,2025-08-01 08:09:10,2025-01-21
 PPE-SHO-3462,Shoe Covers,PPE,31,Expired,Deepspace Life Sciences,2025-03-04 11:12:13,2025-09-13
-EQP-ECG-7621,ECG Machine,EQP,426,Available,Twinkle Medicine Supply,2025-01-05 14:15:16,2026-09-16
-PPE-FAC-7393,Face Shield,PPE,347,Expired,Breth Healthcare,2024-11-20 17:18:19,2025-10-10
-MED-AMO-8329,Amoxicillin,MED,209,Expired,Hex Medical Supplies,2025-05-24 02:03:04,2025-10-24
-MED-AMO-8329,Amoxicillin,MED,355,Expired,Hex Medical Supplies,2025-07-15 05:06:07,2025-08-02
-EQP-VEN-6117,Ventilator,EQP,255,Available,Breth Healthcare,2025-09-25 08:09:10,2026-01-01
-EQP-DEF-6708,Defibrillator,EQP,372,Available,Hex Medical Supplies,2025-09-26 14:15:16,2026-02-15
-PPE-SHO-8350,Shoe Covers,PPE,472,Available,Deepspace Life Sciences,2025-01-28 17:18:19,2026-06-09
+EQP-ECG-7621,ECG Machine,EQP,425,Available,Twinkle Medicine Supply,2025-01-05 14:15:16,2026-09-16
+PPE-FAC-7393,Face Shield,PPE,331,Expired,Breth Healthcare,2024-11-20 17:18:19,2025-10-10
+MED-AMO-8329,Amoxicillin,MED,194,Expired,Hex Medical Supplies,2025-05-24 02:03:04,2025-10-24
+MED-AMO-8329,Amoxicillin,MED,340,Expired,Hex Medical Supplies,2025-07-15 05:06:07,2025-08-02
+EQP-VEN-6117,Ventilator,EQP,254,Available,Breth Healthcare,2025-09-25 08:09:10,2026-01-01
+EQP-DEF-6708,Defibrillator,EQP,370,Available,Hex Medical Supplies,2025-09-26 14:15:16,2026-02-15
+PPE-SHO-8350,Shoe Covers,PPE,458,Available,Deepspace Life Sciences,2025-01-28 17:18:19,2026-06-09
 PPE-SHO-8686,Shoe Covers,PPE,303,Available,Spigan HealthTech,2024-11-16 20:21:22,2026-08-27
 PPE-GLO-9154,Gloves,PPE,659,Available,Deepspace Life Sciences,2025-03-29 02:03:04,2026-05-25
 EQP-DEF-3670,Defibrillator,EQP,228,Available,Breth Healthcare,2025-01-19 05:06:07,2026-01-02
-PPE-GOW-6729,Gown,PPE,332,Available,Spigan HealthTech,2025-02-11 08:09:10,2026-06-29
-PPE-SHO-8850,Shoe Covers,PPE,228,Available,Spigan HealthTech,2024-12-10 11:12:13,2026-09-07
-EQP-ECG-7168,ECG Machine,EQP,538,Available,Hex Medical Supplies,2025-06-15 14:15:16,2025-12-28
+PPE-GOW-6729,Gown,PPE,317,Available,Spigan HealthTech,2025-02-11 08:09:10,2026-06-29
+PPE-SHO-8850,Shoe Covers,PPE,214,Available,Spigan HealthTech,2024-12-10 11:12:13,2026-09-07
+EQP-ECG-7168,ECG Machine,EQP,537,Available,Hex Medical Supplies,2025-06-15 14:15:16,2025-12-28
 MED-PAR-9514,Paracetamol,MED,393,Expired,Twinkle Medicine Supply,2025-03-24 17:18:19,2025-01-04
 MED-AMO-6938,Amoxicillin,MED,536,Available,Hex Medical Supplies,2025-05-07 20:21:22,2026-10-29
 PPE-SHO-3462,Shoe Covers,PPE,269,Available,Deepspace Life Sciences,2025-03-11 23:24:25,2026-01-02
@@ -133,7 +133,7 @@ PPE-GOW-6929,Gown,PPE,192,Available,Hex Medical Supplies,2025-10-28 05:06:07,202
 MED-AMO-7644,Amoxicillin,MED,417,Available,Deepspace Life Sciences,2025-03-14 08:09:10,2026-04-12
 MED-IBU-4897,Ibuprofen,MED,209,Available,Spigan HealthTech,2025-06-27 11:12:13,2026-08-16
 PPE-GOW-2073,Gown,PPE,189,Available,Breth Healthcare,2025-08-12 14:15:16,2026-10-10
-PPE-SHO-6767,Shoe Covers,PPE,288,Available,Deepspace Life Sciences,2025-03-31 17:18:19,2026-07-26
+PPE-SHO-6767,Shoe Covers,PPE,266,Available,Deepspace Life Sciences,2025-03-31 17:18:19,2026-07-26
 PPE-FAC-2533,Face Shield,PPE,182,Available,Deepspace Life Sciences,2025-03-04 23:24:25,2026-05-31
 MED-PAR-5685,Paracetamol,MED,246,Available,Hex Medical Supplies,2025-03-27 02:03:04,2025-12-08
 MED-PAR-9907,Paracetamol,MED,405,Available,Deepspace Life Sciences,2025-06-04 05:06:07,2026-04-20
@@ -141,29 +141,29 @@ PPE-SHO-5627,Shoe Covers,PPE,263,Available,Twinkle Medicine Supply,2025-10-18 08
 MED-MET-4076,Metformin,MED,164,Expired,Spigan HealthTech,2025-08-06 11:12:13,2025-08-04
 EQP-DEF-4023,Defibrillator,EQP,434,Available,Breth Healthcare,2025-04-09 14:15:16,2026-10-20
 EQP-ECG-8781,ECG Machine,EQP,559,Available,Breth Healthcare,2024-12-24 17:18:19,2026-08-03
-EQP-INF-2154,Infusion Pump,EQP,185,Available,Breth Healthcare,2025-01-23 20:21:22,2026-02-16
+EQP-INF-2154,Infusion Pump,EQP,184,Available,Breth Healthcare,2025-01-23 20:21:22,2026-02-16
 EQP-DEF-6396,Defibrillator,EQP,308,Available,Hex Medical Supplies,2025-04-11 23:24:25,2026-02-15
 PPE-FAC-7837,Face Shield,PPE,324,Expired,Breth Healthcare,2025-10-22 02:03:04,2025-10-27
 MED-AMO-2357,Amoxicillin,MED,428,Available,Hex Medical Supplies,2025-04-02 08:09:10,2026-01-19
-PPE-FAC-4162,Face Mask,PPE,412,Expired,Twinkle Medicine Supply,2025-05-30 11:12:13,2025-10-29
-PPE-FAC-3949,Face Mask,PPE,402,Available,Hex Medical Supplies,2025-10-25 17:18:19,2026-10-25
+PPE-FAC-4162,Face Mask,PPE,371,Expired,Twinkle Medicine Supply,2025-05-30 11:12:13,2025-10-29
+PPE-FAC-3949,Face Mask,PPE,382,Available,Hex Medical Supplies,2025-10-25 17:18:19,2026-10-25
 MED-CIP-8334,Ciprofloxacin,MED,332,Available,Deepspace Life Sciences,2024-11-23 20:21:22,2026-01-03
-PPE-FAC-5886,Face Mask,PPE,265,Available,Spigan HealthTech,2025-03-20 23:24:25,2025-12-21
+PPE-FAC-5886,Face Mask,PPE,238,Available,Spigan HealthTech,2025-03-20 23:24:25,2025-12-21
 EQP-DEF-8854,Defibrillator,EQP,349,Available,Twinkle Medicine Supply,2025-07-15 02:03:04,2026-02-24
 EQP-INF-5553,Infusion Pump,EQP,273,Available,Breth Healthcare,2025-07-27 05:06:07,2026-02-21
 EQP-VEN-5405,Ventilator,EQP,393,Available,Spigan HealthTech,2024-11-04 08:09:10,2026-04-14
-PPE-GOW-2081,Gown,PPE,292,Available,Twinkle Medicine Supply,2025-10-01 11:12:13,2026-07-25
+PPE-GOW-2081,Gown,PPE,275,Available,Twinkle Medicine Supply,2025-10-01 11:12:13,2026-07-25
 EQP-ULT-4140,Ultrasound Machine,EQP,555,Available,Breth Healthcare,2025-06-20 14:15:16,2026-03-30
 MED-AMO-1696,Amoxicillin,MED,157,Available,Deepspace Life Sciences,2025-04-19 17:18:19,2026-08-12
 MED-PAR-7489,Paracetamol,MED,455,Available,Spigan HealthTech,2025-03-29 20:21:22,2026-02-04
 PPE-FAC-4409,Face Shield,PPE,162,Available,Hex Medical Supplies,2025-04-01 23:24:25,2026-03-24
-MED-AMO-2617,Amoxicillin,MED,424,Expired,Hex Medical Supplies,2025-01-10 02:03:04,2025-09-28
+MED-AMO-2617,Amoxicillin,MED,409,Expired,Hex Medical Supplies,2025-01-10 02:03:04,2025-09-28
 EQP-VEN-1567,Ventilator,EQP,330,Available,Deepspace Life Sciences,2025-01-28 05:06:07,2026-01-19
 PPE-FAC-9688,Face Mask,PPE,301,Available,Breth Healthcare,2025-07-17 08:09:10,2026-01-24
-EQP-ECG-4584,ECG Machine,EQP,274,Available,Spigan HealthTech,2025-08-16 11:12:13,2026-10-27
-PPE-SHO-6767,Shoe Covers,PPE,200,Available,Deepspace Life Sciences,2024-11-02 17:18:19,2026-07-26
+EQP-ECG-4584,ECG Machine,EQP,273,Available,Spigan HealthTech,2025-08-16 11:12:13,2026-10-27
+PPE-SHO-6767,Shoe Covers,PPE,178,Available,Deepspace Life Sciences,2024-11-02 17:18:19,2026-07-26
 EQP-VEN-7811,Ventilator,EQP,397,Expired,Twinkle Medicine Supply,2025-02-02 20:21:22,2025-03-27
-MED-IBU-3157,Ibuprofen,MED,355,Available,Deepspace Life Sciences,2025-06-23 02:03:04,2026-07-17
+MED-IBU-3157,Ibuprofen,MED,336,Available,Deepspace Life Sciences,2025-06-23 02:03:04,2026-07-17
 MED-MET-1751,Metformin,MED,194,Available,Spigan HealthTech,2025-10-11 05:06:07,2026-09-20
 EQP-INF-7771,Infusion Pump,EQP,585,Available,Hex Medical Supplies,2025-10-25 08:09:10,2026-08-27
 EQP-ULT-6412,Ultrasound Machine,EQP,544,Available,Twinkle Medicine Supply,2025-05-09 11:12:13,2026-03-25
@@ -174,33 +174,33 @@ MED-PAR-7997,Paracetamol,MED,179,Available,Twinkle Medicine Supply,2025-01-09 02
 PPE-GOW-7437,Gown,PPE,203,Expired,Deepspace Life Sciences,2024-12-05 05:06:07,2025-03-23
 EQP-ECG-8757,ECG Machine,EQP,74,Expired,Spigan HealthTech,2025-05-05 11:12:13,2025-10-20
 MED-AMO-3233,Amoxicillin,MED,186,Available,Breth Healthcare,2025-02-12 14:15:16,2026-01-25
-MED-AMO-1023,Amoxicillin,MED,411,Available,Deepspace Life Sciences,2025-07-18 17:18:19,2026-10-18
+MED-AMO-1023,Amoxicillin,MED,397,Available,Deepspace Life Sciences,2025-07-18 17:18:19,2026-10-18
 PPE-GOW-1943,Gown,PPE,373,Available,Breth Healthcare,2024-12-15 20:21:22,2025-12-05
-EQP-ULT-3333,Ultrasound Machine,EQP,241,Expired,Spigan HealthTech,2025-07-17 05:06:07,2024-11-16
-EQP-ECG-7621,ECG Machine,EQP,411,Expired,Twinkle Medicine Supply,2025-07-30 08:09:10,2025-08-30
+EQP-ULT-3333,Ultrasound Machine,EQP,240,Expired,Spigan HealthTech,2025-07-17 05:06:07,2024-11-16
+EQP-ECG-7621,ECG Machine,EQP,410,Expired,Twinkle Medicine Supply,2025-07-30 08:09:10,2025-08-30
 EQP-ULT-8751,Ultrasound Machine,EQP,713,Available,Twinkle Medicine Supply,2025-05-25 11:12:13,2026-10-18
 EQP-ECG-6752,ECG Machine,EQP,473,Available,Hex Medical Supplies,2025-08-30 17:18:19,2026-01-06
 MED-AMO-3907,Amoxicillin,MED,209,Available,Hex Medical Supplies,2025-01-12 20:21:22,2026-09-18
 EQP-INF-1415,Infusion Pump,EQP,334,Available,Twinkle Medicine Supply,2025-10-28 23:24:25,2026-01-13
-PPE-GOW-4201,Gown,PPE,390,Available,Breth Healthcare,2025-05-26 05:06:07,2026-04-30
-MED-CIP-1218,Ciprofloxacin,MED,77,Expired,Hex Medical Supplies,2025-10-06 14:15:16,2025-03-18
+PPE-GOW-4201,Gown,PPE,367,Available,Breth Healthcare,2025-05-26 05:06:07,2026-04-30
+MED-CIP-1218,Ciprofloxacin,MED,36,Expired,Hex Medical Supplies,2025-10-06 14:15:16,2025-03-18
 EQP-ECG-4110,ECG Machine,EQP,224,Available,Deepspace Life Sciences,2024-11-24 20:21:22,2025-12-05
 MED-IBU-5357,Ibuprofen,MED,198,Available,Twinkle Medicine Supply,2024-12-09 02:03:04,2026-01-16
 PPE-SHO-4426,Shoe Covers,PPE,454,Available,Twinkle Medicine Supply,2025-08-16 05:06:07,2025-12-16
 PPE-GOW-2073,Gown,PPE,228,Available,Breth Healthcare,2025-08-20 08:09:10,2026-10-10
-EQP-ECG-7621,ECG Machine,EQP,472,Available,Twinkle Medicine Supply,2024-12-20 11:12:13,2026-09-16
-PPE-GOW-2081,Gown,PPE,258,Available,Twinkle Medicine Supply,2025-03-03 14:15:16,2026-07-25
-MED-PAR-5033,Paracetamol,MED,398,Expired,Hex Medical Supplies,2025-03-21 17:18:19,2025-05-09
+EQP-ECG-7621,ECG Machine,EQP,471,Available,Twinkle Medicine Supply,2024-12-20 11:12:13,2026-09-16
+PPE-GOW-2081,Gown,PPE,241,Available,Twinkle Medicine Supply,2025-03-03 14:15:16,2026-07-25
+MED-PAR-5033,Paracetamol,MED,380,Expired,Hex Medical Supplies,2025-03-21 17:18:19,2025-05-09
 EQP-ULT-4140,Ultrasound Machine,EQP,279,Available,Breth Healthcare,2025-05-01 20:21:22,2026-03-30
 MED-MET-8606,Metformin,MED,337,Available,Spigan HealthTech,2025-07-03 23:24:25,2026-01-13
 MED-CIP-7119,Ciprofloxacin,MED,319,Available,Spigan HealthTech,2025-02-21 02:03:04,2026-03-16
-EQP-DEF-8781,Defibrillator,EQP,174,Available,Breth Healthcare,2025-05-25 05:06:07,2026-07-03
-PPE-GLO-2602,Gloves,PPE,356,Available,Hex Medical Supplies,2024-12-10 11:12:13,2026-09-13
+EQP-DEF-8781,Defibrillator,EQP,171,Available,Breth Healthcare,2025-05-25 05:06:07,2026-07-03
+PPE-GLO-2602,Gloves,PPE,297,Available,Hex Medical Supplies,2024-12-10 11:12:13,2026-09-13
 MED-CIP-2853,Ciprofloxacin,MED,111,Expired,Spigan HealthTech,2025-06-18 14:15:16,2025-07-03
-EQP-ECG-5572,ECG Machine,EQP,185,Available,Deepspace Life Sciences,2025-09-15 17:18:19,2026-08-01
+EQP-ECG-5572,ECG Machine,EQP,184,Available,Deepspace Life Sciences,2025-09-15 17:18:19,2026-08-01
 EQP-ECG-8848,ECG Machine,EQP,254,Available,Hex Medical Supplies,2025-05-17 23:24:25,2026-04-06
 PPE-GLO-6776,Gloves,PPE,13,Expired,Twinkle Medicine Supply,2025-06-16 02:03:04,2025-07-03
-EQP-INF-5268,Infusion Pump,EQP,119,Expired,Hex Medical Supplies,2025-04-30 05:06:07,2025-01-15
-EQP-ECG-7168,ECG Machine,EQP,129,Expired,Hex Medical Supplies,2025-04-09 08:09:10,2025-10-17
-MED-CIP-1218,Ciprofloxacin,MED,244,Available,Hex Medical Supplies,2025-04-14 11:12:13,2026-04-21
+EQP-INF-5268,Infusion Pump,EQP,117,Expired,Hex Medical Supplies,2025-04-30 05:06:07,2025-01-15
+EQP-ECG-7168,ECG Machine,EQP,128,Expired,Hex Medical Supplies,2025-04-09 08:09:10,2025-10-17
+MED-CIP-1218,Ciprofloxacin,MED,203,Available,Hex Medical Supplies,2025-04-14 11:12:13,2026-04-21
 PPE-GLO-1176,Gloves,PPE,677,Available,Breth Healthcare,2025-08-12 14:15:16,2026-05-08
