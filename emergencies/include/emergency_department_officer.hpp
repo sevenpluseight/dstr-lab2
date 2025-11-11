@@ -17,6 +17,8 @@ private:
     void addCase();
     void processHighestPriorityCase();
 
+    void completeProcessingCase();
+
 public:
     EmergencyDepartmentOfficer();
     void run();  // Entry point after login

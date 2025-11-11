@@ -70,6 +70,8 @@ EmergencyDepartmentOfficer::EmergencyDepartmentOfficer() {
 
     dataFile = getDataFilePath("emergency_cases.csv");
     patientDataFile = getDataFilePath("patient_data.csv"); 
+    std::string supplyDataFile = getDataFilePath("medical_supply.csv");
+    manager.loadSupplyData(supplyDataFile);
     
     // Load patient names FIRST
     manager.loadPatientData(patientDataFile);
@@ -89,7 +91,8 @@ void EmergencyDepartmentOfficer::displayMenu() {
         std::cout << "1. View emergency cases\n";
         std::cout << "2. Add new emergency case\n";
         std::cout << "3. Process highest priority case\n";
-        std::cout << "4. Exit\n";
+        std::cout << "4. Complete a 'Processing' case\n";
+        std::cout << "5. Exit\n";
         std::cout << "Select an option: ";
 
         std::string choice;
@@ -98,7 +101,8 @@ void EmergencyDepartmentOfficer::displayMenu() {
         if (choice == "1") viewCases();
         else if (choice == "2") addCase();
         else if (choice == "3") processHighestPriorityCase();
-        else if (choice == "4") {
+        else if (choice == "4") completeProcessingCase();
+        else if (choice == "5") {
             manager.saveToCSV(dataFile);
             MessageHandler::info("Exiting Emergency Department Officer menu...\n");
             break;
@@ -317,4 +321,159 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
         std::cout << "\n";
         MessageHandler::info("Action cancelled. Case remains pending.");
     }
+}
+
+// --- REPLACE YOUR OLD completeProcessingCase WITH THIS ---
+
+void EmergencyDepartmentOfficer::completeProcessingCase() {
+    std::cout << "\n--- Complete 'Processing' Case ---\n";
+    
+    std::string caseID;
+    EmergencyCase* ec = nullptr; // Pointer to the case we will modify
+
+    // 2. Get and validate the Case ID
+    while (true) {
+        std::cout << "\nEnter Case ID to complete (or 'list' to see all, 'back' to cancel): ";
+        
+        if (!std::getline(std::cin, caseID)) { // Handle EOF
+             MessageHandler::info("Action cancelled.");
+             return;
+        }
+        
+        trim(caseID);
+        caseID = toUpper(caseID); // Ensure Case ID is uppercase
+
+        if (caseID == "BACK") {
+            MessageHandler::info("Action cancelled.");
+            return;
+        }
+
+        if (caseID == "LIST") {
+            std::cout << "\n--- All 'Processing' Cases ---";
+            manager.printCasesByStatus("Processing");
+            continue; // Loop back and ask for the ID again
+        }
+
+        ec = manager.getCaseByID(caseID);
+
+        if (caseID.rfind("CASE-", 0) != 0 || caseID.length() <= 5) {
+            MessageHandler::warning("Invalid format. Case ID must be like 'CASE-XXXX'.");
+            continue; // Ask again
+        }
+
+        if (ec == nullptr) {
+            MessageHandler::error("Case ID not found. Please try again.");
+        } else if (ec->status != "Processing") {
+            MessageHandler::error("This case is not 'Processing'. It is '" + ec->status + "'.");
+        } else {
+            // Found a valid case to work on
+            MessageHandler::info("Selected Case: " + ec->case_id + " for Patient: " + ec->patient_name);
+            break; // Valid case found, exit loop
+        }
+    }
+
+    // 3. Loop for logging medical supplies (This part is unchanged)
+    std::cout << "\n--- Log Medical Supplies Used ---";
+    while (true) {
+        std::string confirm;
+        std::cout << "\nLog a medical supply item for this case? (y/n): ";
+        if (!std::getline(std::cin, confirm)) break; 
+        trim(confirm);
+        confirm = toUpper(confirm);
+
+        if (confirm == "N") {
+            break; 
+        }
+        if (confirm != "Y") {
+            MessageHandler::warning("Please enter 'y' or 'n'.");
+            continue;
+        }
+
+        // --- 3-STEP MENU BLOCK FOR SUPPLY SELECTION ---
+        std::cout << "\nSelect Supply Type:\n";
+        int typeCount = manager.printSupplyTypes();
+        if (typeCount == 0) { 
+            MessageHandler::error("No supply types loaded. Check medical_supply.csv");
+            return;
+        }
+        std::string typePrompt = "Select an option (1-" + std::to_string(typeCount) + "): ";
+        int typeChoice = getValidatedInt(typePrompt, 1, typeCount);
+        std::string selectedType = manager.getSupplyTypeByIndex(typeChoice);
+
+        // STEP 2: SELECT UNIQUE SUPPLY NAME
+        std::cout << "\nSelect Supply Name:\n";
+        int nameCount = manager.printUniqueSuppliesByType(selectedType);
+        if (nameCount == 0) {
+            MessageHandler::warning("No supplies found for type " + selectedType);
+            continue;
+        }
+        std::string namePrompt = "Select an option (1-" + std::to_string(nameCount) + "): ";
+        int nameChoice = getValidatedInt(namePrompt, 1, nameCount);
+        std::string selectedName = manager.getUniqueSupplyNameByTypeAndIndex(selectedType, nameChoice);
+
+        // STEP 3: SELECT BATCH ID
+        std::cout << "\nSelect Batch ID for " << selectedName << ":\n";
+        int batchCount = manager.printBatchesForSupply(selectedName);
+        if (batchCount == 0) { 
+            MessageHandler::error("No batches found for " + selectedName);
+            continue;
+        }
+        std::string batchPrompt = "Select an option (1-" + std::to_string(batchCount) + "): ";
+        int batchChoice = getValidatedInt(batchPrompt, 1, batchCount);
+        auto selectedSupply = manager.getBatchBySupplyNameAndIndex(selectedName, batchChoice);
+
+        if (selectedSupply == nullptr) {
+             MessageHandler::error("Error selecting batch. Please try again.");
+             continue;
+        }
+        
+        MessageHandler::info("Selected: " + selectedSupply->supplyName + " (ID: " + selectedSupply->supplyID + ")");
+        // --- END OF 3-STEP MENU BLOCK ---
+
+        // GET QUANTITY
+        int quantity = 0; // Declare quantity up here
+
+        if (selectedType == "EQP") {
+            // For Equipment, quantity is always 1
+            quantity = 1;
+            MessageHandler::info("Quantity set to 1 for Equipment.");
+        } else {
+            // For MED or PPE, ask for quantity
+            while (true) {
+                std::string qtyInput;
+                std::cout << "  Enter Quantity Used: ";
+                if (!std::getline(std::cin, qtyInput)) break; // Handle EOF
+                trim(qtyInput);
+                
+                try {
+                    std::size_t charsProcessed = 0;
+                    quantity = std::stoi(qtyInput, &charsProcessed);
+                    
+                    if (charsProcessed != qtyInput.length() || quantity <= 0) {
+                        MessageHandler::warning("Invalid quantity. Please enter a whole number greater than 0.");
+                    } else {
+                        // Here you could add more validation if you had the 'stock' level
+                        break; // Valid quantity
+                    }
+                } catch (...) {
+                    MessageHandler::warning("Invalid input. Please enter a whole number.");
+                }
+            }
+        }
+
+        if (quantity == 0) continue;
+
+        // LOG IT
+        manager.logSupplyUsage(*ec, selectedSupply->supplyID, selectedSupply->supplyName, quantity);
+        MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
+    }
+
+    // 4. Finalize the case
+    ec->status = "Completed";
+    ec->timestamp_processed = getCurrentTimestamp(); 
+
+    manager.saveToCSV(dataFile);
+    
+    std::cout << "\n";
+    MessageHandler::info("Case " + ec->case_id + " successfully moved to 'Completed'.");
 }

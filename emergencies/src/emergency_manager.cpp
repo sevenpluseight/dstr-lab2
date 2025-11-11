@@ -4,6 +4,7 @@
 #include <iomanip>
 
 #include "emergency_manager.hpp"
+#include "path_utils.hpp"
 
 namespace Color {
     const std::string RESET   = "\033[0m";
@@ -35,6 +36,30 @@ EmergencyManager::~EmergencyManager() {
         TypeNode* tTmp = tCurrent;
         tCurrent = tCurrent->next;
         delete tTmp;
+    }
+
+    // Clear the supply type list
+    SupplyTypeNode* stCurrent = supplyTypeHead;
+    while (stCurrent) {
+        SupplyTypeNode* stTmp = stCurrent;
+        stCurrent = stCurrent->next;
+        delete stTmp;
+    }
+
+    // Clear the unique supply name list
+    UniqueSupplyNode* usCurrent = uniqueSupplyHead;
+    while (usCurrent) {
+        UniqueSupplyNode* usTmp = usCurrent;
+        usCurrent = usCurrent->next;
+        delete usTmp;
+    }
+
+    // Clear the supply data list
+    SupplyNode* sCurrent = supplyHead;
+    while (sCurrent) {
+        SupplyNode* sTmp = sCurrent;
+        sCurrent = sCurrent->next;
+        delete sTmp;
     }
 }
 
@@ -357,6 +382,7 @@ void EmergencyManager::printCasesByStatus(const std::string& status) const {
 // Add case (insert by priority)
 void EmergencyManager::addCase(const EmergencyCase& ec) {
     Node* newNode = new Node{ec, nullptr};
+
     addType(ec.emergency_type);
 
     // Empty list or higher priority than head
@@ -458,4 +484,202 @@ std::string EmergencyManager::generateNextCaseID() {
     std::ostringstream oss;
     oss << "CASE-" << (maxID + 1);
     return oss.str();
+}
+
+// Adds a unique supply type (e.g., "PPE") to the list
+void EmergencyManager::addSupplyType(const std::string& type) {
+    if (type.empty()) return;
+    SupplyTypeNode* current = supplyTypeHead;
+    while (current) {
+        if (current->typeName == type) return; // Already exists
+        current = current->next;
+    }
+    SupplyTypeNode* newNode = new SupplyTypeNode;
+    newNode->typeName = type;
+    newNode->next = supplyTypeHead;
+    supplyTypeHead = newNode;
+}
+
+// Adds a unique supply NAME (e.g., "Paracetamol") to the list
+void EmergencyManager::addUniqueSupply(const std::string& name, const std::string& type) {
+    if (name.empty() || type.empty()) return;
+    UniqueSupplyNode* current = uniqueSupplyHead;
+    while (current) {
+        if (current->supplyName == name && current->supplyType == type) {
+            return; // Already exists
+        }
+        current = current->next;
+    }
+    UniqueSupplyNode* newNode = new UniqueSupplyNode;
+    newNode->supplyName = name;
+    newNode->supplyType = type;
+    newNode->next = uniqueSupplyHead;
+    uniqueSupplyHead = newNode;
+}
+
+// Adds a supply item (e.g., "Gloves") to the main supply list
+void EmergencyManager::addSupply(const std::string& id, const std::string& name, const std::string& type) {
+    SupplyNode* newNode = new SupplyNode;
+    newNode->supplyID = id;
+    newNode->supplyName = name;
+    newNode->supplyType = type;
+    newNode->next = supplyHead; // Add to front
+    supplyHead = newNode;
+}
+
+// Loads all supply data from medical_supply.csv
+void EmergencyManager::loadSupplyData(const std::string& supplyDataFile) {
+    std::ifstream file(supplyDataFile);
+    if (!file.is_open()) {
+        MessageHandler::warning("Medical supply CSV not found: " + supplyDataFile);
+        return;
+    }
+    std::string line;
+    std::getline(file, line); // Skip header
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string supplyID, supplyName, supplyType;
+        std::getline(ss, supplyID, ',');   // Col 1
+        std::getline(ss, supplyName, ','); // Col 2
+        std::getline(ss, supplyType, ','); // Col 3
+        if (!supplyID.empty() && !supplyName.empty() && !supplyType.empty()) {
+            trim(supplyID); 
+            trim(supplyName);
+            trim(supplyType);
+            addSupply(supplyID, supplyName, supplyType);
+            addSupplyType(supplyType);
+            addUniqueSupply(supplyName, supplyType); // NEW
+        }
+    }
+    file.close();
+}
+
+// Prints a numbered menu of unique supply types (e.g., "1. MED")
+int EmergencyManager::printSupplyTypes() const {
+    SupplyTypeNode* current = supplyTypeHead;
+    int i = 0;
+    while (current) {
+        i++;
+        std::string fullName; // Variable to hold the pretty name
+
+        if (current->typeName == "MED") {
+            fullName = "Medication (MED)";
+        } else if (current->typeName == "EQP") {
+            fullName = "Equipment (EQP)";
+        } else if (current->typeName == "PPE") {
+            fullName = "Personal Protective Equipment (PPE)";
+        } else {
+            fullName = current->typeName; // Fallback for any other types
+        }
+        std::cout << i << ". " << fullName << "\n";
+        current = current->next;
+    }
+    return i; // Return the count
+}
+
+// Gets the string name of a supply type by its menu index
+std::string EmergencyManager::getSupplyTypeByIndex(int index) const {
+    SupplyTypeNode* current = supplyTypeHead;
+    int i = 0;
+    while (current) {
+        i++;
+        if (i == index) return current->typeName;
+        current = current->next;
+    }
+    return "Unknown";
+}
+
+// Prints a menu of unique supply NAMES for a given type
+int EmergencyManager::printUniqueSuppliesByType(const std::string& type) const {
+    UniqueSupplyNode* current = uniqueSupplyHead;
+    int i = 0;
+    while (current) {
+        if (current->supplyType == type) {
+            i++;
+            std::cout << i << ". " << current->supplyName << "\n";
+        }
+        current = current->next;
+    }
+    return i; // Return the count
+}
+
+// Gets the string NAME of a unique supply
+std::string EmergencyManager::getUniqueSupplyNameByTypeAndIndex(const std::string& type, int index) const {
+    UniqueSupplyNode* current = uniqueSupplyHead;
+    int i = 0;
+    while (current) {
+        if (current->supplyType == type) {
+            i++;
+            if (i == index) return current->supplyName;
+        }
+        current = current->next;
+    }
+    return "Unknown";
+}
+
+// Prints a menu of all BATCHES for a given supply NAME
+int EmergencyManager::printBatchesForSupply(const std::string& supplyName) const {
+    SupplyNode* current = supplyHead;
+    int i = 0;
+    while (current) {
+        if (current->supplyName == supplyName) {
+            i++;
+            std::cout << i << ". " << current->supplyName 
+                      << " (ID: " << current->supplyID << ")\n";
+        }
+        current = current->next;
+    }
+    return i; // Return the count
+}
+
+// Gets a pointer to a specific BATCH
+EmergencyManager::SupplyNode* EmergencyManager::getBatchBySupplyNameAndIndex(const std::string& supplyName, int index) const {
+    SupplyNode* current = supplyHead;
+    int i = 0;
+    while (current) {
+        if (current->supplyName == supplyName) {
+            i++;
+            if (i == index) return current;
+        }
+        current = current->next;
+    }
+    return nullptr;
+}
+
+// Finds a case by its ID and returns a pointer
+EmergencyCase* EmergencyManager::getCaseByID(const std::string& caseID) {
+    Node* current = head;
+    while (current) {
+        if (current->data.case_id == caseID) {
+            return &(current->data); // Return pointer to the data
+        }
+        current = current->next;
+    }
+    return nullptr; // Not found
+}
+
+// Appends a supply usage record to the log
+void EmergencyManager::logSupplyUsage(const EmergencyCase& ec, const std::string& supplyID, 
+                                        const std::string& supplyName, int quantity) 
+{
+    std::string logFilePath = getDataFilePath("supply_usage_log.csv");
+    bool fileExists = false;
+    { 
+        std::ifstream checker(logFilePath);
+        if (checker.good()) fileExists = true;
+    }
+    std::ofstream logFile(logFilePath, std::ios::app);
+    if (!logFile.is_open()) {
+        MessageHandler::error("FATAL: Could not open supply usage log file at: " + logFilePath);
+        return;
+    }
+    if (!fileExists) {
+        logFile << "Case_ID,Patient_ID,Supply_Batch_ID,Supply_Name,Quantity_Used\n";
+    }
+    logFile << ec.case_id << ","
+            << ec.patient_id << ","
+            << supplyID << ","
+            << supplyName << ","
+            << quantity << "\n";
+    logFile.close();
 }
