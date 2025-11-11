@@ -9,6 +9,7 @@
 #include "message_handler.hpp"
 #include "string_utils.hpp"
 #include "stack.hpp"
+#include "time_utils.hpp"
 
 /**
  * @brief Writes the most recently added supply into medical_supply.csv
@@ -44,7 +45,7 @@ void MedicalSupplyManager::writeSupplyIntoCSV(const Supply& supply, const std::s
 
     // Write header if missing
     if (!hasHeader) {
-        file << "Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity,"
+        file << "Supply_Batch_ID,Name,Supply_Type,Quantity,"
                 "Status,Supplier_Name,Timestamp_Added,Expiry_Date\n";
     }
 
@@ -53,12 +54,10 @@ void MedicalSupplyManager::writeSupplyIntoCSV(const Supply& supply, const std::s
          << supply.name << ","
          << supply.supply_type << ","
          << supply.quantity << ","
-         << supply.min_required << ","
-         << supply.max_capacity << ","
          << supply.status << ","
          << supply.supplier_name << ","
          << supply.timestamp_added << ","
-         << supply.expiry_date << "\n" << std::flush;
+         << supply.expiry_date << std::endl;
 
     if (file.fail()) {
         MessageHandler::error("Failed to write to " + filePath);
@@ -72,13 +71,12 @@ void MedicalSupplyManager::writeSupplyIntoCSV(const Supply& supply, const std::s
  * @brief Adds a new supply to the stack after validating
  */
 void MedicalSupplyManager::addSupply() {
-    const int minReq = 150;
-    int quantity, maxCap;
+    int quantity;
     std::string batchNumber, name, type, supplier, received, expiry, status;
 
     // Prompt for supply type
     type = getValidatedInput(
-        "Enter supply type (MED/EQP/PPE): ",
+        "\nEnter supply type (MED/EQP/PPE): ",
         [](const std::string& input) { return SupplyValidation::isValidSupplyType(input); },
         "Invalid supply type. Must be MED, EQP or PPE."
     );
@@ -116,24 +114,10 @@ void MedicalSupplyManager::addSupply() {
     quantity = std::stoi(getValidatedInput(
         "Enter quantity: ",
         [](const std::string& input) {
-            try { return std::stoi(input) > 0; }
+            try { return std::stoi(input) >= 300; }
             catch (...) { return false; }
         },
-        "Quantity must be a positive number."
-    ));
-
-    // Prompt for max capacity
-    maxCap = std::stoi(getValidatedInput(
-        "Enter maximum required: ",
-        [quantity](const std::string& input) {
-            try {
-                int val = std::stoi(input);
-                return SupplyValidation::isValidQuantity(quantity, 150, val);
-            } catch (...) { return false; }
-        },
-        "Maximum must be at least 150 and not less than quantity."
-        // It must be at least the minimum required stock - 150
-        // It must be greater than or equal to the quantity that the user is trying to add
+        "Quantity must be a number greater than or equal to 300."
     ));
 
     // Prompt for supplier
@@ -143,26 +127,33 @@ void MedicalSupplyManager::addSupply() {
         "Supplier cannot be empty."
     );
 
-    // Prompt for received date
-    received = getValidatedInput(
-        "Enter received date (YYYY-MM-DD): ",
-        [](const std::string& input) { return SupplyValidation::isValidDateFormat(input); },
-        "Invalid date format. Use YYYY-MM-DD."
-    );
+    // Automatically set received date and time
+    received = getCurrentTimestamp();
 
+    // Calculate expiry date based on supply type
+    // MED - 3 years
+    // EQP - 7 years
+    // PPE - 1 year
+    int year, month, day;
+    sscanf(received.substr(0, 10).c_str(), "%d-%d-%d", &year, &month, &day);
 
-    // Prompt for expiry date
-    expiry = getValidatedInput(
-        "Enter expiry date (YYYY-MM-DD): ",
-        [](const std::string& input) { return SupplyValidation::isValidDateFormat(input) && SupplyValidation::isFutureDate(input); },
-        "Expiry date must be in the future and in YYYY-MM-DD format."
-    );
+    if (type == "MED") {
+        year += 3;
+    } else if (type == "EQP") {
+        year += 7;
+    } else if (type == "PPE") {
+        year += 1;
+    }
+
+    char expiryBuffer[11];
+    snprintf(expiryBuffer, sizeof(expiryBuffer), "%04d-%02d-%02d", year, month, day);
+    expiry = expiryBuffer;
 
     // Determine status
     status = SupplyValidation::isFutureDate(expiry) ? "Available" : "Expired";
 
     // Create supply and push to stack
-    Supply s {supply_batch_id, name, type, quantity, minReq, maxCap, status, supplier, received, expiry};
+    Supply s {supply_batch_id, name, type, quantity, status, supplier, received, expiry};
     stack.push(s);
 
     writeSupplyIntoCSV(s, "medical_supply.csv");

@@ -69,7 +69,47 @@ public:
     /**
      * @brief Displays all current supplies in the stack
      */
-    void viewCurrentSupply();
+    void viewAllSupply();
+
+    /**
+     * @brief Displays all expired supplies in the stack
+     */
+    void viewExpiredSupply();
+
+    /**
+     * @brief Displays all available supplies in the stack
+     */
+    void viewAvailableSupply();
+
+    /**
+     * @brief Displays all medicine supplies in the stack
+     */
+    void viewMedicineSupply();
+
+    /**
+     * @brief Displays all equipment supplies in the stack
+     */
+    void viewEquipmentSupply();
+
+    /**
+     * @brief Displays all PPE supplies in the stack
+     */
+    void viewPPESupply();
+
+    /**
+     * @brief Displays all supplies that are about to expire in the stack
+     */
+    void viewToBeExpiredSupply();
+
+    /**
+     * @brief Displays all removed supplies
+     */
+    void viewRemovedSupplies();
+
+    /*
+     * @brief Displays a view inventory menu
+     */
+    void displayInventoryMenu();
 
     /**
      * @brief Displays a user menu for interacting with the system
