@@ -674,12 +674,13 @@ void EmergencyManager::logSupplyUsage(const EmergencyCase& ec, const std::string
         return;
     }
     if (!fileExists) {
-        logFile << "Case_ID,Patient_ID,Supply_Batch_ID,Supply_Name,Quantity_Used\n";
+        logFile << "Case_ID,Patient_ID,Supply_Batch_ID,Supply_Name,Quantity_Used,Status\n";
     }
     logFile << ec.case_id << ","
             << ec.patient_id << ","
             << supplyID << ","
             << supplyName << ","
-            << quantity << "\n";
+            << quantity << ","
+            << "Not Deducted" << "\n";
     logFile.close();
 }
