@@ -26,6 +26,7 @@ add_library(core STATIC
         supplies/src/removed_supply.cpp
         supplies/src/stack.cpp
         supplies/src/view_supply.cpp
+        supplies/src/supply_usage_log_dynamic_array.cpp
         utils/path_utils.cpp
         utils/dynamic_array.cpp
         utils/patient.cpp
