@@ -90,3 +90,67 @@ void MedicalSupplyManager::saveToCSV(const std::string &filename) {
 
     file.close();
 }
+
+void MedicalSupplyManager::loadSupplyUsageLog() {
+    std::string filePath = getDataFilePath("supply_usage_log.csv");
+
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        MessageHandler::error("Unable to open dataset: " + filePath);
+        return;
+    }
+
+    std::string line;
+    std::getline(file, line); // Skip CSV header
+
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string case_id, patient_id, supply_batch_id, supply_name, quantity_used_str, status;
+        
+        if (!std::getline(ss, case_id, ',')) continue;
+        if (!std::getline(ss, patient_id, ',')) continue;
+        if (!std::getline(ss, supply_batch_id, ',')) continue;
+        if (!std::getline(ss, supply_name, ',')) continue;
+        if (!std::getline(ss, quantity_used_str, ',')) continue;
+        if (!std::getline(ss, status, ',')) continue;
+
+        SupplyUsageLog log {
+            trim(case_id),
+            trim(patient_id),
+            trim(supply_batch_id),
+            trim(supply_name),
+            std::stoi(trim(quantity_used_str)),
+            trim(status)
+        };
+
+        usage_logs.appendArray(log);
+    }
+
+    file.close();
+}
+
+void MedicalSupplyManager::saveSupplyUsageLog() {
+    std::string filePath = getDataFilePath("supply_usage_log.csv");
+    std::ofstream file(filePath, std::ios::trunc); // Overwrite the file
+
+    if (!file.is_open()) {
+        MessageHandler::error("Failed to open " + filePath + " for writing.");
+        return;
+    }
+
+    // Write header
+    file << "Case_ID,Patient_ID,Supply_Batch_ID,Supply_Name,Quantity_Used,Status\n";
+
+    // Write all logs from the dynamic array
+    for (int i = 0; i < usage_logs.getSize(); ++i) {
+        SupplyUsageLog log = usage_logs.getElementAt(i);
+        file << log.case_id << ","
+             << log.patient_id << ","
+             << log.supply_batch_id << ","
+             << log.supply_name << ","
+             << log.quantity_used << ","
+             << log.status << "\n";
+    }
+
+    file.close();
+}
