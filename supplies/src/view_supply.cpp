@@ -25,7 +25,8 @@ void MedicalSupplyManager::displayInventoryMenu() {
         std::cout << "6. View PPE Supplies\n";
         std::cout << "7. View Supplies Expiring Soon\n";
         std::cout << "8. View Removed Supplies\n";
-        std::cout << "9. Back to Main Menu\n";
+        std::cout << "9. View Supply Usage Log\n";
+        std::cout << "10. Back to Main Menu\n";
         std::cout << "----------------------------------------------------------\n";
         std::cout << "Enter a number to perform an action: ";
 
@@ -64,12 +65,15 @@ void MedicalSupplyManager::displayInventoryMenu() {
                 viewRemovedSupplies();
                 break;
             case 9:
+                displaySupplyUsageLogMenu();
+                break;
+            case 10:
                 break;
             default:
                 MessageHandler::error("Invalid choice. Please select a valid option.");
                 break;
         }
-    } while (choice != 9);
+    } while (choice != 10);
 }
 
 void MedicalSupplyManager::viewExpiredSupply() {
@@ -567,4 +571,175 @@ void MedicalSupplyManager::viewRemovedSupplies() {
     }
 
     file.close();
+}
+
+void MedicalSupplyManager::displaySupplyUsageLogMenu() {
+    int choice;
+    do {
+        std::cout << "\n--------------- SUPPLY USAGE LOG MENU --------------------\n";
+        std::cout << "1. View All Supply Usage\n";
+        std::cout << "2. View Non-Deducted Supply Usage\n";
+        std::cout << "3. Deduct Supply from Usage Log\n";
+        std::cout << "4. Back to Inventory Menu\n";
+        std::cout << "----------------------------------------------------------\n";
+        std::cout << "Enter a number to perform an action: ";
+
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            MessageHandler::error("Invalid input. Please enter a number.");
+            continue;
+        }
+
+        std::cin.ignore();
+
+        switch (choice) {
+            case 1:
+                viewAllSupplyUsageLog();
+                break;
+            case 2:
+                viewNonDeductedSupplyUsageLog();
+                break;
+            case 3:
+                deductSupplyFromUsageLog();
+                break;
+            case 4:
+                break;
+            default:
+                MessageHandler::error("Invalid choice. Please select a valid option.");
+                break;
+        }
+    } while (choice != 4);
+}
+
+void MedicalSupplyManager::viewAllSupplyUsageLog() {
+    if (usage_logs.getSize() == 0) {
+        MessageHandler::info("Supply usage log is empty.");
+        return;
+    }
+
+    std::cout << "\nALL SUPPLY USAGE LOG\n";
+
+    constexpr int wCaseID = 15, wPatientID = 15, wSupplyBatchID = 20, wSupplyName = 25, wQuantityUsed = 15, wStatus = 15;
+
+    // Table header
+    std::cout << std::string(wCaseID + wPatientID + wSupplyBatchID + wSupplyName + wQuantityUsed + wStatus, '-') << "\n";
+    std::cout << std::left
+              << std::setw(wCaseID) << "Case ID"
+              << std::setw(wPatientID) << "Patient ID"
+              << std::setw(wSupplyBatchID) << "Supply Batch ID"
+              << std::setw(wSupplyName) << "Supply Name"
+              << std::setw(wQuantityUsed) << "Quantity Used"
+              << std::setw(wStatus) << "Status" << "\n";
+    std::cout << std::string(wCaseID + wPatientID + wSupplyBatchID + wSupplyName + wQuantityUsed + wStatus, '-') << "\n";
+
+    for (int i = 0; i < usage_logs.getSize(); ++i) {
+        SupplyUsageLog log = usage_logs.getElementAt(i);
+        std::cout << std::left
+                  << std::setw(wCaseID) << log.case_id
+                  << std::setw(wPatientID) << log.patient_id
+                  << std::setw(wSupplyBatchID) << log.supply_batch_id
+                  << std::setw(wSupplyName) << log.supply_name
+                  << std::setw(wQuantityUsed) << log.quantity_used;
+        
+        if (log.status == "Not Deducted") {
+            std::cout << "\033[31m" << std::setw(wStatus) << log.status << "\033[0m" << "\n"; // Red
+        } else if (log.status == "Deducted") {
+            std::cout << "\033[32m" << std::setw(wStatus) << log.status << "\033[0m" << "\n"; // Green
+        } else {
+            std::cout << std::setw(wStatus) << log.status << "\n"; // No color
+        }
+    }
+}
+
+void MedicalSupplyManager::viewNonDeductedSupplyUsageLog() {
+    if (usage_logs.getSize() == 0) {
+        MessageHandler::info("Supply usage log is empty.");
+        return;
+    }
+
+    std::cout << "\nNON-DEDUCTED SUPPLY USAGE LOG\n";
+
+    constexpr int wCaseID = 15, wPatientID = 15, wSupplyBatchID = 20, wSupplyName = 25, wQuantityUsed = 15, wStatus = 15;
+
+    // Table header
+    std::cout << std::string(wCaseID + wPatientID + wSupplyBatchID + wSupplyName + wQuantityUsed + wStatus, '-') << "\n";
+    std::cout << std::left
+              << std::setw(wCaseID) << "Case ID"
+              << std::setw(wPatientID) << "Patient ID"
+              << std::setw(wSupplyBatchID) << "Supply Batch ID"
+              << std::setw(wSupplyName) << "Supply Name"
+              << std::setw(wQuantityUsed) << "Quantity Used"
+              << std::setw(wStatus) << "Status" << "\n";
+    std::cout << std::string(wCaseID + wPatientID + wSupplyBatchID + wSupplyName + wQuantityUsed + wStatus, '-') << "\n";
+
+    bool found = false;
+    for (int i = 0; i < usage_logs.getSize(); ++i) {
+        SupplyUsageLog log = usage_logs.getElementAt(i);
+        if (log.status == "Not Deducted") {
+            found = true;
+            std::cout << std::left
+                      << std::setw(wCaseID) << log.case_id
+                      << std::setw(wPatientID) << log.patient_id
+                      << std::setw(wSupplyBatchID) << log.supply_batch_id
+                      << std::setw(wSupplyName) << log.supply_name
+                      << std::setw(wQuantityUsed) << log.quantity_used
+                      << "\033[31m" << std::setw(wStatus) << log.status << "\033[0m" << "\n"; // Red
+        }
+    }
+
+    if (!found) {
+        MessageHandler::info("No non-deducted supply usage found.");
+    }
+}
+
+void MedicalSupplyManager::deductSupplyFromUsageLog() {
+    viewNonDeductedSupplyUsageLog();
+
+    std::string input;
+    std::cout << "\nType 'all' to deduct all non-deducted logs: ";
+    std::getline(std::cin, input);
+
+    if (input != "all") {
+        MessageHandler::info("Deduction cancelled.");
+        return;
+    }
+
+    for (int i = 0; i < usage_logs.getSize(); ++i) {
+        SupplyUsageLog log = usage_logs.getElementAt(i);
+        if (log.status == "Not Deducted") {
+            // Find the supply in the main stack and deduct
+            SupplyStack temp_stack;
+            bool supply_found = false;
+
+            while(!stack.isStackEmpty()){
+                Supply s = stack.pop();
+                if (s.supply_batch_id == log.supply_batch_id) {
+                    supply_found = true;
+                    if (s.quantity >= log.quantity_used) {
+                        s.quantity -= log.quantity_used;
+                    } else {
+                        MessageHandler::error("Not enough quantity to deduct for " + s.name + ". Skipping.");
+                    }
+                }
+                temp_stack.push(s);
+            }
+
+            while(!temp_stack.isStackEmpty()){
+                stack.push(temp_stack.pop());
+            }
+
+            if(supply_found){
+                 // Update the usage log status
+                log.status = "Deducted";
+                usage_logs.setElementAt(i, log);
+            }
+        }
+    }
+
+    // Save both files
+    saveToCSV("medical_supply.csv");
+    saveSupplyUsageLog();
+
+    MessageHandler::info("All non-deducted logs have been processed.");
 }
