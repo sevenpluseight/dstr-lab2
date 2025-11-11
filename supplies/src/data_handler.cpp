@@ -27,31 +27,28 @@ void MedicalSupplyManager::loadFromCSV(const std::string& filename) {
     while (std::getline(file, line)) {
         std::stringstream ss(line);
         std::string supply_batch_id, name, type, status, supplier, received, expiry;
-        int quantity, minReq, maxCap;
+        int quantity;
 
         if (!std::getline(ss, supply_batch_id, ',')) continue;
         if (!std::getline(ss, name, ',')) continue;
         if (!std::getline(ss, type, ',')) continue;
-        std::string quantityStr, minReqStr, maxCapStr;
+        std::string quantityStr;
         if (!std::getline(ss, quantityStr, ',')) continue;
-        if (!std::getline(ss, minReqStr, ',')) continue;
-        if (!std::getline(ss, maxCapStr, ',')) continue;
+        // if (!std::getline(ss, maxCapStr, ',')) continue;
         if (!std::getline(ss, status, ',')) continue;
         if (!std::getline(ss, supplier, ',')) continue;
         if (!std::getline(ss, received, ',')) continue;
         if (!std::getline(ss, expiry, ',')) continue;
 
         quantity = std::stoi(trim(quantityStr));
-        minReq   = std::stoi(trim(minReqStr));
-        maxCap   = std::stoi(trim(maxCapStr));
+        // maxCap   = std::stoi(trim(maxCapStr));
 
         Supply s{
             trim(supply_batch_id),
             trim(name),
             trim(type),
             quantity,
-            minReq,
-            maxCap,
+            // maxCap,
             trim(status),
             trim(supplier),
             trim(received),
@@ -74,7 +71,7 @@ void MedicalSupplyManager::saveToCSV(const std::string &filename) {
     }
 
     // Write header
-    file << "Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity," 
+    file << "Supply_Batch_ID,Name,Supply_Type,Quantity,"
             "Status,Supplier_Name,Timestamp_Added,Expiry_Date\n";
 
     // Write all supplies from the stack
@@ -84,8 +81,7 @@ void MedicalSupplyManager::saveToCSV(const std::string &filename) {
              << s.name << ","
              << s.supply_type << ","
              << s.quantity << ","
-             << s.min_required << ","
-             << s.max_capacity << ","
+             // << s.max_capacity << ","
              << s.status << ","
              << s.supplier_name << ","
              << s.timestamp_added << ","
