@@ -25,12 +25,13 @@ void MedicalSupplyManager::displayMenu() {
 
     // Load dataset
     loadFromCSV("medical_supply.csv");
+    loadSupplyUsageLog();
 
     do {
         std::cout << "\n--------------- MEDICAL SUPPLY MANAGEMENT MENU -----------------\n";
         std::cout << "1. Add New Supply\n";
         std::cout << "2. Use (Remove) Last Added Supply\n";
-        std::cout << "3. View Current Supplies Inventory\n";
+        std::cout << "3. View Supply Inventory\n";
         std::cout << "4. Exit\n";
         std::cout << "----------------------------------------------------------------\n";
         std::cout << "Enter a number to perform an action: ";
@@ -52,7 +53,7 @@ void MedicalSupplyManager::displayMenu() {
                 useLastAddedSupply();
                 break;
             case 3:
-                viewCurrentSupply();
+                displayInventoryMenu();
                 break;
             case 4:
                 MessageHandler::info("Exiting Medical Supply Management System...\n");

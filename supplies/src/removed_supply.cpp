@@ -11,6 +11,8 @@
 #include "message_handler.hpp"
 #include "stack.hpp"
 
+#include "time_utils.hpp"
+
 /**
 * @brief Appends a removed supply record into removed_supplies.csv
  *
@@ -42,27 +44,23 @@ void MedicalSupplyManager::writeRemovedSupply(const Supply& supply) {
 
     // Write header if not present
     if (!hasHeader) {
-        file << "Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity,"
+        file << "Supply_Batch_ID,Name,Supply_Type,Quantity,"
                 "Status,Supplier_Name,Timestamp_Added,Expiry_Date,Removed_On\n";
     }
 
-    // Get current date for removal
-    std::time_t now = std::time(nullptr);
-    char dateStr[20];
-    std::strftime(dateStr, sizeof(dateStr), "%Y-%m-%d", std::localtime(&now));
+    // Get current timestamp for removal
+    std::string removedOn = getCurrentTimestamp();
 
     // Append supply details
     file << supply.supply_batch_id << ","
          << supply.name << ","
          << supply.supply_type << ","
          << supply.quantity << ","
-         << supply.min_required << ","
-         << supply.max_capacity << ","
          << supply.status << ","
          << supply.supplier_name << ","
          << supply.timestamp_added << ","
          << supply.expiry_date << ","
-         << dateStr << "\n" << std::flush;
+         << removedOn << std::endl;
 
     if (file.fail()) {
         MessageHandler::error("Failed to write to " + filePath);

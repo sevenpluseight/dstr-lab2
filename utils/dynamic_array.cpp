@@ -1,7 +1,7 @@
 #include "dynamic_array.hpp"
 #include <iostream>
 #include <array>
-#include <array>
+// #include <array>
 
 DynamicArray::DynamicArray() {
     size = 0;

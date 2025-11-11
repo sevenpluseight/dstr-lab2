@@ -30,17 +30,6 @@ namespace SupplyValidation {
     }
 
     /**
-     * @brief Validates quantity against capacity limits
-     * @param quantity Current available quantity
-     * @param minReq Minimum required stock
-     * @param maxCap Maximum allowed stock
-     * @return true if valid, false otherwise
-     */
-    inline bool isValidQuantity(int quantity, int minReq, int maxCap) {
-        return quantity >= minReq && quantity <= maxCap;
-    }
-
-    /**
      * @brief Checks if a give date string is in "YYYY-MM-DD" format
      * @param date The date string to validate
      * @return true if format is valid, false otherwise

@@ -54,13 +54,21 @@ struct Supply {
     std::string supply_batch_id; /// Unique ID
     std::string name; /// Name of the supply
     std::string supply_type; /// Type of supply (Medical, Equipment, Protective Personal Equipment [PPE])
-    int quantity; /// Current available quantity
-    int min_required; /// Minimum required quantity before low stock
-    int max_capacity; /// Maximum allowed stock capacity
-    std::string status; /// Status (Available, Low Stock, Expired)
+    int quantity; /// Quantity received
+    // int max_capacity; /// Maximum allowed stock capacity
+    std::string status; /// Status (Available, Expired)
     std::string supplier_name; /// Supplier name
     std::string timestamp_added; /// Date/time when supply was added
     std::string expiry_date; /// Expiration date
+};
+
+struct SupplyUsageLog {
+    std::string case_id;
+    std::string patient_id;
+    std::string supply_batch_id;
+    std::string supply_name;
+    int quantity_used;
+    std::string status;
 };
 
 // Emergency Department Officer
