@@ -25,6 +25,7 @@ void MedicalSupplyManager::displayMenu() {
 
     // Load dataset
     loadFromCSV("medical_supply.csv");
+    loadSupplyUsageLog();
 
     do {
         std::cout << "\n--------------- MEDICAL SUPPLY MANAGEMENT MENU -----------------\n";
