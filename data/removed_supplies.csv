@@ -1,6 +1,3 @@
-Supply_Batch_ID,Name,Supply_Type,Quantity,Min_Required,Max_Capacity,Status,Supplier_Name,Timestamp_Added,Expiry_Date,Removed_On
-MED-PAR-0708,Paracetamol,MED,450,150,500,Available,Testing Supplier,2025-11-02,2026-01-01,2025-11-02
-PPE-SHO-3462,Shoe Covers,PPE,71,150,700,Low Stock,Deepspace Life Sciences,2025-06-15,2026-01-02,2025-11-02
-PPE-GLO-6677,Gloves,PPE,450,150,500,Available,Test Sup 1,2025-11-02,2026-01-01,2025-11-02
-EQP-ECG-7621,ECG Machine,EQP,182,150,300,Available,Twinkle Medicine Supply,2025-08-30,2026-09-16,2025-11-02
-EQP-INF-1752,Infusion Pump,EQP,482,150,500,Expired,Spigan HealthTech,2025-06-06,2025-10-10,2025-11-02
+Supply_Batch_ID,Name,Supply_Type,Quantity,Status,Supplier_Name,Timestamp_Added,Expiry_Date,Removed_On
+PPE-GLO-4455,Gloves,PPE,678,Available,Supplier 1,2025-11-11 14:21:55,2026-11-11,2025-11-11 14:22:03
+EQP-ECG-5678,ECG Machine,EQP,310,Available,Supplier test 1,2025-11-11 14:51:26,2032-11-11,2025-11-11 16:04:15
