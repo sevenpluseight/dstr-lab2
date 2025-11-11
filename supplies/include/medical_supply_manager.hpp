@@ -8,6 +8,7 @@
 #include "stack.hpp"
 #include "message_handler.hpp"
 #include "path_utils.hpp"
+#include "supply_usage_log_dynamic_array.hpp"
 
 namespace fs = std::filesystem;
 
@@ -22,6 +23,13 @@ namespace fs = std::filesystem;
 class MedicalSupplyManager {
 private:
     SupplyStack stack; /// Stack for storing supply records
+    SupplyUsageLogDynamicArray usage_logs; /// Dynamic array for storing supply usage logs
+
+    void loadSupplyUsageLog();
+    void saveSupplyUsageLog();
+    void viewAllSupplyUsageLog();
+    void viewNonDeductedSupplyUsageLog();
+    void deductSupplyFromUsageLog();
 
 public:
     /**
@@ -106,8 +114,13 @@ public:
      */
     void viewRemovedSupplies();
 
-    /*
-     * @brief Displays a view inventory menu
+    /**
+     * @brief Displays the supply usage log menu
+     */
+    void displaySupplyUsageLogMenu();
+
+    /**
+     * @brief Displays the inventory menu
      */
     void displayInventoryMenu();
 
