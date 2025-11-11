@@ -62,6 +62,15 @@ struct Supply {
     std::string expiry_date; /// Expiration date
 };
 
+struct SupplyUsageLog {
+    std::string case_id;
+    std::string patient_id;
+    std::string supply_batch_id;
+    std::string supply_name;
+    int quantity_used;
+    std::string status;
+};
+
 // Emergency Department Officer
 /**
  * @struct EmergencyCase
