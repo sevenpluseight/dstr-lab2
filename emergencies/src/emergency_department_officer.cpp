@@ -148,10 +148,15 @@ void EmergencyDepartmentOfficer::addCase() {
     
 // Patient ID Input
     while (true) {
-        std::cout << "Enter Patient ID (e.g., PAT-0001): ";
+        std::cout << "Enter Patient ID (e.g., PAT-0001) (or 'back' to cancel):";
         std::getline(std::cin, ec.patient_id);
         trim(ec.patient_id);
 
+        if (toUpper(ec.patient_id) == "BACK") {
+            MessageHandler::info("Add case cancelled.");
+            return;
+        }
+        
         if (ec.patient_id.empty()) {
             MessageHandler::warning("Patient ID cannot be empty.");
             continue; // Ask again
