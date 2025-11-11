@@ -346,25 +346,25 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         }
         
         trim(caseID);
-        caseID = toUpper(caseID); // Ensure Case ID is uppercase
-
-        if (caseID == "BACK") {
+        
+        // 1. Check for commands using a temporary uppercase version
+        std::string upperInput = toUpper(caseID);
+        if (upperInput == "BACK") {
             MessageHandler::info("Action cancelled.");
             return;
         }
-
-        if (caseID == "LIST") {
+        if (upperInput == "LIST") {
             std::cout << "\n--- All 'Processing' Cases ---";
             manager.printCasesByStatus("Processing");
-            continue; // Loop back and ask for the ID again
+            continue; // Loop back and ask for the ID
         }
-
-        ec = manager.getCaseByID(caseID);
 
         if (caseID.rfind("CASE-", 0) != 0 || caseID.length() <= 5) {
             MessageHandler::warning("Invalid format. Case ID must be like 'CASE-XXXX'.");
             continue; // Ask again
         }
+
+        ec = manager.getCaseByID(caseID);
 
         if (ec == nullptr) {
             MessageHandler::error("Case ID not found. Please try again.");
