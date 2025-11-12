@@ -43,6 +43,7 @@ private:
         std::string supplyID;   // Supply_Batch_ID
         std::string supplyName;
         std::string supplyType;
+        int stockQuantity;
         SupplyNode* next;
     };
 
@@ -66,7 +67,7 @@ private:
     // Private helpers for supply management
     void addSupplyType(const std::string& type);
     void addUniqueSupply(const std::string& name, const std::string& type);
-    void addSupply(const std::string& id, const std::string& name, const std::string& type);
+    void addSupply(const std::string& id, const std::string& name, const std::string& type, int stockQty);
 
     // Private helper to add an ambulance to the list
     void addAmbulance(const Ambulance& amb);

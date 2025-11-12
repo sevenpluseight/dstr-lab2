@@ -465,9 +465,11 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
                     
                     if (charsProcessed != qtyInput.length() || quantity <= 0) {
                         MessageHandler::warning("Invalid quantity. Please enter a whole number greater than 0.");
+                    } else if (quantity > selectedSupply->stockQuantity) {
+                        MessageHandler::warning("Not enough stock. Only " + std::to_string(selectedSupply->stockQuantity) + " available.");
                     } else {
-                        // Here you could add more validation if you had the 'stock' level
-                        break; // Valid quantity
+                        // Quantity is valid AND stock is sufficient
+                        break; 
                     }
                 } catch (...) {
                     MessageHandler::warning("Invalid input. Please enter a whole number.");
@@ -480,6 +482,13 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         // LOG IT
         manager.logSupplyUsage(*ec, selectedSupply->supplyID, selectedSupply->supplyName, quantity);
         MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
+
+        // // This deducts the stock from the in-memory list
+        // selectedSupply->stockQuantity -= quantity; 
+        
+        // MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
+        // // ADDED REMAINING STOCK MESSAGE
+        // MessageHandler::info("Remaining stock for this batch: " + std::to_string(selectedSupply->stockQuantity));
     }
 
     // Finalize the case

@@ -518,11 +518,12 @@ void EmergencyManager::addUniqueSupply(const std::string& name, const std::strin
 }
 
 // Adds a supply item to the main supply list
-void EmergencyManager::addSupply(const std::string& id, const std::string& name, const std::string& type) {
+void EmergencyManager::addSupply(const std::string& id, const std::string& name, const std::string& type, int stockQty) {
     SupplyNode* newNode = new SupplyNode;
     newNode->supplyID = id;
     newNode->supplyName = name;
     newNode->supplyType = type;
+    newNode->stockQuantity = stockQty;
     newNode->next = supplyHead; // Add to front
     supplyHead = newNode;
 }
@@ -538,15 +539,26 @@ void EmergencyManager::loadSupplyData(const std::string& supplyDataFile) {
     std::getline(file, line); // Skip header
     while (std::getline(file, line)) {
         std::stringstream ss(line);
-        std::string supplyID, supplyName, supplyType;
+        std::string supplyID, supplyName, supplyType, stockQtyStr;
         std::getline(ss, supplyID, ',');   
         std::getline(ss, supplyName, ','); 
         std::getline(ss, supplyType, ','); 
+        std::getline(ss, stockQtyStr, ',');
         if (!supplyID.empty() && !supplyName.empty() && !supplyType.empty()) {
             trim(supplyID); 
             trim(supplyName);
             trim(supplyType);
-            addSupply(supplyID, supplyName, supplyType);
+            trim(stockQtyStr);
+
+            int stockQty = 0;
+            try {
+                if(!stockQtyStr.empty()) {
+                    stockQty = std::stoi(stockQtyStr);
+                }
+            } catch (const std::invalid_argument&) {
+                MessageHandler::warning("Invalid stock quantity for supply ID: " + supplyID + ". Defaulting to 0.");
+            }
+            addSupply(supplyID, supplyName, supplyType, stockQty);
             addSupplyType(supplyType);
             addUniqueSupply(supplyName, supplyType); 
         }
