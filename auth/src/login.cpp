@@ -11,6 +11,7 @@
 #include "medical_supply_manager.hpp"
 #include "patient_admission_clerk.hpp"
 #include "emergency_department_officer.hpp"
+#include "ambulance_dispatcher.hpp"
 
 /**
  * @brief Constructor for Login
@@ -175,13 +176,11 @@ bool Login::promptLogin() {
                 break;
 
             case AMBULANCE_DISPATCHER:
-                MessageHandler::warning("Ambulance Dispatcher menu not implemented yet");
-                // Once implemented, comment out the above MessageHandler line
-                // and uncomment the block below:
-                // {
-                //     AmbulanceDispatcher ab;
-                //     ab.displayMenu();
-                // }
+            {
+                // Provide the CSV paths for schedule and history
+                AmbulanceDispatcher ab;
+                ab.run(); // <-- use run(), not displayMenu()
+            }
                 break;
 
             default:
