@@ -61,6 +61,8 @@ EmergencyManager::~EmergencyManager() {
         sCurrent = sCurrent->next;
         delete sTmp;
     }
+
+    clearAmbulanceList();
 }
 
 // Adds a new patient to the front of the patient list
@@ -226,7 +228,7 @@ void EmergencyManager::loadFromCSV(const std::string& filename) {
         std::getline(ss, ec.ambulance_id, ','); 
 
         trim(ec.status); 
-
+        trim(ec.ambulance_id);
         addCase(ec); // insert in priority order
     }
     file.close();
@@ -683,4 +685,88 @@ void EmergencyManager::logSupplyUsage(const EmergencyCase& ec, const std::string
             << quantity << ","
             << "Not Deducted" << "\n";
     logFile.close();
+}
+
+void EmergencyManager::clearAmbulanceList() {
+    AmbulanceNode* current = ambHead;
+    while (current) {
+        AmbulanceNode* tmp = current;
+        current = current->next;
+        delete tmp;
+    }
+    ambHead = nullptr;
+}
+
+void EmergencyManager::loadAmbulanceData(const std::string& filename) {
+    clearAmbulanceList(); // Clear old data first
+    
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        MessageHandler::warning("Ambulance schedule CSV not found: " + filename);
+        return;
+    }
+    std::string line;
+    std::getline(file, line); // Skip header
+
+    while (std::getline(file, line)) {
+        if (line.empty()) continue;
+        std::stringstream ss(line);
+        std::string token;
+        Ambulance amb;
+        
+        std::getline(ss, amb.ambulance_id, ','); 
+        std::getline(ss, amb.driver_name, ',');   
+        std::getline(ss, amb.driver_status, ','); 
+        std::getline(ss, token, ','); 
+        std::getline(ss, token, ',');
+        std::getline(ss, token, ','); 
+        std::getline(ss, token, ','); 
+        std::getline(ss, amb.assigned_case_id, ','); 
+        std::getline(ss, amb.ambulance_status, ','); 
+
+        trim(amb.ambulance_id);
+        trim(amb.driver_name);
+        trim(amb.driver_status);
+        trim(amb.assigned_case_id);
+        trim(amb.ambulance_status);
+
+        // Add to our list (to the front)
+        AmbulanceNode* newNode = new AmbulanceNode{amb, nullptr};
+        newNode->next = ambHead;
+        ambHead = newNode;
+    }
+    file.close();
+}
+
+std::string EmergencyManager::getFirstAvailableAmbulanceID() const {
+    AmbulanceNode* current = ambHead;
+    while (current) {
+        // Find ambulances that are ready for a new case
+        bool isReady = (current->data.ambulance_status.find("On Duty") != std::string::npos) ||
+                       (current->data.ambulance_status.find("Available") != std::string::npos);
+
+        if (isReady) {
+            // Check if it is free from 'Processing' list
+            if (!isAmbulanceOnProcessingCase(current->data.ambulance_id)) 
+            {
+                return current->data.ambulance_id; // Found an ambulance that is truly available!
+            }
+        }
+        current = current->next;
+    }
+    return ""; 
+}
+
+bool EmergencyManager::isAmbulanceOnProcessingCase(const std::string& ambID) const {
+    Node* current = head; // Start at the beginning of the emergency case list
+
+    while (current) {
+        // Check if a case is "Processing" AND has the ambulance ID we're looking for
+        if (current->data.status == "Processing" && current->data.ambulance_id == ambID) {
+            return true; // Found it, the ambulance is busy
+        }
+        current = current->next;
+    }
+
+    return false; // Reached the end, ambulance is not on a processing case
 }

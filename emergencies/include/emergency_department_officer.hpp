@@ -11,6 +11,7 @@ private:
     EmergencyManager manager;
     std::string dataFile;
     std::string patientDataFile; 
+    std::string ambulanceDataFile;
 
     void displayMenu();
     void viewCases();

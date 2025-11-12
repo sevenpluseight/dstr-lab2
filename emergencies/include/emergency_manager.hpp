@@ -46,13 +46,18 @@ private:
         SupplyNode* next;
     };
 
+    struct AmbulanceNode {
+        Ambulance data; // Use the struct from entities.hpp
+        AmbulanceNode* next;
+    };
+
     Node* head = nullptr; // Head of the emergency case list
     PatientNode* patientHead = nullptr; // Head of the patient data list
     TypeNode* typeHead = nullptr;
     SupplyTypeNode* supplyTypeHead = nullptr;
     UniqueSupplyNode* uniqueSupplyHead = nullptr;
     SupplyNode* supplyHead = nullptr;
-
+    AmbulanceNode* ambHead = nullptr;
 
     // Private helper to add a patient to the list
     void addPatient(const std::string& id, const std::string& name);
@@ -61,6 +66,9 @@ private:
     void addSupplyType(const std::string& type);
     void addUniqueSupply(const std::string& name, const std::string& type);
     void addSupply(const std::string& id, const std::string& name, const std::string& type);
+
+    bool isAmbulanceOnProcessingCase(const std::string& ambID) const;
+    void clearAmbulanceList();
 
 public:
     EmergencyManager() = default;
@@ -93,6 +101,18 @@ public:
     void updateCase(const EmergencyCase& ec);
     std::string generateNextCaseID();
     bool isEmpty() const { return head == nullptr; }
+
+    /**
+     * @brief Loads ambulance data from the schedule CSV.
+     * This clears any existing ambulance data in the manager.
+     */
+    void loadAmbulanceData(const std::string& filename);
+
+    /**
+     * @brief Finds the first ambulance that is "On Duty" or "Available".
+     * @return The string ID of the ambulance, or "" if none are found.
+     */
+    std::string getFirstAvailableAmbulanceID() const;
 
     void loadSupplyData(const std::string& supplyDataFile);
     

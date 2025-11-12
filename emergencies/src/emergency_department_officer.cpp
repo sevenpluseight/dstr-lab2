@@ -70,6 +70,7 @@ EmergencyDepartmentOfficer::EmergencyDepartmentOfficer() {
 
     dataFile = getDataFilePath("emergency_cases.csv");
     patientDataFile = getDataFilePath("patient_data.csv"); 
+    ambulanceDataFile = getDataFilePath("ambulance_schedule.csv");
     std::string supplyDataFile = getDataFilePath("medical_supply.csv");
     manager.loadSupplyData(supplyDataFile);
     
@@ -313,9 +314,20 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
         std::cout << "\n";
 
         if (assignAmbulance == "Y") {
-            processedCase.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
-            MessageHandler::info("Ambulance " + processedCase.ambulance_id + " assigned.");
-            MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+            manager.loadAmbulanceData(ambulanceDataFile);
+            std::string ambID = manager.getFirstAvailableAmbulanceID();
+            if (ambID.empty()) {
+                // Handle no available ambulances
+                MessageHandler::warning("No 'On Duty' or 'Available' ambulances found for assignment.");
+                MessageHandler::info("Case " + processedCase.case_id + " is 'Processing' (Note: Ambulance Not Assigned).");
+            
+            } else {
+                //Auto-assign the found ambulance
+                processedCase.ambulance_id = ambID;
+                
+                MessageHandler::info("Ambulance " + processedCase.ambulance_id + " auto-assigned.");
+                MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+            }
         } else {
             MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
         }
