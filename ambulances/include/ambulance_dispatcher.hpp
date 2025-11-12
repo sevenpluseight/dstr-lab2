@@ -1,60 +1,55 @@
 #ifndef AMBULANCE_DISPATCHER_HPP
 #define AMBULANCE_DISPATCHER_HPP
 
-#include <iostream>
 #include <string>
-#include "entities.hpp"
-#include "message_handler.hpp"
-#include "path_utils.hpp"
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <ctime>
+#include "../../utils/entities.hpp"
+#include "../../utils/dynamic_array.hpp"
 
-// Node for queue
-struct AmbulanceNode {
-    Ambulance data;
-    AmbulanceNode* next;
-};
+#define MAX_AMBULANCES 50
+#define MAX_SHIFTS 500
 
-// Node for stack (shift history)
-struct ShiftNode {
-    std::string ambulance_id;
-    std::string driver_name;
-    std::string shift_start;
-    std::string shift_end;
-    ShiftNode* next;
-};
-
+/**
+ * @brief Handles ambulance operations:
+ * - View queue
+ * - Register/update drivers
+ * - Edit shift hours
+ * - Manage availability
+ * - View supplies (read-only)
+ * - View emergency stats (day/week/year)
+ * - Auto-save data on exit
+ */
 class AmbulanceDispatcher {
 private:
-    std::string scheduleFile;
-    std::string shiftFile;
+    DynamicArray ambulanceData;
+    DynamicArray shiftHistory;
 
-    // Queue of available ambulances
-    AmbulanceNode* front = nullptr;
-    AmbulanceNode* rear = nullptr;
+    Ambulance ambulances[MAX_AMBULANCES];
+    int ambulanceCount;
 
-    // Stack for shift history
-    ShiftNode* shiftTop = nullptr;
+    // Utility
+    void loadAmbulanceData(const std::string &path);
+    void saveAmbulanceData(const std::string &path);
+    void loadShiftHistory(const std::string &path);
 
-    // Private helpers
-    void loadSchedule();
-    void saveSchedule();
-    void loadShiftHistory();
-    void saveShiftHistory();
+    // Functionalities
+    void viewAmbulanceQueue();
+    void registerDriver();
+    void editShiftHours();
+    void updateDriverAvailability();
+    void viewSuppliesReadOnly();
+    void viewEmergencyStats();
 
-    void displayMenu();
-    void viewSchedule();
-    void assignAmbulance();
-    void viewShiftHistory();
+    // Helpers
+    void recalcShiftRotation(int hours);
+    int getCasesHandled(const std::string &ambID, const std::string &periodType);
 
-    void enqueueAmbulance(const Ambulance& amb);
-    Ambulance dequeueAmbulance();
-    bool isQueueEmpty() const { return front == nullptr; }
-
-    void pushShift(const ShiftNode& shift);
 public:
-    AmbulanceDispatcher(const std::string& schedulePath, const std::string& shiftPath);
-    ~AmbulanceDispatcher();
-
-    void run(); // Entry point
+    AmbulanceDispatcher();
+    void run();
 };
 
 #endif

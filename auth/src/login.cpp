@@ -178,15 +178,10 @@ bool Login::promptLogin() {
             case AMBULANCE_DISPATCHER:
             {
                 // Provide the CSV paths for schedule and history
-                AmbulanceDispatcher ab(
-                    getDataFilePath("ambulance_schedule.csv"),
-                    getDataFilePath("shift_history.csv")
-                );
+                AmbulanceDispatcher ab;
                 ab.run(); // <-- use run(), not displayMenu()
             }
                 break;
-
-
 
             default:
                 MessageHandler::error("Unknown role: " + role);
