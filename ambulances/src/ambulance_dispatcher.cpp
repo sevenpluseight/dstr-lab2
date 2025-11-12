@@ -99,7 +99,11 @@ void AmbulanceDispatcher::rotateShift() {
         Ambulance &amb = ambulanceQueue[idx];
 
         char buf[20];
-        sprintf_s(buf, sizeof(buf), "2025-11-03 %02d:%02d", currHour, currMin);
+        #ifdef _WIN32
+            sprintf_s(buf, sizeof(buf), "2025-11-03 %02d:%02d", currHour, currMin);
+        #else
+            snprintf(buf, sizeof(buf), "2025-11-03 %02d:%02d", currHour, currMin);
+        #endif
         amb.shift_start = buf;
 
         int endHour = currHour + amb.shift_duration;
@@ -109,7 +113,11 @@ void AmbulanceDispatcher::rotateShift() {
             endDay = 1;
         }
 
-        sprintf_s(buf, sizeof(buf), "2025-11-%02d %02d:%02d", 3 + endDay, endHour, currMin);
+        #ifdef _WIN32
+            sprintf_s(buf, sizeof(buf), "2025-11-%02d %02d:%02d", 3 + endDay, endHour, currMin);
+        #else
+            snprintf(buf, sizeof(buf), "2025-11-%02d %02d:%02d", 3 + endDay, endHour, currMin);
+        #endif
         amb.shift_end = buf;
         amb.next_rotation_time = amb.shift_end;
 
@@ -122,7 +130,6 @@ void AmbulanceDispatcher::rotateShift() {
         }
 
         currHour = endHour;
-        currMin = currMin;
     }
 
     std::cout << "All ambulance shifts rotated for 24-hour coverage successfully.\n";
@@ -157,12 +164,22 @@ std::string addHoursToDatetime(const std::string& datetime, int hours) {
     t += hours * 3600;
 
     std::tm newTm = {};
+    #ifdef _WIN32
     localtime_s(&newTm, &t);
+    #else
+        localtime_r(&t, &newTm);
+    #endif
 
     char buf[20];
-    sprintf_s(buf, sizeof(buf), "%04d-%02d-%02d %02d:%02d",
+    #ifdef _WIN32
+        sprintf_s(buf, sizeof(buf), "%04d-%02d-%02d %02d:%02d",
               newTm.tm_year + 1900, newTm.tm_mon + 1, newTm.tm_mday,
               newTm.tm_hour, newTm.tm_min);
+    #else
+        snprintf(buf, sizeof(buf), "%04d-%02d-%02d %02d:%02d",
+              newTm.tm_year + 1900, newTm.tm_mon + 1, newTm.tm_mday,
+              newTm.tm_hour, newTm.tm_min);
+    #endif
 
     return std::string(buf);
 }
