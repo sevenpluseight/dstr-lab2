@@ -1,55 +1,38 @@
 #ifndef AMBULANCE_DISPATCHER_HPP
 #define AMBULANCE_DISPATCHER_HPP
-
-#include <string>
+#define MAX_SHIFTS 1000
 #include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <ctime>
-#include "../../utils/entities.hpp"
-#include "../../utils/dynamic_array.hpp"
+#include <string>
+#include "entities.hpp"
 
-#define MAX_AMBULANCES 50
-#define MAX_SHIFTS 500
-
-/**
- * @brief Handles ambulance operations:
- * - View queue
- * - Register/update drivers
- * - Edit shift hours
- * - Manage availability
- * - View supplies (read-only)
- * - View emergency stats (day/week/year)
- * - Auto-save data on exit
- */
 class AmbulanceDispatcher {
 private:
-    DynamicArray ambulanceData;
-    DynamicArray shiftHistory;
+    static const int MAX_AMBULANCES = 20; // Adjust based on dataset size
+    Ambulance ambulanceQueue[MAX_AMBULANCES]; // circular queue of active-duty ambulances
+    int front; // front index of queue
+    int rear;  // rear index of queue
+    int count; // number of ambulances in queue
 
-    Ambulance ambulances[MAX_AMBULANCES];
-    int ambulanceCount;
-
-    // Utility
-    void loadAmbulanceData(const std::string &path);
-    void saveAmbulanceData(const std::string &path);
-    void loadShiftHistory(const std::string &path);
-
-    // Functionalities
-    void viewAmbulanceQueue();
-    void registerDriver();
-    void editShiftHours();
-    void updateDriverAvailability();
-    void viewSuppliesReadOnly();
-    void viewEmergencyStats();
-
-    // Helpers
-    void recalcShiftRotation(int hours);
-    int getCasesHandled(const std::string &ambID, const std::string &periodType);
+    ShiftRecord shiftRecords[MAX_AMBULANCES]; // store shift history if needed
+    int shiftCount;
 
 public:
     AmbulanceDispatcher();
-    void run();
+
+    void run(); // main entry point called after login
+
+private:
+    void displayMenu();
+    void registerAmbulance();
+    void rotateShift();
+    void displaySchedule();
+    void updateShift();
+    void viewInventory();
+    int findAmbulanceIndex(const std::string& id); // helper for updating shifts
+    void loadScheduleFromCSV(const std::string& filename);
+    void loadShiftDatasetFromCSV(const std::string& filename);
+    void saveScheduleToCSV(const std::string& filename);
+    void saveShiftDatasetToCSV(const std::string& filename);
 };
 
 #endif
