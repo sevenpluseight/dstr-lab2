@@ -89,8 +89,8 @@ void EmergencyManager::loadPatientData(const std::string& patientDataFile) {
         std::stringstream ss(line);
         std::string patientID, patientName;
         
-        std::getline(ss, patientID, ','); // Column 1: Patient_ID
-        std::getline(ss, patientName, ','); // Column 2: Name
+        std::getline(ss, patientID, ','); 
+        std::getline(ss, patientName, ','); 
         
         if (!patientID.empty() && !patientName.empty()) {
             trim(patientID); 
@@ -113,9 +113,9 @@ std::string EmergencyManager::getPatientName(const std::string& patientID) const
     return "Unknown"; // Not found
 }
 
-// Checks if a type already exists in the list (case-insensitive)
+// Checks if a type already exists in the list
 bool EmergencyManager::typeExists(const std::string& type) const {
-    std::string upperType = toUpper(type); // <-- Convert to upper
+    std::string upperType = toUpper(type); 
     TypeNode* current = typeHead;
     while (current) {
         if (current->typeName == upperType) { 
@@ -126,7 +126,7 @@ bool EmergencyManager::typeExists(const std::string& type) const {
     return false;
 }
 
-// Adds a new type to the list in alphabetical order (case-insensitive)
+// Adds a new type to the list in alphabetical order 
 void EmergencyManager::addType(const std::string& type) {
     std::string upperType = toUpper(type); // Convert to upper
 
@@ -309,7 +309,7 @@ void EmergencyManager::printAllCases() const {
  // Loop for each priority level from 1 to 5
     for (int priority = 1; priority <= 5; ++priority) {
 
-        // --- Pass 1: "Pending" ---
+        // "Pending" 
         current = head; // Reset pointer to the start of the list
         while (current) {
             if (current->data.priority_level == priority && current->data.status == "Pending") {
@@ -319,7 +319,7 @@ void EmergencyManager::printAllCases() const {
             current = current->next;
         }
 
-        // --- Pass 2: "Processing" ---
+        // "Processing"
         current = head; // Reset pointer to the start of the list
         while (current) {
             if (current->data.priority_level == priority && current->data.status == "Processing") {
@@ -329,7 +329,7 @@ void EmergencyManager::printAllCases() const {
             current = current->next;
         }
 
-        // --- Pass 3: "Completed" ---
+        // "Completed" 
         current = head; // Reset pointer to the start of the list
         while (current) {
             if (current->data.priority_level == priority && current->data.status == "Completed") {
@@ -408,8 +408,6 @@ EmergencyCase EmergencyManager::getHighestPriorityPendingCase() const {
     Node* current = head;
     while (current) {
         if (current->data.status == "Pending") {
-            // Because the list is already sorted by priority,
-            // the first "Pending" case we find IS the one.
             return current->data;
         }
         current = current->next;
@@ -453,7 +451,7 @@ EmergencyCase EmergencyManager::popHighestPriorityPendingCase() {
     return ec;
 }
 
-// Update case (used after processing)
+// Update case
 void EmergencyManager::updateCase(const EmergencyCase& ec) {
     Node* current = head;
     while (current) {
@@ -468,7 +466,7 @@ void EmergencyManager::updateCase(const EmergencyCase& ec) {
 
 // Generate next Case ID
 std::string EmergencyManager::generateNextCaseID() {
-    int maxID = 3350; // Start from a base, e.g., CASE-3101
+    int maxID = 3350; // Start from a base, CASE-3101
     Node* current = head;
 
     while (current) {
@@ -488,7 +486,7 @@ std::string EmergencyManager::generateNextCaseID() {
     return oss.str();
 }
 
-// Adds a unique supply type (e.g., "PPE") to the list
+// Adds a unique supply type to the list
 void EmergencyManager::addSupplyType(const std::string& type) {
     if (type.empty()) return;
     SupplyTypeNode* current = supplyTypeHead;
@@ -502,7 +500,7 @@ void EmergencyManager::addSupplyType(const std::string& type) {
     supplyTypeHead = newNode;
 }
 
-// Adds a unique supply NAME (e.g., "Paracetamol") to the list
+// Adds a unique supply NAME to the list
 void EmergencyManager::addUniqueSupply(const std::string& name, const std::string& type) {
     if (name.empty() || type.empty()) return;
     UniqueSupplyNode* current = uniqueSupplyHead;
@@ -519,7 +517,7 @@ void EmergencyManager::addUniqueSupply(const std::string& name, const std::strin
     uniqueSupplyHead = newNode;
 }
 
-// Adds a supply item (e.g., "Gloves") to the main supply list
+// Adds a supply item to the main supply list
 void EmergencyManager::addSupply(const std::string& id, const std::string& name, const std::string& type) {
     SupplyNode* newNode = new SupplyNode;
     newNode->supplyID = id;
@@ -541,22 +539,22 @@ void EmergencyManager::loadSupplyData(const std::string& supplyDataFile) {
     while (std::getline(file, line)) {
         std::stringstream ss(line);
         std::string supplyID, supplyName, supplyType;
-        std::getline(ss, supplyID, ',');   // Col 1
-        std::getline(ss, supplyName, ','); // Col 2
-        std::getline(ss, supplyType, ','); // Col 3
+        std::getline(ss, supplyID, ',');   
+        std::getline(ss, supplyName, ','); 
+        std::getline(ss, supplyType, ','); 
         if (!supplyID.empty() && !supplyName.empty() && !supplyType.empty()) {
             trim(supplyID); 
             trim(supplyName);
             trim(supplyType);
             addSupply(supplyID, supplyName, supplyType);
             addSupplyType(supplyType);
-            addUniqueSupply(supplyName, supplyType); // NEW
+            addUniqueSupply(supplyName, supplyType); 
         }
     }
     file.close();
 }
 
-// Prints a numbered menu of unique supply types (e.g., "1. MED")
+// Prints a numbered menu of unique supply types
 int EmergencyManager::printSupplyTypes() const {
     SupplyTypeNode* current = supplyTypeHead;
     int i = 0;
@@ -576,7 +574,7 @@ int EmergencyManager::printSupplyTypes() const {
         std::cout << i << ". " << fullName << "\n";
         current = current->next;
     }
-    return i; // Return the count
+    return i; 
 }
 
 // Gets the string name of a supply type by its menu index
@@ -749,7 +747,7 @@ std::string EmergencyManager::getFirstAvailableAmbulanceID() const {
             // Check if it is free from 'Processing' list
             if (!isAmbulanceOnProcessingCase(current->data.ambulance_id)) 
             {
-                return current->data.ambulance_id; // Found an ambulance that is truly available!
+                return current->data.ambulance_id; // Found an ambulance that is truly available
             }
         }
         current = current->next;
@@ -768,5 +766,5 @@ bool EmergencyManager::isAmbulanceOnProcessingCase(const std::string& ambID) con
         current = current->next;
     }
 
-    return false; // Reached the end, ambulance is not on a processing case
+    return false; // Not found, the ambulance is free
 }

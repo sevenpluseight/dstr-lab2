@@ -340,15 +340,13 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
     }
 }
 
-// --- REPLACE YOUR OLD completeProcessingCase WITH THIS ---
-
 void EmergencyDepartmentOfficer::completeProcessingCase() {
     std::cout << "\n--- Complete 'Processing' Case ---\n";
     
     std::string caseID;
     EmergencyCase* ec = nullptr; // Pointer to the case we will modify
 
-    // 2. Get and validate the Case ID
+    // Get and validate the Case ID
     while (true) {
         std::cout << "\nEnter Case ID to complete (or 'list' to see all, 'back' to cancel): ";
         
@@ -359,7 +357,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         
         trim(caseID);
         
-        // 1. Check for commands using a temporary uppercase version
+        // Check for commands using a temporary uppercase version
         std::string upperInput = toUpper(caseID);
         if (upperInput == "BACK") {
             MessageHandler::info("Action cancelled.");
@@ -389,7 +387,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         }
     }
 
-    // 3. Loop for logging medical supplies (This part is unchanged)
+    // Loop for logging medical supplies used
     std::cout << "\n--- Log Medical Supplies Used ---";
     while (true) {
         std::string confirm;
@@ -406,7 +404,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
             continue;
         }
 
-        // --- 3-STEP MENU BLOCK FOR SUPPLY SELECTION ---
+        // MENU BLOCK FOR SUPPLY SELECTION
         std::cout << "\nSelect Supply Type:\n";
         int typeCount = manager.printSupplyTypes();
         if (typeCount == 0) { 
@@ -417,7 +415,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         int typeChoice = getValidatedInt(typePrompt, 1, typeCount);
         std::string selectedType = manager.getSupplyTypeByIndex(typeChoice);
 
-        // STEP 2: SELECT UNIQUE SUPPLY NAME
+        // MENU BLOCK FOR UNIQUE SUPPLY NAME SELECTION
         std::cout << "\nSelect Supply Name:\n";
         int nameCount = manager.printUniqueSuppliesByType(selectedType);
         if (nameCount == 0) {
@@ -428,7 +426,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         int nameChoice = getValidatedInt(namePrompt, 1, nameCount);
         std::string selectedName = manager.getUniqueSupplyNameByTypeAndIndex(selectedType, nameChoice);
 
-        // STEP 3: SELECT BATCH ID
+        // MENU BLOCK FOR BATCH ID SELECTION
         std::cout << "\nSelect Batch ID for " << selectedName << ":\n";
         int batchCount = manager.printBatchesForSupply(selectedName);
         if (batchCount == 0) { 
@@ -445,7 +443,6 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         }
         
         MessageHandler::info("Selected: " + selectedSupply->supplyName + " (ID: " + selectedSupply->supplyID + ")");
-        // --- END OF 3-STEP MENU BLOCK ---
 
         // GET QUANTITY
         int quantity = 0; // Declare quantity up here
@@ -485,7 +482,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
     }
 
-    // 4. Finalize the case
+    // Finalize the case
     ec->status = "Completed";
     ec->timestamp_processed = getCurrentTimestamp(); 
 

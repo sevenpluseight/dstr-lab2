@@ -47,7 +47,7 @@ private:
     };
 
     struct AmbulanceNode {
-        Ambulance data; // Use the struct from entities.hpp
+        Ambulance data;
         AmbulanceNode* next;
     };
 
@@ -63,10 +63,13 @@ private:
     void addPatient(const std::string& id, const std::string& name);
     void addType(const std::string& type);
 
+    // Private helpers for supply management
     void addSupplyType(const std::string& type);
     void addUniqueSupply(const std::string& name, const std::string& type);
     void addSupply(const std::string& id, const std::string& name, const std::string& type);
 
+    // Private helper to add an ambulance to the list
+    void addAmbulance(const Ambulance& amb);
     bool isAmbulanceOnProcessingCase(const std::string& ambID) const;
     void clearAmbulanceList();
 
