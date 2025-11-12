@@ -98,7 +98,7 @@ void AmbulanceDispatcher::rotateShift() {
         int idx = (front + i) % MAX_AMBULANCES;
         Ambulance &amb = ambulanceQueue[idx];
 
-        char buf[20];
+        char buf[32];
         #ifdef _WIN32
             sprintf_s(buf, sizeof(buf), "2025-11-03 %02d:%02d", currHour, currMin);
         #else
@@ -170,7 +170,7 @@ std::string addHoursToDatetime(const std::string& datetime, int hours) {
         localtime_r(&t, &newTm);
     #endif
 
-    char buf[20];
+    char buf[32];
     #ifdef _WIN32
         sprintf_s(buf, sizeof(buf), "%04d-%02d-%02d %02d:%02d",
               newTm.tm_year + 1900, newTm.tm_mon + 1, newTm.tm_mday,
