@@ -61,6 +61,9 @@ int getValidatedInt(const std::string& prompt, int min, int max) {
         } catch (const std::invalid_argument&) {
             MessageHandler::warning("Invalid input. Please enter a number.");
         }
+        catch (const std::out_of_range&) {
+            MessageHandler::warning("Input is too large. Please enter a number between " + std::to_string(min) + " and " + std::to_string(max) + ".");
+        }
     }
 }
 
@@ -463,7 +466,9 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
                     std::size_t charsProcessed = 0;
                     quantity = std::stoi(qtyInput, &charsProcessed);
                     
-                    if (charsProcessed != qtyInput.length() || quantity <= 0) {
+                    if (charsProcessed != qtyInput.length()) {
+                         MessageHandler::warning("Invalid input. Please enter a valid number without extra characters.");
+                    } else if (quantity <= 0) {
                         MessageHandler::warning("Invalid quantity. Please enter a whole number greater than 0.");
                     } else if (quantity > selectedSupply->stockQuantity) {
                         MessageHandler::warning("Not enough stock. Only " + std::to_string(selectedSupply->stockQuantity) + " available.");
@@ -471,7 +476,9 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
                         // Quantity is valid AND stock is sufficient
                         break; 
                     }
-                } catch (...) {
+                } catch (const std::out_of_range&) {
+                    MessageHandler::warning("Input is too large. Please enter a valid quantity.");
+                } catch (const std::invalid_argument&) {
                     MessageHandler::warning("Invalid input. Please enter a whole number.");
                 }
             }
