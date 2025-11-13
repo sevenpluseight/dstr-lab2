@@ -98,12 +98,12 @@ bool Queue::inQueue(std::string ID) {
     const Node* temp = front;
     for (int i = 1; i <= getLength(); i++) {
         if (temp->patient_id == ID) {
-            delete temp;
+            // delete temp;
             return true;
         }
         temp = temp->next;
     }
-    delete temp;
+    // delete temp;
     return false;
 }
 
@@ -111,12 +111,12 @@ int Queue::getPatientQueueNumber(std::string ID) {
     Node* temp = front;
     for (int i = 1; i <= getLength(); i++) {
         if (temp->patient_id == ID) {
-            delete temp;
+            // delete temp;
             return i;
         }
         temp = temp->next;
     }
-    delete temp;
+    // delete temp;
     MessageHandler::info("Patient not found in queue.");
     return -1;
 }
