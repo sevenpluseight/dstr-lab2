@@ -88,7 +88,38 @@ struct EmergencyCase {
     std::string ambulance_id;      
 };
 
-// Ambulance Dispatcher
+struct ShiftRecord {
+    std::string shift_id;
+    std::string ambulance_id;
+    std::string driver_name;
+    std::string shift_start;
+    std::string shift_end;
+    int shift_duration_hours;
+    std::string assigned_case_id;
+    int cases_handled;
+    double total_distance_km;
+    int oxygen_used;
+    int medicine_used;
+    std::string status_at_end;
+};
+
+struct Ambulance {
+    std::string ambulance_id;
+    std::string driver_name;
+    std::string driver_status;
+    std::string shift_start;
+    std::string shift_end;
+    int shift_duration;
+    std::string next_rotation_time;
+    std::string assigned_case_id;
+    std::string ambulance_status;
+    int oxygen_tank;
+    int first_aid_kit;
+    int medicine_units;
+    std::string last_service_date;
+    std::string location;
+    DynamicArray shift_history;
+};
 
 
 

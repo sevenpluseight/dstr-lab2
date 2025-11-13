@@ -61,6 +61,9 @@ int getValidatedInt(const std::string& prompt, int min, int max) {
         } catch (const std::invalid_argument&) {
             MessageHandler::warning("Invalid input. Please enter a number.");
         }
+        catch (const std::out_of_range&) {
+            MessageHandler::warning("Input is too large. Please enter a number between " + std::to_string(min) + " and " + std::to_string(max) + ".");
+        }
     }
 }
 
@@ -70,6 +73,7 @@ EmergencyDepartmentOfficer::EmergencyDepartmentOfficer() {
 
     dataFile = getDataFilePath("emergency_cases.csv");
     patientDataFile = getDataFilePath("patient_data.csv"); 
+    ambulanceDataFile = getDataFilePath("ambulance_schedule.csv");
     std::string supplyDataFile = getDataFilePath("medical_supply.csv");
     manager.loadSupplyData(supplyDataFile);
     
@@ -313,9 +317,20 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
         std::cout << "\n";
 
         if (assignAmbulance == "Y") {
-            processedCase.ambulance_id = "AMB" + std::to_string(40 + rand() % 10);
-            MessageHandler::info("Ambulance " + processedCase.ambulance_id + " assigned.");
-            MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+            manager.loadAmbulanceData(ambulanceDataFile);
+            std::string ambID = manager.getFirstAvailableAmbulanceID();
+            if (ambID.empty()) {
+                // Handle no available ambulances
+                MessageHandler::warning("No 'On Duty' or 'Available' ambulances found for assignment.");
+                MessageHandler::info("Case " + processedCase.case_id + " is 'Processing' (Note: Ambulance Not Assigned).");
+            
+            } else {
+                //Auto-assign the found ambulance
+                processedCase.ambulance_id = ambID;
+                
+                MessageHandler::info("Ambulance " + processedCase.ambulance_id + " auto-assigned.");
+                MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
+            }
         } else {
             MessageHandler::info("Case " + processedCase.case_id + " is now 'Processing'.");
         }
@@ -328,15 +343,13 @@ void EmergencyDepartmentOfficer::processHighestPriorityCase() {
     }
 }
 
-// --- REPLACE YOUR OLD completeProcessingCase WITH THIS ---
-
 void EmergencyDepartmentOfficer::completeProcessingCase() {
     std::cout << "\n--- Complete 'Processing' Case ---\n";
     
     std::string caseID;
     EmergencyCase* ec = nullptr; // Pointer to the case we will modify
 
-    // 2. Get and validate the Case ID
+    // Get and validate the Case ID
     while (true) {
         std::cout << "\nEnter Case ID to complete (or 'list' to see all, 'back' to cancel): ";
         
@@ -347,7 +360,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         
         trim(caseID);
         
-        // 1. Check for commands using a temporary uppercase version
+        // Check for commands using a temporary uppercase version
         std::string upperInput = toUpper(caseID);
         if (upperInput == "BACK") {
             MessageHandler::info("Action cancelled.");
@@ -377,7 +390,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         }
     }
 
-    // 3. Loop for logging medical supplies (This part is unchanged)
+    // Loop for logging medical supplies used
     std::cout << "\n--- Log Medical Supplies Used ---";
     while (true) {
         std::string confirm;
@@ -394,7 +407,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
             continue;
         }
 
-        // --- 3-STEP MENU BLOCK FOR SUPPLY SELECTION ---
+        // MENU BLOCK FOR SUPPLY SELECTION
         std::cout << "\nSelect Supply Type:\n";
         int typeCount = manager.printSupplyTypes();
         if (typeCount == 0) { 
@@ -405,7 +418,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         int typeChoice = getValidatedInt(typePrompt, 1, typeCount);
         std::string selectedType = manager.getSupplyTypeByIndex(typeChoice);
 
-        // STEP 2: SELECT UNIQUE SUPPLY NAME
+        // MENU BLOCK FOR UNIQUE SUPPLY NAME SELECTION
         std::cout << "\nSelect Supply Name:\n";
         int nameCount = manager.printUniqueSuppliesByType(selectedType);
         if (nameCount == 0) {
@@ -416,7 +429,7 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         int nameChoice = getValidatedInt(namePrompt, 1, nameCount);
         std::string selectedName = manager.getUniqueSupplyNameByTypeAndIndex(selectedType, nameChoice);
 
-        // STEP 3: SELECT BATCH ID
+        // MENU BLOCK FOR BATCH ID SELECTION
         std::cout << "\nSelect Batch ID for " << selectedName << ":\n";
         int batchCount = manager.printBatchesForSupply(selectedName);
         if (batchCount == 0) { 
@@ -433,7 +446,6 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         }
         
         MessageHandler::info("Selected: " + selectedSupply->supplyName + " (ID: " + selectedSupply->supplyID + ")");
-        // --- END OF 3-STEP MENU BLOCK ---
 
         // GET QUANTITY
         int quantity = 0; // Declare quantity up here
@@ -454,13 +466,19 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
                     std::size_t charsProcessed = 0;
                     quantity = std::stoi(qtyInput, &charsProcessed);
                     
-                    if (charsProcessed != qtyInput.length() || quantity <= 0) {
+                    if (charsProcessed != qtyInput.length()) {
+                         MessageHandler::warning("Invalid input. Please enter a valid number without extra characters.");
+                    } else if (quantity <= 0) {
                         MessageHandler::warning("Invalid quantity. Please enter a whole number greater than 0.");
+                    } else if (quantity > selectedSupply->stockQuantity) {
+                        MessageHandler::warning("Not enough stock. Only " + std::to_string(selectedSupply->stockQuantity) + " available.");
                     } else {
-                        // Here you could add more validation if you had the 'stock' level
-                        break; // Valid quantity
+                        // Quantity is valid AND stock is sufficient
+                        break; 
                     }
-                } catch (...) {
+                } catch (const std::out_of_range&) {
+                    MessageHandler::warning("Input is too large. Please enter a valid quantity.");
+                } catch (const std::invalid_argument&) {
                     MessageHandler::warning("Invalid input. Please enter a whole number.");
                 }
             }
@@ -471,9 +489,16 @@ void EmergencyDepartmentOfficer::completeProcessingCase() {
         // LOG IT
         manager.logSupplyUsage(*ec, selectedSupply->supplyID, selectedSupply->supplyName, quantity);
         MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
+
+        // // This deducts the stock from the in-memory list
+        // selectedSupply->stockQuantity -= quantity; 
+        
+        // MessageHandler::info("Logged " + std::to_string(quantity) + " of " + selectedSupply->supplyName + ".");
+        // // ADDED REMAINING STOCK MESSAGE
+        // MessageHandler::info("Remaining stock for this batch: " + std::to_string(selectedSupply->stockQuantity));
     }
 
-    // 4. Finalize the case
+    // Finalize the case
     ec->status = "Completed";
     ec->timestamp_processed = getCurrentTimestamp(); 
 

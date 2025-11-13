@@ -15,6 +15,7 @@ endif()
 add_library(core STATIC
         auth/src/login.cpp
         auth/src/session_manager.cpp
+        ambulances/src/ambulance_dispatcher.cpp
         emergencies/src/emergency_department_officer.cpp
         emergencies/src/emergency_manager.cpp
         patients/src/patient_array.cpp
@@ -51,7 +52,9 @@ target_link_libraries(main_app PRIVATE core)
 file(GLOB MAIN_FILES "*_main.cpp")
 foreach(MAIN_FILE ${MAIN_FILES})
     get_filename_component(EXE_NAME ${MAIN_FILE} NAME_WE)
-    add_executable(${EXE_NAME} ${MAIN_FILE})
+    add_executable(${EXE_NAME} ${MAIN_FILE}
+            ambulances/src/ambulance_dispatcher.cpp
+    )
     target_link_libraries(${EXE_NAME} PRIVATE core)
 endforeach()
 
