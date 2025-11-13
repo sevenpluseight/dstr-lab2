@@ -1,3 +1,4 @@
 Supply_Batch_ID,Name,Supply_Type,Quantity,Status,Supplier_Name,Timestamp_Added,Expiry_Date,Removed_On
 PPE-GLO-4455,Gloves,PPE,678,Available,Supplier 1,2025-11-11 14:21:55,2026-11-11,2025-11-11 14:22:03
 EQP-ECG-5678,ECG Machine,EQP,310,Available,Supplier test 1,2025-11-11 14:51:26,2032-11-11,2025-11-11 16:04:15
+MED-MED-4525,Medicine test 1,MED,560,Available,Supplier test 1,2025-11-13 07:12:09,2028-11-13,2025-11-13 07:12:17
