@@ -134,6 +134,10 @@ void PatientAdmissionClerk::admitExistingPatient() {
 }
 
 void PatientAdmissionClerk::viewPatientQueue() {
+    if (patientQueue.isEmpty()) {
+        MessageHandler::info("Patient queue is empty.");
+        return;
+    }
     int queueLength = patientQueue.getLength();
     constexpr int columnWidthOfQueueID = 8;
     constexpr int columnWidthOfPatientID = 14;
@@ -154,6 +158,10 @@ void PatientAdmissionClerk::viewPatientQueue() {
 
     Node* temp = patientQueue.getFront();
     for (int i = 0; i < queueLength; i++) {
+        if (temp == nullptr) {
+            MessageHandler::error("Encountered an unexpected null pointer in the queue. The queue might be corrupted.");
+            break;
+        }
         std::cout << std::left <<
             std::setw(columnWidthOfQueueID) << i + 1 <<
             std::setw(columnWidthOfPatientID) << temp->patient_id <<
@@ -164,7 +172,7 @@ void PatientAdmissionClerk::viewPatientQueue() {
 
         temp = temp->next;
     }
-    delete temp;
+    // delete temp;
 }
 
 void PatientAdmissionClerk::viewPatient() {
