@@ -204,3 +204,4 @@ EQP-INF-5268,Infusion Pump,EQP,117,Expired,Hex Medical Supplies,2025-04-30 05:06
 EQP-ECG-7168,ECG Machine,EQP,128,Expired,Hex Medical Supplies,2025-04-09 08:09:10,2025-10-17
 MED-CIP-1218,Ciprofloxacin,MED,203,Available,Hex Medical Supplies,2025-04-14 11:12:13,2026-04-21
 PPE-GLO-1176,Gloves,PPE,677,Available,Breth Healthcare,2025-08-12 14:15:16,2026-05-08
+EQP-EQU-4521,Equipment test 1,EQP,300,Available,Supplier test 2,2025-11-13 07:12:50,2032-11-13
