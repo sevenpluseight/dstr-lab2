@@ -75,3 +75,5 @@ CASE-3183,PAT-0083,MED-PAR-7507,Paracetamol,16,Deducted
 CASE-3238,PAT-0138,PPE-FAC-7856,Face Shield,14,Deducted
 CASE-3196,PAT-0096,MED-IBU-7085,Ibuprofen,8,Deducted
 CASE-3240,PAT-0140,EQP-INF-5268,Infusion Pump,1,Deducted
+CASE-3246,PAT-0146,MED-PAR-5033,Paracetamol,10,Not Deducted
+CASE-3246,PAT-0146,EQP-INF-5268,Infusion Pump,1,Not Deducted
