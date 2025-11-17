@@ -8,6 +8,12 @@
 | Ambulance Dispatcher       | Elysha Sophia binti Ridzuan | TP071162  |
 
 ---
+# Links
+
+1. [Full Presentation Link - Google Drive](https://drive.google.com/drive/folders/1INx0JHEj6UZ7IICKHKAYslDxfDiHYpWW?usp=drive_link)
+2. [GitHub](https://github.com/sevenpluseight/dstr-lab2)
+
+---
 
 # User Credentials
 
